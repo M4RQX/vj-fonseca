@@ -3,33 +3,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#F4EFE6" />
-  <meta name="description" content="V&J Fonseca · Serralharia em Palmela. Portões, gradeamentos, estruturas e vedações. Forjado à medida desde 2003." />
-  <meta property="og:title" content="V&J Fonseca · Serralharia" />
-  <meta property="og:description" content="Forjado em Palmela desde 2003." />
-  <title>V&J Fonseca · Serralharia · Palmela</title>
+  <meta name="theme-color" content="#1C2E45" />
+  <meta name="description" content="V&J Fonseca · Serralharia em Palmela desde 2003. Portões, gradeamentos, estruturas e vedações em ferro e aço. Orçamento em 24 horas." />
+  <meta property="og:title" content="V&J Fonseca · Serralharia · Palmela" />
+  <meta property="og:description" content="Serralharia em Palmela. Família Fonseca, desde 2003." />
+  <title>V&J Fonseca · Serralharia · Palmela · 263 079 366</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F4EFE6'/%3E%3Ctext x='16' y='24' font-family='Outfit,sans-serif' font-size='22' font-weight='900' fill='%230E0B07' text-anchor='middle'%3EV%3C/text%3E%3Ccircle cx='25' cy='8' r='3' fill='%239C3F1F'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231C2E45'/%3E%3Ctext x='16' y='22' font-family='Lora,Georgia,serif' font-size='18' font-weight='700' fill='%23F4F1EB' text-anchor='middle'%3EVJ%3C/text%3E%3C/svg%3E" />
 
   <style>
     /* ============================================================
-       TOKENS  ·  iron-oxide editorial spread
+       TOKENS  —  serralharia tradicional
        ============================================================ */
     :root {
-      --paper:       #F4EFE6;
-      --paper-warm:  #ECE4D2;
-      --paper-deep:  #DDD3BD;
-      --ink:         #0E0B07;
-      --ink-soft:    #2A2520;
-      --muted:       #6E665A;
-      --rule:        rgba(14,11,7,.12);
-      --rule-soft:   rgba(14,11,7,.06);
-      --accent:      #9C3F1F;   /* iron oxide · single accent */
-      --easing:      cubic-bezier(.16,1,.3,1);
+      --paper:        #F4F1EB;   /* creme papel notarial */
+      --paper-warm:   #EAE5D9;
+      --paper-deep:   #DDD3BD;
+      --ink:          #1C2E45;   /* navy profissional */
+      --ink-soft:     #3A4A5E;
+      --muted:        #7B8492;
+      --rule:         rgba(28,46,69,0.14);
+      --rule-soft:    rgba(28,46,69,0.07);
+      --accent:       #8B6A3D;   /* bronze · wood — calmo, sem neon */
+      --green-trust:  #2F5D3C;   /* "aberto" indicator */
+      --easing:       ease;
     }
 
     * { box-sizing: border-box; }
@@ -38,93 +39,93 @@
       margin: 0;
       background: var(--paper);
       color: var(--ink);
-      font-family: "Outfit", system-ui, sans-serif;
-      font-feature-settings: "ss01";
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
       overflow-x: hidden;
-      line-height: 1.55;
-    }
-
-    /* ============================================================
-       GRAIN  · fixed pseudo-element only
-       ============================================================ */
-    .grain {
-      position: fixed; inset: 0;
-      pointer-events: none;
-      z-index: 90;
-      opacity: .26;
-      mix-blend-mode: multiply;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.05 0 0 0 0 0.04 0 0 0 0 0.03 0 0 0 .25 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
 
     /* ============================================================
        TYPE
        ============================================================ */
-    .display {
-      font-family: "Outfit", system-ui, sans-serif;
-      font-weight: 900;
-      letter-spacing: -0.035em;
-      line-height: 0.9;
+    .serif {
+      font-family: "Lora", Georgia, "Times New Roman", serif;
     }
-    .editorial-italic {
-      font-family: "Fraunces", Georgia, serif;
-      font-variation-settings: "opsz" 144, "SOFT" 100;
-      font-style: italic;
-      font-weight: 400;
-      letter-spacing: -0.015em;
+    .sans {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+    }
+    h1, h2, h3 {
+      font-family: "Lora", Georgia, serif;
+      font-weight: 700;
+      letter-spacing: -0.005em;
+      line-height: 1.15;
+      margin: 0;
     }
     .label {
-      font-family: "JetBrains Mono", ui-monospace, monospace;
-      font-size: 11px;
-      letter-spacing: 0.18em;
+      font-family: "Source Sans 3", sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--muted);
-      font-weight: 500;
+      font-weight: 600;
     }
-    .num { font-variant-numeric: tabular-nums; }
+    .num {
+      font-variant-numeric: tabular-nums;
+      font-feature-settings: "tnum";
+    }
 
     /* ============================================================
        LAYOUT
        ============================================================ */
     .container {
-      max-width: 1480px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 0 clamp(20px, 4vw, 64px);
+      padding: 0 clamp(20px, 4vw, 48px);
     }
 
     /* ============================================================
-       FOLIO  ·  page-number style markers in corners
+       TOP INFO BAR  ·  always visible
        ============================================================ */
-    .folio {
-      position: fixed; z-index: 41;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      mix-blend-mode: multiply;
-      pointer-events: none;
+    .topbar {
+      background: var(--ink);
+      color: var(--paper);
+      font-size: 13px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--ink);
     }
-    .folio-l { top: 50%; left: 16px; transform: translateY(-50%) rotate(-90deg); transform-origin: center; }
-    .folio-r { top: 50%; right: 16px; transform: translateY(-50%) rotate(90deg); transform-origin: center; }
-    @media (max-width: 980px) { .folio { display: none; } }
+    .topbar-inner {
+      display: flex; gap: 24px;
+      align-items: center; justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .topbar a { color: var(--paper); text-decoration: none; font-weight: 500; }
+    .topbar a:hover { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+    .topbar .open-dot {
+      display: inline-block;
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #6FB87E;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    .topbar-left, .topbar-right {
+      display: flex; align-items: center; gap: 18px;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 720px) {
+      .topbar-left { font-size: 12px; }
+      .topbar-right span:not(.phone-link) { display: none; }
+    }
 
     /* ============================================================
        HEADER
        ============================================================ */
     header {
-      position: fixed; top: 0; left: 0; right: 0;
-      z-index: 50;
-      padding: 18px 0;
-      transition: background .35s var(--easing), padding .35s var(--easing), border-color .35s var(--easing);
-      border-bottom: 1px solid transparent;
-    }
-    header.scrolled {
-      background: rgba(244,239,230,0.86);
-      backdrop-filter: blur(14px) saturate(140%);
-      padding: 12px 0;
+      position: sticky; top: 0; z-index: 50;
+      background: var(--paper);
       border-bottom: 1px solid var(--rule);
+      padding: 14px 0;
     }
     .nav {
       display: grid;
@@ -133,794 +134,672 @@
       align-items: center;
     }
     .brand {
-      font-family: "Outfit", sans-serif;
-      font-weight: 900;
-      font-size: 22px;
-      letter-spacing: -0.03em;
-      color: var(--ink);
       text-decoration: none;
-      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--ink);
+      display: inline-flex; align-items: baseline; gap: 12px;
     }
-    .brand-mark {
-      width: 28px; height: 28px;
-      display: grid; place-items: center;
-      background: var(--ink);
-      color: var(--paper);
-      font-family: "Fraunces", serif;
-      font-style: italic;
-      font-weight: 500;
-      font-size: 16px;
+    .brand .mark {
+      font-family: "Lora", serif;
+      font-weight: 700;
+      font-size: 26px;
+      letter-spacing: -0.01em;
       line-height: 1;
     }
-    .brand-mark .ampersand { color: var(--accent); }
+    .brand .mark .amp { color: var(--accent); }
+    .brand .sub {
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    @media (max-width: 720px) { .brand .sub { display: none; } }
+
     .nav-links {
-      display: flex; gap: 30px; justify-self: center;
-      font-size: 14px; font-weight: 400;
+      display: flex; gap: 28px; justify-self: center;
+      font-size: 15px; font-weight: 500;
     }
     .nav-links a {
       color: var(--ink-soft);
       text-decoration: none;
-      transition: color .2s var(--easing);
-      position: relative;
-      padding: 4px 0;
+      transition: color .15s var(--easing);
+      padding: 6px 0;
     }
     .nav-links a:hover { color: var(--ink); }
-    .nav-links a::after {
-      content: ""; position: absolute; left: 0; right: 0; bottom: -2px;
-      height: 1px; background: var(--accent);
-      transform: scaleX(0); transform-origin: left;
-      transition: transform .25s var(--easing);
-    }
-    .nav-links a:hover::after { transform: scaleX(1); }
-    .cta {
-      --cta-bg: var(--ink);
-      --cta-fg: var(--paper);
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 11px 22px;
-      background: var(--cta-bg);
-      color: var(--cta-fg);
+    .nav-links a.active { color: var(--ink); border-bottom: 2px solid var(--accent); }
+
+    .header-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 20px;
+      background: var(--ink); color: var(--paper);
       text-decoration: none;
-      font-size: 13px; font-weight: 500;
-      letter-spacing: 0.02em;
-      transition: transform .25s var(--easing), background .25s var(--easing);
-      will-change: transform;
+      font-size: 14px; font-weight: 600;
+      transition: background .15s var(--easing);
     }
-    .cta:active { transform: scale(0.98); }
-    .cta:hover { background: var(--accent); }
-    .cta::after { content: "→"; transition: transform .2s var(--easing); }
-    .cta:hover::after { transform: translateX(4px); }
+    .header-cta:hover { background: #2A3F58; }
 
     @media (max-width: 720px) {
       .nav-links { display: none; }
     }
 
     /* ============================================================
-       HERO  ·  asymmetric editorial spread (60/40)
+       HERO  ·  classic plaque + photograph
        ============================================================ */
     .hero {
-      min-height: 100dvh;
-      padding: 96px 0 0;
-      display: grid;
-      align-items: center;
-      position: relative;
+      padding: clamp(56px, 8vh, 96px) 0 clamp(64px, 10vh, 120px);
+      border-bottom: 1px solid var(--rule);
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: 7fr 5fr;
-      gap: clamp(24px, 4vw, 80px);
-      align-items: end;
-      padding-bottom: clamp(56px, 9vh, 96px);
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(32px, 5vw, 80px);
+      align-items: center;
     }
     .hero-eyebrow {
-      display: flex; align-items: center; gap: 14px;
-      margin-bottom: clamp(28px, 5vh, 48px);
-      opacity: 0;
-      animation: fade-rise .9s var(--easing) .15s forwards;
-    }
-    .hero-eyebrow::before {
-      content: ""; width: 56px; height: 1px; background: var(--accent);
-    }
-    .hero-title {
-      font-size: clamp(72px, 12vw, 232px);
-      margin: 0;
-    }
-    .hero-title .l1, .hero-title .l2, .hero-title .l3 {
-      display: block;
-      opacity: 0;
-      transform: translateY(.2em);
-      animation: fade-rise 1.1s var(--easing) forwards;
-    }
-    .hero-title .l1 { animation-delay: .3s; }
-    .hero-title .l2 { animation-delay: .5s; padding-left: clamp(20px, 8vw, 140px); }
-    .hero-title .l3 { animation-delay: .7s; }
-    .hero-title .editorial-italic {
-      color: var(--accent);
-    }
-    @keyframes fade-rise {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero-meta {
-      margin-top: clamp(28px, 5vh, 56px);
-      max-width: 50ch;
-      font-size: clamp(15px, 1.2vw, 18px);
-      line-height: 1.6;
-      color: var(--ink-soft);
-      opacity: 0;
-      animation: fade-rise .9s var(--easing) .9s forwards;
-    }
-    .hero-cta-wrap {
-      margin-top: clamp(28px, 4vh, 40px);
-      display: flex; flex-wrap: wrap; gap: 14px; align-items: center;
-      opacity: 0;
-      animation: fade-rise .9s var(--easing) 1.05s forwards;
-    }
-
-    .hero-photo {
-      position: relative;
-      aspect-ratio: 4 / 5;
-      overflow: hidden;
-      background:
-        linear-gradient(180deg, transparent 60%, rgba(14,11,7,0.4) 100%),
-        url("https://picsum.photos/seed/forjado-vj-001/1100/1400");
-      background-size: cover;
-      background-position: center;
-      filter: saturate(0.82) contrast(1.04);
-      opacity: 0;
-      animation: fade-rise 1.2s var(--easing) .55s forwards;
-    }
-    .hero-photo::before {
-      content: ""; position: absolute; inset: 8px;
-      border: 1px solid rgba(244,239,230,.4);
-      pointer-events: none;
-    }
-    .hero-caption {
-      position: absolute; bottom: 22px; left: 22px; right: 22px;
-      color: var(--paper);
-      display: grid; gap: 4px;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11px;
+      display: inline-flex;
+      align-items: center; gap: 12px;
+      padding: 6px 14px;
+      background: var(--paper-warm);
+      border: 1px solid var(--rule);
+      font-size: 12px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-    }
-    .hero-caption b { font-weight: 500; color: var(--paper); }
-    .hero-caption span { color: rgba(244,239,230,.7); }
-
-    .hero-yearstamp {
-      position: absolute; right: clamp(20px, 4vw, 64px); top: 96px;
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11px;
-      letter-spacing: 0.32em;
-      color: var(--muted);
-      opacity: 0;
-      animation: fade-rise .9s var(--easing) 1.2s forwards;
-    }
-    .hero-yearstamp::after {
-      content: ""; display: block;
-      width: 1px; height: clamp(40px, 8vh, 80px);
-      background: var(--accent);
-      margin-top: 14px; margin-left: 7px;
-    }
-
-    @media (max-width: 880px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
-      .hero-photo { aspect-ratio: 4 / 3; order: 2; }
-      .hero-yearstamp { display: none; }
-      .hero-title .l2 { padding-left: 0; }
-    }
-
-    /* ============================================================
-       MARQUEE  ·  kinetic banner
-       ============================================================ */
-    .marquee {
-      border-top: 1px solid var(--ink);
-      border-bottom: 1px solid var(--ink);
-      padding: 14px 0;
-      overflow: hidden;
-      background: var(--paper-warm);
-    }
-    .marquee-track {
-      display: flex; gap: 56px;
-      white-space: nowrap;
-      animation: marquee 40s linear infinite;
-    }
-    .marquee-track > span {
-      font-family: "Outfit", sans-serif;
+      color: var(--ink-soft);
       font-weight: 600;
-      font-size: clamp(15px, 1.4vw, 19px);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      display: inline-flex; align-items: center; gap: 56px;
-    }
-    .marquee-track > span::after {
-      content: "✶";
-      color: var(--accent);
-      font-size: 14px;
-    }
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    /* ============================================================
-       SECTION HEADERS
-       ============================================================ */
-    .section {
-      padding: clamp(80px, 14vh, 200px) 0;
-      position: relative;
-    }
-    .section-head {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: clamp(24px, 4vw, 80px);
-      align-items: end;
-      margin-bottom: clamp(48px, 8vh, 96px);
-    }
-    .section-eyebrow {
-      display: flex; align-items: center; gap: 14px;
-    }
-    .section-eyebrow::before {
-      content: ""; width: 32px; height: 1px; background: var(--accent);
-    }
-    .section-title {
-      font-size: clamp(40px, 6vw, 88px);
-      margin: 0;
-      max-width: 14ch;
-      text-wrap: balance;
-    }
-    .section-title em {
-      font-family: "Fraunces", serif;
-      font-style: italic;
-      font-variation-settings: "opsz" 144, "SOFT" 100;
-      font-weight: 400;
-      color: var(--accent);
-      letter-spacing: -0.02em;
-    }
-    .section-lede {
-      font-size: clamp(16px, 1.3vw, 19px);
-      line-height: 1.55;
-      color: var(--ink-soft);
-      max-width: 56ch;
-      margin: 0;
-    }
-    @media (max-width: 880px) {
-      .section-head { grid-template-columns: 1fr; gap: 24px; }
-    }
-
-    /* ============================================================
-       MANIFESTO  ·  editorial article with drop cap
-       ============================================================ */
-    .manifesto-grid {
-      display: grid;
-      grid-template-columns: 5fr 7fr;
-      gap: clamp(32px, 6vw, 96px);
-      align-items: start;
-    }
-    .manifesto-side {
-      position: sticky; top: 96px;
-      align-self: start;
-    }
-    .manifesto-side .display {
-      font-size: clamp(40px, 5vw, 72px);
-      line-height: 0.92;
-    }
-    .manifesto-body {
-      column-count: 1;
-      max-width: 64ch;
-    }
-    .manifesto-body p {
-      font-size: clamp(17px, 1.2vw, 19px);
-      line-height: 1.65;
-      color: var(--ink-soft);
-      margin: 0 0 24px;
-    }
-    .manifesto-body > p:first-of-type::first-letter {
-      font-family: "Fraunces", serif;
-      font-style: italic;
-      font-weight: 500;
-      font-size: 6.5em;
-      float: left;
-      line-height: 0.82;
-      margin: 0.05em 0.15em 0 0;
-      color: var(--accent);
-    }
-    .manifesto-pull {
-      font-family: "Fraunces", serif;
-      font-style: italic;
-      font-variation-settings: "opsz" 144, "SOFT" 100;
-      font-weight: 400;
-      font-size: clamp(28px, 3.4vw, 48px);
-      line-height: 1.15;
-      letter-spacing: -0.015em;
-      color: var(--ink);
-      margin: 40px 0;
-      padding: 32px 0;
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-      max-width: 22ch;
-      text-wrap: balance;
-    }
-    .manifesto-pull::before {
-      content: "“";
-      font-style: normal;
-      font-weight: 700;
-      color: var(--accent);
-      margin-right: 6px;
-    }
-    @media (max-width: 880px) {
-      .manifesto-grid { grid-template-columns: 1fr; }
-      .manifesto-side { position: static; }
-    }
-
-    /* ============================================================
-       BENTO  ·  asymmetric what-we-do (NOT 3-equal cards)
-       ============================================================ */
-    .bento {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      grid-auto-rows: auto;
-      gap: 1px;
-      background: var(--ink);
-      border: 1px solid var(--ink);
-    }
-    .bento > * {
-      background: var(--paper);
-      padding: clamp(24px, 3vw, 40px);
-      transition: background .3s var(--easing), transform .3s var(--easing);
-      position: relative;
-    }
-    .bento > *:hover {
-      background: var(--paper-warm);
-    }
-    .bento .b-feature {
-      grid-column: span 4;
-      grid-row: span 2;
-      min-height: 420px;
-      display: grid;
-      grid-template-rows: 1fr auto;
-      background:
-        linear-gradient(180deg, transparent 40%, rgba(14,11,7,.65) 100%),
-        url("https://picsum.photos/seed/portao-feature-vj/1400/1000");
-      background-size: cover;
-      background-position: center;
-      color: var(--paper);
-    }
-    .bento .b-feature:hover {
-      background:
-        linear-gradient(180deg, transparent 30%, rgba(14,11,7,.7) 100%),
-        url("https://picsum.photos/seed/portao-feature-vj/1400/1000");
-      background-size: 105% auto;
-      background-position: center;
-    }
-    .bento .b-feature .b-num { color: var(--paper); border-color: rgba(244,239,230,.4); }
-    .bento .b-feature h3 { color: var(--paper); }
-    .bento .b-feature p { color: rgba(244,239,230,.85); }
-    .bento .b-card {
-      grid-column: span 2;
-    }
-    .b-num {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      color: var(--accent);
-      display: inline-flex;
-      padding: 4px 8px;
-      border: 1px solid var(--accent);
       margin-bottom: 24px;
     }
-    .bento h3 {
-      font-family: "Outfit", sans-serif;
-      font-weight: 800;
-      font-size: clamp(28px, 2.6vw, 40px);
-      line-height: 0.95;
-      letter-spacing: -0.025em;
-      margin: 0 0 16px;
+    .hero-eyebrow::before {
+      content: ""; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent);
     }
-    .bento p {
-      font-size: 15px; line-height: 1.55;
-      color: var(--ink-soft);
-      margin: 0 0 20px;
-      max-width: 38ch;
+    .hero h1 {
+      font-size: clamp(40px, 5vw, 72px);
+      letter-spacing: -0.015em;
+      line-height: 1.05;
+      margin-bottom: 24px;
     }
-    .bento .b-tags {
-      list-style: none; padding: 0; margin: 0;
-      display: flex; flex-wrap: wrap; gap: 4px 12px;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .bento .b-feature .b-tags { color: rgba(244,239,230,.7); }
-    .bento .b-tags li::before { content: "·"; margin-right: 8px; color: var(--accent); }
-    .bento .b-tags li:first-child::before { content: ""; margin: 0; }
-    @media (max-width: 880px) {
-      .bento { grid-template-columns: 1fr; }
-      .bento > * { grid-column: span 1 !important; grid-row: span 1 !important; }
-      .bento .b-feature { min-height: 320px; }
-    }
-
-    /* ============================================================
-       TRABALHOS  ·  asymmetric masonry-grid (varied aspect ratios)
-       ============================================================ */
-    .trabalhos-spread {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: clamp(8px, 1vw, 16px);
-    }
-    .trab {
-      position: relative;
-      overflow: hidden;
-      background: var(--paper-warm);
-      cursor: default;
-    }
-    .trab img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      filter: saturate(0.82) contrast(1.04);
-      transition: transform .9s var(--easing), filter .4s var(--easing);
-      display: block;
-    }
-    .trab:hover img {
-      transform: scale(1.05);
-      filter: saturate(1) contrast(1.06);
-    }
-    .trab::after {
-      content: ""; position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(180deg, transparent 50%, rgba(14,11,7,.85) 100%);
-      opacity: 0; transition: opacity .35s var(--easing);
-    }
-    .trab:hover::after { opacity: 1; }
-    .trab-info {
-      position: absolute; left: 20px; right: 20px; bottom: 22px;
-      z-index: 2;
-      transform: translateY(8px); opacity: 0;
-      transition: all .35s var(--easing);
-      color: var(--paper);
-    }
-    .trab:hover .trab-info { transform: translateY(0); opacity: 1; }
-    .trab-name {
-      font-family: "Outfit", sans-serif;
-      font-weight: 800;
-      font-size: clamp(18px, 1.6vw, 24px);
-      letter-spacing: -0.02em;
-      line-height: 1;
-      margin: 0 0 4px;
-    }
-    .trab-meta {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    .hero h1 .accent {
       color: var(--accent);
+      font-style: italic;
+      font-weight: 600;
     }
-    .trab-folio {
-      position: absolute; top: 12px; left: 12px;
-      z-index: 2;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      color: var(--paper);
-      background: rgba(14,11,7,.5);
-      padding: 4px 8px;
-      backdrop-filter: blur(6px);
+    .hero-sub {
+      font-size: clamp(17px, 1.3vw, 19px);
+      color: var(--ink-soft);
+      max-width: 50ch;
+      line-height: 1.55;
+      margin-bottom: 32px;
     }
-
-    /* asymmetric layout */
-    .trab:nth-child(1) { grid-column: span 7; aspect-ratio: 16 / 11; }
-    .trab:nth-child(2) { grid-column: span 5; aspect-ratio: 4 / 5; }
-    .trab:nth-child(3) { grid-column: span 4; aspect-ratio: 3 / 4; }
-    .trab:nth-child(4) { grid-column: span 4; aspect-ratio: 1 / 1; }
-    .trab:nth-child(5) { grid-column: span 4; aspect-ratio: 3 / 4; }
-    .trab:nth-child(6) { grid-column: span 5; aspect-ratio: 5 / 4; }
-    .trab:nth-child(7) { grid-column: span 7; aspect-ratio: 16 / 9; }
-
+    .hero-actions {
+      display: flex; gap: 12px; flex-wrap: wrap;
+      align-items: center;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 24px;
+      font-size: 16px; font-weight: 600;
+      text-decoration: none;
+      transition: all .15s var(--easing);
+      border: 1px solid transparent;
+    }
+    .btn-primary {
+      background: var(--ink); color: var(--paper);
+    }
+    .btn-primary:hover { background: #2A3F58; }
+    .btn-secondary {
+      background: transparent; color: var(--ink);
+      border-color: var(--ink);
+    }
+    .btn-secondary:hover { background: var(--ink); color: var(--paper); }
+    .btn-whatsapp {
+      background: #25D366; color: #fff;
+      border-color: #25D366;
+    }
+    .btn-whatsapp:hover { background: #1DB954; border-color: #1DB954; }
+    .btn-whatsapp::before {
+      content: ""; display: inline-block;
+      width: 18px; height: 18px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.057 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884z'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
+    .hero-photo {
+      aspect-ratio: 5 / 4;
+      background: url("https://picsum.photos/seed/serralharia-vj-oficina/1200/960") center / cover no-repeat;
+      border: 1px solid var(--rule);
+      box-shadow: 0 4px 24px -8px rgba(28,46,69,.18);
+    }
     @media (max-width: 880px) {
-      .trabalhos-spread { grid-template-columns: 1fr 1fr; }
-      .trab { grid-column: span 1 !important; aspect-ratio: 4 / 3 !important; }
-    }
-    @media (max-width: 540px) {
-      .trabalhos-spread { grid-template-columns: 1fr; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-photo { aspect-ratio: 4 / 3; order: -1; }
     }
 
     /* ============================================================
-       PROCESSO  ·  4-passos com hairline rules
+       TRUST STRIP  ·  números clássicos
        ============================================================ */
-    .processo {
+    .trust {
       background: var(--paper-warm);
-      border-top: 1px solid var(--ink);
-      border-bottom: 1px solid var(--ink);
+      border-bottom: 1px solid var(--rule);
     }
-    .passos {
+    .trust-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 0;
     }
-    .passo {
-      padding: clamp(24px, 3vw, 40px) clamp(16px, 2vw, 32px);
-      border-right: 1px solid var(--ink);
-      counter-increment: p;
-      position: relative;
+    .trust-item {
+      padding: clamp(28px, 5vh, 44px) clamp(16px, 2vw, 28px);
+      border-right: 1px solid var(--rule);
+      text-align: center;
     }
-    .passos { counter-reset: p; }
-    .passo:last-child { border-right: 0; }
-    .passo .p-num {
-      font-family: "Fraunces", serif;
-      font-style: italic;
-      font-variation-settings: "opsz" 144, "SOFT" 100;
-      font-weight: 400;
-      font-size: clamp(56px, 7vw, 96px);
-      color: var(--accent);
+    .trust-item:last-child { border-right: 0; }
+    .trust-num {
+      font-family: "Lora", serif;
+      font-weight: 700;
+      font-size: clamp(36px, 4vw, 56px);
       line-height: 1;
-      margin-bottom: clamp(16px, 3vh, 32px);
+      color: var(--ink);
+      margin-bottom: 8px;
       display: block;
     }
-    .passo h3 {
-      font-family: "Outfit", sans-serif;
-      font-weight: 800;
-      font-size: clamp(24px, 2.2vw, 36px);
-      letter-spacing: -0.025em;
-      line-height: 1;
-      margin: 0 0 14px;
-      text-transform: uppercase;
-    }
-    .passo p {
-      font-size: 14px; line-height: 1.55;
+    .trust-num .small { font-size: 0.55em; vertical-align: 0.15em; color: var(--accent); margin-right: 2px; }
+    .trust-label {
+      font-size: 13px;
       color: var(--ink-soft);
-      margin: 0;
-      max-width: 28ch;
+      font-weight: 500;
     }
-    @media (max-width: 880px) {
-      .passos { grid-template-columns: 1fr 1fr; }
-      .passo:nth-child(2) { border-right: 0; }
-      .passo:nth-child(1), .passo:nth-child(2) { border-bottom: 1px solid var(--ink); }
-    }
-    @media (max-width: 540px) {
-      .passos { grid-template-columns: 1fr; }
-      .passo { border-right: 0 !important; border-bottom: 1px solid var(--ink); }
-      .passo:last-child { border-bottom: 0; }
+    @media (max-width: 720px) {
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+      .trust-item:nth-child(2) { border-right: 0; }
+      .trust-item:nth-child(1), .trust-item:nth-child(2) { border-bottom: 1px solid var(--rule); }
     }
 
     /* ============================================================
-       QUOTE / FUNDADOR  ·  asymmetric editorial pull
+       SECTION
        ============================================================ */
-    .quote-grid {
-      display: grid;
-      grid-template-columns: 3fr 9fr;
-      gap: clamp(24px, 4vw, 80px);
-      align-items: end;
+    .section {
+      padding: clamp(64px, 10vh, 112px) 0;
     }
-    .quote-photo {
-      aspect-ratio: 3 / 4;
-      background: url("https://picsum.photos/seed/jose-fonseca-fundador/900/1200") center / cover no-repeat;
-      filter: grayscale(0.5) contrast(1.05);
-      position: relative;
+    .section-header {
+      max-width: 60ch;
+      margin-bottom: clamp(40px, 6vh, 64px);
     }
-    .quote-photo::after {
-      content: ""; position: absolute; inset: 0;
-      box-shadow: inset 0 0 80px rgba(14,11,7,.4);
-    }
-    .quote-text {
-      font-family: "Fraunces", Georgia, serif;
-      font-style: italic;
-      font-variation-settings: "opsz" 144, "SOFT" 100;
-      font-weight: 400;
-      font-size: clamp(28px, 4vw, 64px);
-      line-height: 1.12;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-      margin: 0;
-      max-width: 22ch;
-      text-wrap: balance;
-    }
-    .quote-text::before {
-      content: "“";
-      color: var(--accent);
-      font-style: normal;
-      font-weight: 700;
-    }
-    .quote-attr {
-      margin-top: 32px;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11px;
-      letter-spacing: 0.18em;
+    .section-eyebrow {
+      display: inline-block;
+      padding: 4px 12px;
+      background: var(--paper-warm);
+      border: 1px solid var(--rule);
+      font-size: 12px;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 16px;
     }
-    .quote-attr strong { color: var(--ink); font-weight: 500; }
-    @media (max-width: 880px) {
-      .quote-grid { grid-template-columns: 1fr; gap: 32px; }
-      .quote-photo { aspect-ratio: 4 / 3; max-width: 60%; }
+    .section-title {
+      font-size: clamp(32px, 4.4vw, 56px);
+      letter-spacing: -0.015em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .section-title .accent { color: var(--accent); font-style: italic; font-weight: 600; }
+    .section-lede {
+      font-size: clamp(16px, 1.2vw, 18px);
+      color: var(--ink-soft);
+      line-height: 1.6;
+      max-width: 60ch;
+      margin: 0;
     }
 
     /* ============================================================
-       CONTACTO  ·  big editorial numbers
+       SOBRE  ·  história da casa, com retrato
        ============================================================ */
-    .contacto-grid {
+    .sobre-grid {
       display: grid;
-      grid-template-columns: 7fr 5fr;
-      gap: clamp(32px, 5vw, 96px);
+      grid-template-columns: 5fr 7fr;
+      gap: clamp(40px, 5vw, 80px);
       align-items: start;
     }
-    .contacto h2 {
-      font-size: clamp(56px, 8vw, 144px);
-      margin: 0 0 32px;
-      max-width: 11ch;
-      text-wrap: balance;
-    }
-    .contacto h2 em { color: var(--accent); }
-    .channels {
-      margin-top: clamp(24px, 4vh, 48px);
-    }
-    .channel {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--rule);
-      text-decoration: none;
-      color: var(--ink);
-      transition: padding-left .3s var(--easing);
-      align-items: end;
-    }
-    .channel:first-of-type { border-top: 1px solid var(--rule); }
-    .channel:hover { padding-left: 16px; }
-    .channel:hover .channel-value { color: var(--accent); }
-    .channel-label {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--muted);
-      display: block;
-      margin-bottom: 6px;
-    }
-    .channel-value {
-      font-family: "Outfit", sans-serif;
-      font-weight: 600;
-      font-size: clamp(22px, 2.4vw, 36px);
-      letter-spacing: -0.025em;
-      line-height: 1;
-      transition: color .25s var(--easing);
-    }
-    .channel-arrow {
-      font-size: 18px;
-      color: var(--muted);
-      transition: transform .25s var(--easing), color .25s var(--easing);
-      align-self: center;
-    }
-    .channel:hover .channel-arrow {
-      transform: translateX(8px);
-      color: var(--accent);
-    }
-    .contacto-card {
-      padding: clamp(24px, 3vw, 36px);
+    .sobre-photo {
+      aspect-ratio: 4 / 5;
+      background: url("https://picsum.photos/seed/jose-fonseca-ofic/900/1100") center / cover no-repeat;
       border: 1px solid var(--rule);
-      background: var(--paper-warm);
+      box-shadow: 0 4px 24px -10px rgba(28,46,69,.2);
+      filter: contrast(1.04) saturate(0.92);
+      position: relative;
     }
-    .contacto-card h3 {
-      font-family: "Outfit", sans-serif;
-      font-weight: 800;
-      font-size: clamp(22px, 2vw, 28px);
-      letter-spacing: -0.02em;
-      line-height: 1;
-      margin: 0 0 8px;
+    .sobre-caption {
+      position: absolute; left: 0; right: 0; bottom: -32px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      font-style: italic;
+      font-family: "Lora", serif;
     }
-    .contacto-card p {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
+    .sobre-text p {
+      font-size: clamp(17px, 1.2vw, 19px);
+      line-height: 1.7;
       color: var(--ink-soft);
+      margin: 0 0 22px;
+    }
+    .sobre-text p strong { color: var(--ink); font-weight: 600; }
+    .sobre-list {
+      list-style: none;
+      padding: 0;
+      margin: 32px 0 0;
+      display: grid;
+      gap: 14px;
+    }
+    .sobre-list li {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 14px;
+      align-items: baseline;
+      font-size: 16px;
+      color: var(--ink);
+    }
+    .sobre-list li::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1;
+    }
+    @media (max-width: 880px) {
+      .sobre-grid { grid-template-columns: 1fr; }
+      .sobre-photo { max-width: 70%; aspect-ratio: 4 / 4; margin: 0 auto; }
+    }
+
+    /* ============================================================
+       SERVIÇOS  ·  lista classificada
+       ============================================================ */
+    .servicos {
+      background: var(--paper-warm);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--rule);
+    }
+    .servico {
+      padding: clamp(28px, 4vh, 40px) clamp(20px, 2.5vw, 32px);
+      border-bottom: 1px solid var(--rule);
+      border-right: 1px solid var(--rule);
+      background: var(--paper);
+    }
+    .servico:nth-child(2n) { border-right: 0; }
+    .servico:nth-last-child(-n+2) { border-bottom: 0; }
+    .servico-head {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      align-items: baseline;
+      margin-bottom: 12px;
+    }
+    .servico-num {
+      font-family: "Lora", serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 22px;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .servico-name {
+      font-family: "Lora", serif;
+      font-weight: 700;
+      font-size: clamp(22px, 2vw, 28px);
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .servico p {
+      font-size: 16px;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      margin: 0 0 14px;
+      max-width: 50ch;
+    }
+    .servico-tags {
+      list-style: none;
+      padding: 0; margin: 0;
+      display: flex; flex-wrap: wrap;
+      gap: 6px 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .servico-tags li {
+      padding: 3px 10px;
+      background: var(--paper-warm);
+      border: 1px solid var(--rule);
+    }
+    @media (max-width: 720px) {
+      .servicos-grid { grid-template-columns: 1fr; }
+      .servico { border-right: 0 !important; }
+      .servico:nth-last-child(-n+2) { border-bottom: 1px solid var(--rule); }
+      .servico:last-child { border-bottom: 0; }
+    }
+
+    /* ============================================================
+       TRABALHOS  ·  galeria séria, sem efeitos
+       ============================================================ */
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(12px, 1.4vw, 20px);
+    }
+    .obra {
+      position: relative;
+      background: var(--paper-warm);
+      overflow: hidden;
+      border: 1px solid var(--rule);
+    }
+    .obra img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      filter: saturate(0.92);
+      transition: transform .4s var(--easing);
+      display: block;
+    }
+    .obra:hover img { transform: scale(1.02); }
+    .obra-cap {
+      padding: 14px 18px;
+      background: var(--paper);
+      border-top: 1px solid var(--rule);
+    }
+    .obra-name {
+      font-family: "Lora", serif;
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--ink);
+      margin: 0 0 4px;
+      line-height: 1.2;
+    }
+    .obra-meta {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    @media (max-width: 880px) {
+      .galeria { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 540px) {
+      .galeria { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
+       COBERTURA GEOGRÁFICA
+       ============================================================ */
+    .cobertura {
+      background: var(--paper-warm);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .cobertura-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: clamp(32px, 5vw, 80px);
+      align-items: start;
+    }
+    .zonas {
+      list-style: none; padding: 0; margin: 24px 0 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 32px;
+    }
+    .zonas li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 16px;
+      color: var(--ink);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 12px;
+      align-items: baseline;
+    }
+    .zonas li::before {
+      content: "·";
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .zonas li .km {
+      font-size: 13px;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+    .map-static {
+      aspect-ratio: 4 / 3;
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      position: relative;
+      overflow: hidden;
+    }
+    .map-static svg { width: 100%; height: 100%; display: block; }
+    @media (max-width: 880px) {
+      .cobertura-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
+       TESTEMUNHOS
+       ============================================================ */
+    .testemunhos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(20px, 2vw, 32px);
+    }
+    .testemunho {
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      padding: clamp(24px, 3vw, 36px);
+    }
+    .testemunho-stars {
+      color: var(--accent);
+      letter-spacing: 2px;
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+    .testemunho-text {
+      font-family: "Lora", serif;
+      font-style: italic;
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--ink);
+      margin: 0 0 22px;
+      max-width: 38ch;
+    }
+    .testemunho-attr {
+      font-size: 14px;
+      color: var(--muted);
+      padding-top: 16px;
+      border-top: 1px solid var(--rule);
+    }
+    .testemunho-attr strong { color: var(--ink); font-weight: 600; }
+    @media (max-width: 880px) {
+      .testemunhos { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
+       CONTACTO  ·  três telefones gigantes + morada
+       ============================================================ */
+    .contacto {
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .contacto .section-eyebrow {
+      background: rgba(244,241,235,0.06);
+      border-color: rgba(244,241,235,0.18);
+      color: var(--paper);
+    }
+    .contacto .section-title { color: var(--paper); }
+    .contacto .section-title .accent { color: #C99868; }
+    .contacto .section-lede { color: rgba(244,241,235,0.7); }
+
+    .contacto-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: clamp(40px, 5vw, 80px);
+      margin-top: 40px;
+    }
+    .telefones {
+      display: grid; gap: 4px;
+    }
+    .telefone-card {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(244,241,235,0.12);
+      align-items: end;
+      text-decoration: none;
+      color: var(--paper);
+      transition: padding-left .2s var(--easing);
+    }
+    .telefone-card:first-child { border-top: 1px solid rgba(244,241,235,0.12); }
+    .telefone-card:hover { padding-left: 8px; }
+    .telefone-card:hover .telefone-num { color: #C99868; }
+    .telefone-icon {
+      width: 44px; height: 44px;
+      border: 1px solid rgba(244,241,235,0.25);
+      display: grid; place-items: center;
+      color: rgba(244,241,235,0.7);
+    }
+    .telefone-icon svg { width: 18px; height: 18px; }
+    .telefone-label {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(244,241,235,0.55);
+      font-weight: 500;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .telefone-num {
+      font-family: "Lora", serif;
+      font-weight: 700;
+      font-size: clamp(24px, 2.6vw, 36px);
+      letter-spacing: -0.005em;
+      line-height: 1;
+      transition: color .2s var(--easing);
+    }
+    .telefone-arrow {
+      font-size: 22px;
+      color: rgba(244,241,235,0.4);
+    }
+
+    .morada-card {
+      background: rgba(244,241,235,0.05);
+      border: 1px solid rgba(244,241,235,0.15);
+      padding: clamp(24px, 3vw, 36px);
+    }
+    .morada-card h3 {
+      font-size: 22px;
+      color: var(--paper);
+      margin-bottom: 12px;
+    }
+    .morada-card p {
+      font-size: 15px;
+      color: rgba(244,241,235,0.85);
       line-height: 1.6;
       margin: 0 0 24px;
     }
-    .hours {
+    .horario {
       display: grid;
       grid-template-columns: auto 1fr;
-      gap: 6px 18px;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
-      color: var(--ink-soft);
-      padding-top: 18px;
-      border-top: 1px solid var(--rule);
+      gap: 8px 24px;
+      padding: 16px 0 0;
+      border-top: 1px solid rgba(244,241,235,0.15);
+      font-size: 14px;
+      color: var(--paper);
     }
-    .hours .closed { color: var(--muted); }
+    .horario .closed { color: rgba(244,241,235,0.45); }
+    .horario-label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(244,241,235,0.55);
+      font-weight: 600;
+      margin-bottom: 8px;
+      grid-column: 1 / -1;
+    }
     @media (max-width: 880px) {
       .contacto-grid { grid-template-columns: 1fr; }
     }
 
     /* ============================================================
-       FOOTER · colophon
+       FOOTER
        ============================================================ */
     footer {
-      border-top: 1px solid var(--ink);
-      padding: 56px 0 32px;
-      background: var(--paper);
+      background: var(--paper-warm);
+      border-top: 1px solid var(--rule);
+      padding: 48px 0 28px;
     }
-    .colophon {
+    .footer-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 32px;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
       align-items: start;
     }
-    .colophon-brand {
-      font-family: "Outfit", sans-serif;
-      font-weight: 900;
-      font-size: clamp(28px, 3vw, 48px);
-      letter-spacing: -0.03em;
-      line-height: 0.95;
-      margin: 0 0 8px;
+    .footer-brand .mark {
+      font-family: "Lora", serif;
+      font-weight: 700;
+      font-size: 24px;
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
     }
-    .colophon-brand em {
-      font-family: "Fraunces", serif;
-      font-style: italic;
-      font-weight: 400;
-      color: var(--accent);
-    }
-    .colophon-tag {
+    .footer-brand .mark .amp { color: var(--accent); }
+    .footer-brand p {
+      color: var(--ink-soft);
       font-size: 14px;
-      color: var(--muted);
-      max-width: 32ch;
+      max-width: 36ch;
       line-height: 1.55;
+      margin: 8px 0 0;
     }
-    .colophon h4 {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    .footer-col h4 {
+      font-family: "Source Sans 3", sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
       color: var(--muted);
-      font-weight: 500;
       margin: 0 0 14px;
     }
-    .colophon ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
-    .colophon a {
-      color: var(--ink-soft); text-decoration: none;
-      font-size: 13px;
-      transition: color .2s var(--easing);
+    .footer-col ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    .footer-col a, .footer-col span {
+      color: var(--ink-soft);
+      font-size: 14px;
+      text-decoration: none;
+      transition: color .15s var(--easing);
     }
-    .colophon a:hover { color: var(--accent); }
-    .foot-bottom {
-      margin-top: 48px; padding-top: 20px;
+    .footer-col a:hover { color: var(--accent); }
+    .footer-bottom {
+      margin-top: 40px;
+      padding-top: 20px;
       border-top: 1px solid var(--rule);
       display: flex; justify-content: space-between; align-items: center;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+      font-size: 13px;
       color: var(--muted);
       flex-wrap: wrap; gap: 12px;
     }
-    @media (max-width: 720px) {
-      .colophon { grid-template-columns: 1fr; }
+    @media (max-width: 880px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 540px) {
+      .footer-grid { grid-template-columns: 1fr; }
     }
 
     /* ============================================================
-       REVEAL animations
+       Reveals discretos
        ============================================================ */
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 1s var(--easing), transform 1s var(--easing);
-      will-change: opacity, transform;
-    }
+    .reveal { opacity: 0; transform: translateY(12px); transition: opacity .8s var(--easing), transform .8s var(--easing); }
     .reveal.in { opacity: 1; transform: translateY(0); }
-    .reveal-stagger > * {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity .85s var(--easing), transform .85s var(--easing);
-      will-change: opacity, transform;
-    }
-    .reveal-stagger.in > * { opacity: 1; transform: translateY(0); }
-    .reveal-stagger.in > *:nth-child(1) { transition-delay: .04s; }
-    .reveal-stagger.in > *:nth-child(2) { transition-delay: .12s; }
-    .reveal-stagger.in > *:nth-child(3) { transition-delay: .20s; }
-    .reveal-stagger.in > *:nth-child(4) { transition-delay: .28s; }
-    .reveal-stagger.in > *:nth-child(5) { transition-delay: .36s; }
-    .reveal-stagger.in > *:nth-child(6) { transition-delay: .44s; }
-    .reveal-stagger.in > *:nth-child(7) { transition-delay: .52s; }
 
     a:focus-visible, button:focus-visible {
       outline: 2px solid var(--accent);
-      outline-offset: 4px;
+      outline-offset: 3px;
     }
     .skip-link {
       position: absolute; top: -40px; left: 8px;
-      background: var(--accent); color: var(--paper);
+      background: var(--ink); color: var(--paper);
       padding: 8px 14px;
-      font-family: "JetBrains Mono", monospace; font-size: 12px;
+      font-size: 13px;
       z-index: 200; text-decoration: none;
     }
     .skip-link:focus { top: 8px; }
@@ -928,408 +807,472 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
-      }
-      .marquee-track { animation: none; }
-      .hero-title .l1, .hero-title .l2, .hero-title .l3,
-      .hero-eyebrow, .hero-meta, .hero-cta-wrap, .hero-photo, .hero-yearstamp {
-        opacity: 1 !important; transform: none !important;
       }
     }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Saltar para conteúdo</a>
-  <div class="grain" aria-hidden="true"></div>
 
-  <span class="folio folio-l">VJ&nbsp;FONSECA · MMXXVI · ED.&nbsp;01</span>
-  <span class="folio folio-r">FORJADO EM PALMELA · 38°&nbsp;34&prime;&nbsp;13&Prime;&nbsp;N</span>
+  <!-- ============= TOP INFO BAR ============= -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <div class="topbar-left">
+          <span><span class="open-dot" aria-hidden="true"></span>Aberto&nbsp;·&nbsp;Seg–Sex&nbsp;08:00 — 18:00</span>
+          <span>Palmela&nbsp;·&nbsp;Setúbal</span>
+        </div>
+        <div class="topbar-right">
+          <span><a href="tel:+351263079366" class="phone-link">Atelier&nbsp;<strong>263 079 366</strong></a></span>
+          <span><a href="tel:+351916641573">Sr. Fonseca&nbsp;<strong>916 641 573</strong></a></span>
+          <span><a href="mailto:jf@vjfonseca.com">jf@vjfonseca.com</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <header id="site-header" role="banner">
+  <!-- ============= HEADER ============= -->
+  <header role="banner">
     <div class="container">
       <nav class="nav" aria-label="Principal">
         <a class="brand" href="#main">
-          <span class="brand-mark"><span class="ampersand">&amp;</span></span>
-          <span>VJ Fonseca</span>
+          <span class="mark">V<span class="amp">&amp;</span>J Fonseca</span>
+          <span class="sub">Serralharia · Palmela</span>
         </a>
         <div class="nav-links">
-          <a href="#manifesto">Manifesto</a>
-          <a href="#oficio">Ofício</a>
+          <a href="#sobre">A casa</a>
+          <a href="#servicos">Serviços</a>
           <a href="#trabalhos">Trabalhos</a>
-          <a href="#processo">Processo</a>
+          <a href="#cobertura">Onde trabalhamos</a>
           <a href="#contacto">Contacto</a>
         </div>
-        <a class="cta" href="#contacto">Pedir orçamento</a>
+        <a class="header-cta" href="#contacto">Pedir orçamento</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
 
-    <!-- ============================================================
-         HERO — asymmetric editorial spread
-         ============================================================ -->
+    <!-- ============= HERO ============= -->
     <section class="hero">
       <div class="container">
-        <div class="hero-eyebrow">
-          <span class="label">Edição&nbsp;01 · 2026 · Serralharia</span>
-        </div>
-
         <div class="hero-grid">
-          <h1 class="display hero-title">
-            <span class="l1">Forjado</span>
-            <span class="l2 editorial-italic">em Palmela,</span>
-            <span class="l3">desde 2003.</span>
-          </h1>
-
-          <figure class="hero-photo" aria-hidden="true">
-            <figcaption class="hero-caption">
-              <b>Estudo · 4117</b>
-              <span>Portão de quinta · ferro forjado · 4.8 m</span>
-            </figcaption>
-          </figure>
-        </div>
-
-        <div class="hero-grid" style="margin-top:0;">
           <div>
-            <p class="hero-meta">
+            <span class="hero-eyebrow">Família Fonseca · desde 2003</span>
+            <h1>
+              Serralharia em Palmela.<br>
+              <span class="accent">Há vinte e dois anos.</span>
+            </h1>
+            <p class="hero-sub">
               Portões, gradeamentos, estruturas e vedações em ferro e aço.
-              Cortados, soldados e instalados pela mesma mão que os desenha —
-              sem catálogo standard, sem subcontratos, sem atalhos.
+              Trabalho à medida, feito em Palmela e instalado pela nossa equipa.
+              Resposta em vinte e quatro horas, orçamento sem compromisso.
             </p>
-            <div class="hero-cta-wrap">
-              <a class="cta cta-magnet" href="#contacto">Pedir orçamento</a>
-              <a class="cta" style="background:transparent; color:var(--ink); border:1px solid var(--ink);" href="#trabalhos">Ver trabalhos</a>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="tel:+351263079366">Ligar 263 079 366</a>
+              <a class="btn btn-whatsapp" href="https://wa.me/351916641573?text=Boa%20tarde%2C%20gostaria%20de%20pedir%20um%20or%C3%A7amento.">WhatsApp</a>
+              <a class="btn btn-secondary" href="#servicos">Ver serviços</a>
             </div>
           </div>
-          <div></div>
-        </div>
-      </div>
-
-      <div class="hero-yearstamp" aria-hidden="true">
-        ANNO&nbsp;XXII · DOC.&nbsp;001
-      </div>
-    </section>
-
-    <!-- ============================================================
-         MARQUEE — kinetic banner
-         ============================================================ -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>Portões</span><span>Gradeamentos</span><span>Estruturas</span><span>Vedações</span>
-        <span>Corrimãos</span><span>Cancelas</span><span>Alpendres</span><span>Mezanines</span>
-        <span>Portões</span><span>Gradeamentos</span><span>Estruturas</span><span>Vedações</span>
-        <span>Corrimãos</span><span>Cancelas</span><span>Alpendres</span><span>Mezanines</span>
-      </div>
-    </div>
-
-    <!-- ============================================================
-         MANIFESTO — editorial article
-         ============================================================ -->
-    <section id="manifesto" class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <div class="section-eyebrow"><span class="label">02 — Manifesto</span></div>
-          <div></div>
-        </div>
-
-        <div class="manifesto-grid">
-          <aside class="manifesto-side reveal">
-            <h2 class="display">Não fazemos<br>peças.<br><em class="editorial-italic">Fazemos<br>esta peça.</em></h2>
-          </aside>
-
-          <article class="manifesto-body reveal">
-            <p>
-              Há vinte e dois anos que se entra na nossa oficina pela porta lateral
-              e se sai pela mesma — o que muda é o trabalho que está em cima da
-              bancada. Hoje é um portão de quinta com 4,8&nbsp;m de vão, amanhã um
-              corrimão de loft em Setúbal, depois uma estrutura para cobrir um
-              alpendre em Évora.
-            </p>
-            <p>
-              O ferro não tem catálogo. Tem a tua casa, o teu terreno, a tua
-              entrada. A nossa parte é desenhar, cortar, dobrar, soldar e dar
-              acabamento — e depois ir lá, com a equipa, instalar.
-            </p>
-
-            <p class="manifesto-pull">
-              A peça que entregamos é a peça que viste a sair daquela bancada.
-            </p>
-
-            <p>
-              Trabalhamos ferro, aço inox, aço galvanizado a quente. Pintura
-              electrostática, tratamento anticorrosivo, todos os RAL. Documentos
-              técnicos e DoP entregues com cada obra.
-            </p>
-            <p>
-              O telefone é atendido pela mesma pessoa que mede a obra e fecha o
-              orçamento. Resposta em menos de vinte e quatro horas.
-            </p>
-          </article>
+          <div class="hero-photo" role="img" aria-label="Oficina V&J Fonseca em Palmela"></div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         BENTO — what we do · asymmetric (1 feature + 4 small)
-         ============================================================ -->
-    <section id="oficio" class="section">
+    <!-- ============= TRUST STRIP ============= -->
+    <section class="trust" aria-label="Indicadores">
       <div class="container">
-        <div class="section-head reveal">
-          <div class="section-eyebrow"><span class="label">03 — Ofício</span></div>
-          <div>
-            <h2 class="display section-title">Quatro famílias.<br><em>Uma só&nbsp;mão.</em></h2>
-            <p class="section-lede" style="margin-top:24px;">
-              Do portão pesado à malha de vedação. Tudo desenhado, soldado e
-              instalado por nós, no atelier em Palmela.
-            </p>
+        <div class="trust-grid">
+          <div class="trust-item">
+            <span class="trust-num num"><span class="small">desde</span>2003</span>
+            <span class="trust-label">Família Fonseca em Palmela</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-num num"><span class="small">+</span>800</span>
+            <span class="trust-label">Trabalhos entregues</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-num num">22</span>
+            <span class="trust-label">Anos de experiência</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-num num">24h</span>
+            <span class="trust-label">Resposta a orçamentos</span>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="bento reveal-stagger">
-          <article class="b-feature">
-            <div>
-              <span class="b-num" style="color:#fff; border-color:rgba(255,255,255,.5);">01 · DESTAQUE</span>
-              <h3>Portões<br>e portas.</h3>
+    <!-- ============= SOBRE ============= -->
+    <section id="sobre" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">A casa</span>
+          <h2 class="section-title">Uma serralharia <span class="accent">de família</span>, em Palmela.</h2>
+        </div>
+
+        <div class="sobre-grid">
+          <div class="sobre-photo reveal" role="img" aria-label="José Fonseca, fundador">
+            <span class="sobre-caption">José Fonseca · fundador</span>
+          </div>
+
+          <div class="sobre-text reveal">
+            <p>
+              <strong>A V&J Fonseca abriu portas em 2003</strong>, na mesma rua onde
+              continua hoje, em Palmela. Começou como uma oficina pequena dedicada a
+              gradeamentos e portões para casas da região — Pinhal Novo, Quinta do
+              Anjo, Marateca, Setúbal.
+            </p>
+            <p>
+              Vinte e dois anos depois, ainda é a mesma família a atender o telefone,
+              a ir a obra medir e a soldar a peça. Cresceu o portfólio e a equipa,
+              mas o método é o mesmo: <strong>trabalho à medida, feito por quem o
+              desenha</strong>, sem subcontratos e sem catálogo industrial.
+            </p>
+
+            <ul class="sobre-list">
+              <li>Empresa familiar, mesma morada desde 2003</li>
+              <li>Equipa fixa de quatro serralheiros</li>
+              <li>Trabalhamos ferro, aço inox e galvanizado</li>
+              <li>Documentos técnicos e DoP entregues com cada obra</li>
+              <li>Garantia escrita sobre instalação e acabamentos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============= SERVIÇOS ============= -->
+    <section id="servicos" class="servicos section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Serviços</span>
+          <h2 class="section-title">O que fazemos.</h2>
+          <p class="section-lede">
+            Cinco famílias de trabalho. Cada um sai do nosso atelier desenhado,
+            soldado e instalado pela mesma equipa.
+          </p>
+        </div>
+
+        <div class="servicos-grid">
+          <article class="servico">
+            <div class="servico-head">
+              <span class="servico-num">i.</span>
+              <h3 class="servico-name">Portões e portas</h3>
             </div>
-            <div>
-              <p>
-                Pedonais, automáticos, de batente ou correr. Em ferro forjado,
-                aço inox ou tubo galvanizado a quente.
-              </p>
-              <ul class="b-tags">
-                <li>Batente</li><li>Correr</li><li>Articulado</li><li>Pedonal</li><li>Automático</li>
-              </ul>
+            <p>Pedonais, automáticos, de batente ou de correr. Em ferro forjado, aço inox ou tubo galvanizado, conforme o uso e a casa.</p>
+            <ul class="servico-tags">
+              <li>Batente</li><li>Correr</li><li>Automatização</li><li>Pedonal</li><li>Articulado</li>
+            </ul>
+          </article>
+
+          <article class="servico">
+            <div class="servico-head">
+              <span class="servico-num">ii.</span>
+              <h3 class="servico-name">Gradeamentos e corrimãos</h3>
             </div>
+            <p>Varandas, escadas, terraços, marquises. Modelos clássicos ou linhas mais simples, sempre tomados à medida.</p>
+            <ul class="servico-tags">
+              <li>Varanda</li><li>Escada</li><li>Terraço</li><li>Inox</li><li>Forjado</li>
+            </ul>
           </article>
 
-          <article class="b-card">
-            <span class="b-num">02</span>
-            <h3>Gradeamentos<br>e corrimãos.</h3>
-            <p>Varandas, escadas, terraços. Clássico ou minimalista.</p>
-            <ul class="b-tags"><li>Varanda</li><li>Escada</li><li>Inox</li><li>Forjado</li></ul>
+          <article class="servico">
+            <div class="servico-head">
+              <span class="servico-num">iii.</span>
+              <h3 class="servico-name">Estruturas metálicas</h3>
+            </div>
+            <p>Coberturas, alpendres, naves, mezanines. Perfis HEB, IPE e tubo, galvanizados a quente quando o serviço o exige.</p>
+            <ul class="servico-tags">
+              <li>Cobertura</li><li>Alpendre</li><li>Nave</li><li>Mezanine</li>
+            </ul>
           </article>
 
-          <article class="b-card">
-            <span class="b-num">03</span>
-            <h3>Estruturas<br>metálicas.</h3>
-            <p>Coberturas, alpendres, naves, mezanines. HEB, IPE, tubo.</p>
-            <ul class="b-tags"><li>Cobertura</li><li>Alpendre</li><li>Mezanine</li></ul>
+          <article class="servico">
+            <div class="servico-head">
+              <span class="servico-num">iv.</span>
+              <h3 class="servico-name">Vedações e perímetros</h3>
+            </div>
+            <p>Quintas, indústrias, recintos. Painel eletrosoldado, malha rede e rede ovelheira, com postes próprios.</p>
+            <ul class="servico-tags">
+              <li>Painel</li><li>Malha</li><li>Postes</li><li>Cancelas</li>
+            </ul>
           </article>
 
-          <article class="b-card">
-            <span class="b-num">04</span>
-            <h3>Vedações<br>e perímetros.</h3>
-            <p>Quintas, indústrias, recintos. Painel, malha, postes próprios.</p>
-            <ul class="b-tags"><li>Painel</li><li>Malha</li><li>Cancela</li></ul>
-          </article>
-
-          <article class="b-card">
-            <span class="b-num">05</span>
-            <h3>Reparações<br>e retocagem.</h3>
-            <p>Soldadura local, recuperação, repintura. Visita ao terreno.</p>
-            <ul class="b-tags"><li>Soldadura</li><li>Pintura</li><li>Anti-corrosão</li></ul>
+          <article class="servico" style="grid-column: 1 / -1;">
+            <div class="servico-head">
+              <span class="servico-num">v.</span>
+              <h3 class="servico-name">Reparações e retoques</h3>
+            </div>
+            <p>Soldadura local, recuperação de portões antigos, substituição de fechaduras, repintura. Visita ao terreno quando preciso.</p>
+            <ul class="servico-tags">
+              <li>Soldadura</li><li>Pintura</li><li>Anti-corrosão</li><li>Fechaduras</li>
+            </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         TRABALHOS — masonry asymmetric
-         ============================================================ -->
+    <!-- ============= TRABALHOS ============= -->
     <section id="trabalhos" class="section">
       <div class="container">
-        <div class="section-head reveal">
-          <div class="section-eyebrow"><span class="label">04 — Trabalhos</span></div>
-          <div>
-            <h2 class="display section-title">Sete obras.<br><em>Uma amostra.</em></h2>
-            <p class="section-lede" style="margin-top:24px;">
-              Sete trabalhos recentes, todos ainda de pé. Pede o portfólio
-              completo por email para ver os outros 793.
-            </p>
-          </div>
+        <div class="section-header">
+          <span class="section-eyebrow">Trabalhos</span>
+          <h2 class="section-title">Alguns dos nossos trabalhos.</h2>
+          <p class="section-lede">
+            Nove obras recentes na faixa Lisboa–Setúbal–Alentejo Litoral.
+            Para o portfólio completo, basta pedir por email.
+          </p>
         </div>
 
-        <div class="trabalhos-spread reveal-stagger">
-          <a class="trab" href="#contacto" aria-label="Portão de quinta · Marateca">
-            <span class="trab-folio">FOLIO · 001</span>
-            <img src="https://picsum.photos/seed/portao-quinta-vj-001/1600/1100" alt="Portão de quinta em ferro forjado, Marateca" loading="lazy"/>
-            <div class="trab-info">
-              <h3 class="trab-name">Portão de quinta · Marateca</h3>
-              <span class="trab-meta">Ferro forjado · 4.8&nbsp;m · 2024</span>
+        <div class="galeria">
+          <article class="obra reveal">
+            <img src="https://picsum.photos/seed/srl-portao-1/800/600" alt="Portão de quinta em ferro forjado, Marateca" loading="lazy"/>
+            <div class="obra-cap">
+              <h3 class="obra-name">Portão de quinta · Marateca</h3>
+              <span class="obra-meta">Ferro forjado · 4,8 m · 2024</span>
             </div>
-          </a>
-          <a class="trab" href="#contacto" aria-label="Varanda em inox · Pinhal Novo">
-            <span class="trab-folio">FOLIO · 002</span>
-            <img src="https://picsum.photos/seed/varanda-inox-vj-002/1100/1400" alt="Gradeamento de varanda em inox, Pinhal Novo" loading="lazy"/>
-            <div class="trab-info">
-              <h3 class="trab-name">Varanda · Pinhal Novo</h3>
-              <span class="trab-meta">Inox 304 · 12&nbsp;m · 2024</span>
+          </article>
+          <article class="obra reveal">
+            <img src="https://picsum.photos/seed/srl-varanda-2/800/600" alt="Gradeamento de varanda em inox, Pinhal Novo" loading="lazy"/>
+            <div class="obra-cap">
+              <h3 class="obra-name">Varanda · Pinhal Novo</h3>
+              <span class="obra-meta">Inox 304 · 12 m · 2024</span>
             </div>
-          </a>
-          <a class="trab" href="#contacto" aria-label="Escada de loft · Setúbal">
-            <span class="trab-folio">FOLIO · 003</span>
-            <img src="https://picsum.photos/seed/escada-loft-vj-003/900/1200" alt="Escada metálica de loft em Setúbal" loading="lazy"/>
-            <div class="trab-info">
-              <h3 class="trab-name">Escada de loft · Setúbal</h3>
-              <span class="trab-meta">Aço pintado · 3&nbsp;m · 2023</span>
+          </article>
+          <article class="obra reveal">
+            <img src="https://picsum.photos/seed/srl-escada-3/800/600" alt="Escada metálica de loft em Setúbal" loading="lazy"/>
+            <div class="obra-cap">
+              <h3 class="obra-name">Escada de loft · Setúbal</h3>
+              <span class="obra-meta">Aço pintado · 3 m · 2023</span>
             </div>
-          </a>
-          <a class="trab" href="#contacto" aria-label="Alpendre · Quinta do Anjo">
-            <span class="trab-folio">FOLIO · 004</span>
-            <img src="https://picsum.photos/seed/alpendre-vj-004/900/900" alt="Alpendre em tubo galvanizado, Quinta do Anjo" loading="lazy"/>
-            <div class="trab-info">
-              <h3 class="trab-name">Alpendre · Quinta&nbsp;do&nbsp;Anjo</h3>
-              <span class="trab-meta">Tubo galv. · 36&nbsp;m² · 2023</span>
+          </article>
+          <article class="obra reveal">
+            <img src="https://picsum.photos/seed/srl-alpendre-4/800/600" alt="Alpendre em tubo galvanizado, Quinta do Anjo" loading="lazy"/>
+            <div class="obra-cap">
+              <h3 class="obra-name">Alpendre · Quinta do Anjo</h3>
+              <span class="obra-meta">Tubo galvanizado · 36 m² · 2023</span>
             </div>
-          </a>
-          <a class="trab" href="#contacto" aria-label="Cancela agrícola · Évora">
-            <span class="trab-folio">FOLIO · 005</span>
-            <img src="https://picsum.photos/seed/cancela-vj-005/900/1200" alt="Cancela agrícola em tubo galvanizado, Évora" loading="lazy"/>
-            <div class="trab-info">
-              <h3 class="trab-name">Cancela agrícola · Évora</h3>
-              <span class="trab-meta">Tubo galv. · 6&nbsp;m · 2022</span>
+          </article>
+          <article class="obra reveal">
+            <img src="https://picsum.photos/seed/srl-cancela-5/800/600" alt="Cancela agrícola, Évora" loading="lazy"/>
+            <div class="obra-cap">
+              <h3 class="obra-name">Cancela agrícola · Évora</h3>
+              <span class="obra-meta">Tubo galv. · 6 m · 2022</span>
             </div>
-          </a>
-          <a class="trab" href="#contacto" aria-label="Portão automático · Almada">
-            <span class="trab-folio">FOLIO · 006</span>
-            <img src="https://picsum.photos/seed/portao-auto-vj-006/1200/1000" alt="Portão automático de correr, Almada" loading="lazy"/>
-            <div class="trab-info">
-              <h3 class="trab-name">Portão automático · Almada</h3>
-              <span class="trab-meta">Correr motorizado · 5&nbsp;m · 2022</span>
+          </article>
+          <article class="obra reveal">
+            <img src="https://picsum.photos/seed/srl-portao-auto-6/800/600" alt="Portão automático, Almada" loading="lazy"/>
+            <div class="obra-cap">
+              <h3 class="obra-name">Portão automático · Almada</h3>
+              <span class="obra-meta">Correr motorizado · 5 m · 2022</span>
             </div>
-          </a>
-          <a class="trab" href="#contacto" aria-label="Vedação industrial · Azambuja">
-            <span class="trab-folio">FOLIO · 007</span>
-            <img src="https://picsum.photos/seed/vedacao-industrial-vj-007/1700/950" alt="Vedação industrial perimétrica, Azambuja" loading="lazy"/>
-            <div class="trab-info">
-              <h3 class="trab-name">Vedação industrial · Azambuja</h3>
-              <span class="trab-meta">Painel Ø5 · 1.200&nbsp;m · 2022</span>
+          </article>
+          <article class="obra reveal">
+            <img src="https://picsum.photos/seed/srl-vedacao-7/800/600" alt="Vedação industrial, Azambuja" loading="lazy"/>
+            <div class="obra-cap">
+              <h3 class="obra-name">Vedação industrial · Azambuja</h3>
+              <span class="obra-meta">Painel Ø5 · 1.200 m · 2022</span>
             </div>
-          </a>
+          </article>
+          <article class="obra reveal">
+            <img src="https://picsum.photos/seed/srl-corrimao-8/800/600" alt="Corrimão de escada exterior, Moita" loading="lazy"/>
+            <div class="obra-cap">
+              <h3 class="obra-name">Corrimão exterior · Moita</h3>
+              <span class="obra-meta">Inox escovado · 2,2 m · 2021</span>
+            </div>
+          </article>
+          <article class="obra reveal">
+            <img src="https://picsum.photos/seed/srl-marquise-9/800/600" alt="Estrutura de marquise, Montijo" loading="lazy"/>
+            <div class="obra-cap">
+              <h3 class="obra-name">Marquise · Montijo</h3>
+              <span class="obra-meta">Perfil C 200 · 18 m² · 2021</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         PROCESSO — 4 passos com hairline rules
-         ============================================================ -->
-    <section id="processo" class="processo section">
+    <!-- ============= COBERTURA GEOGRÁFICA ============= -->
+    <section id="cobertura" class="cobertura section">
       <div class="container">
-        <div class="section-head reveal">
-          <div class="section-eyebrow"><span class="label">05 — Processo</span></div>
-          <div>
-            <h2 class="display section-title">Quatro passos.<br><em>Sem desvios.</em></h2>
-            <p class="section-lede" style="margin-top:24px;">
-              Da primeira chamada à instalação final, o trajeto é o mesmo há
-              vinte e dois anos.
-            </p>
-          </div>
+        <div class="section-header">
+          <span class="section-eyebrow">Onde trabalhamos</span>
+          <h2 class="section-title">Cobertura habitual.</h2>
+          <p class="section-lede">
+            Trabalhamos toda a faixa Setúbal — Lisboa — Alentejo Litoral. Para
+            obras maiores, deslocamo-nos a outras zonas; basta combinar.
+          </p>
         </div>
 
-        <div class="passos reveal-stagger">
-          <div class="passo">
-            <span class="p-num">i.</span>
-            <h3>Visita</h3>
-            <p>Vamos à obra. Medimos, fotografamos, percebemos o sítio. Sem custo, sem compromisso.</p>
-          </div>
-          <div class="passo">
-            <span class="p-num">ii.</span>
-            <h3>Desenho</h3>
-            <p>Atelier. Desenhamos a peça à escala, mandamos imagem para aprovares. Mexemos até estar certo.</p>
-          </div>
-          <div class="passo">
-            <span class="p-num">iii.</span>
-            <h3>Oficina</h3>
-            <p>Cortamos, dobramos, soldamos, acabamento. Pintura ou galvanização à parte conforme aplicação.</p>
-          </div>
-          <div class="passo">
-            <span class="p-num">iv.</span>
-            <h3>Obra</h3>
-            <p>Instalamos com a equipa: prumos, parafusos químicos, maciços. Limpamos antes de sair.</p>
+        <div class="cobertura-grid">
+          <ul class="zonas">
+            <li>Palmela <span class="km">sede</span></li>
+            <li>Setúbal <span class="km">12 km</span></li>
+            <li>Pinhal Novo <span class="km">8 km</span></li>
+            <li>Quinta do Anjo <span class="km">5 km</span></li>
+            <li>Marateca <span class="km">14 km</span></li>
+            <li>Montijo <span class="km">22 km</span></li>
+            <li>Almada <span class="km">35 km</span></li>
+            <li>Moita <span class="km">18 km</span></li>
+            <li>Alcochete <span class="km">28 km</span></li>
+            <li>Azambuja <span class="km">62 km</span></li>
+            <li>Vendas Novas <span class="km">38 km</span></li>
+            <li>Évora <span class="km">75 km</span></li>
+          </ul>
+
+          <div class="map-static" aria-hidden="true">
+            <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
+              <!-- Coastline -->
+              <path d="M0 280 Q80 270 140 285 Q220 300 280 295 Q360 290 480 305" fill="none" stroke="#7B8492" stroke-width="0.8" opacity="0.5"/>
+              <path d="M0 320 L480 320" fill="none" stroke="#7B8492" stroke-dasharray="3 4" stroke-width="0.6" opacity="0.4"/>
+              <!-- Rivers (Tagus + Sado) -->
+              <path d="M0 90 Q80 80 160 95 Q240 110 320 100 Q400 95 480 110" fill="none" stroke="#3A4A5E" stroke-width="1.2" opacity="0.4"/>
+              <path d="M80 220 Q160 215 240 225 Q320 235 400 225" fill="none" stroke="#3A4A5E" stroke-width="1" opacity="0.3"/>
+              <!-- Lisboa -->
+              <circle cx="105" cy="100" r="3" fill="#7B8492"/>
+              <text x="115" y="98" font-family="Source Sans 3, sans-serif" font-size="11" fill="#3A4A5E" font-weight="600">LISBOA</text>
+              <!-- Setúbal -->
+              <circle cx="225" cy="240" r="3" fill="#7B8492"/>
+              <text x="234" y="244" font-family="Source Sans 3, sans-serif" font-size="11" fill="#3A4A5E" font-weight="600">SETÚBAL</text>
+              <!-- Évora -->
+              <circle cx="395" cy="180" r="3" fill="#7B8492"/>
+              <text x="404" y="184" font-family="Source Sans 3, sans-serif" font-size="11" fill="#3A4A5E" font-weight="600">ÉVORA</text>
+              <!-- PALMELA (highlighted) -->
+              <circle cx="225" cy="180" r="5" fill="#8B6A3D"/>
+              <circle cx="225" cy="180" r="14" fill="none" stroke="#8B6A3D" stroke-width="1.2"/>
+              <circle cx="225" cy="180" r="22" fill="none" stroke="#8B6A3D" stroke-width="0.6" opacity="0.5"/>
+              <line x1="225" y1="155" x2="225" y2="172" stroke="#8B6A3D" stroke-width="1"/>
+              <text x="232" y="148" font-family="Lora, serif" font-size="14" fill="#1C2E45" font-weight="700">PALMELA · sede</text>
+              <text x="232" y="162" font-family="Source Sans 3, sans-serif" font-size="10" fill="#7B8492">38° 34&apos; 13&quot; N · 08° 44&apos; 57&quot; W</text>
+              <!-- North arrow -->
+              <g transform="translate(440, 32)">
+                <circle r="14" fill="#F4F1EB" stroke="#3A4A5E" stroke-width="0.6"/>
+                <path d="M0 -8 L4 4 L0 1 L-4 4 Z" fill="#1C2E45"/>
+                <text x="0" y="-18" font-family="Source Sans 3, sans-serif" font-size="9" text-anchor="middle" fill="#7B8492" font-weight="600">N</text>
+              </g>
+            </svg>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         QUOTE — fundador
-         ============================================================ -->
+    <!-- ============= TESTEMUNHOS ============= -->
     <section class="section">
       <div class="container">
-        <div class="section-head reveal">
-          <div class="section-eyebrow"><span class="label">06 — Quem somos</span></div>
-          <div></div>
+        <div class="section-header">
+          <span class="section-eyebrow">O que dizem</span>
+          <h2 class="section-title">Palavra de quem já trabalhou connosco.</h2>
         </div>
 
-        <div class="quote-grid">
-          <div class="quote-photo reveal" aria-hidden="true"></div>
-          <div class="reveal">
-            <p class="quote-text">
-              Comecei aos&nbsp;19 a soldar gradeamentos na garagem do meu pai.
-              Hoje continuo a soldar — só que agora numa oficina maior, com o
-              meu filho a fazer o desenho.
+        <div class="testemunhos">
+          <article class="testemunho reveal">
+            <div class="testemunho-stars" aria-label="5 estrelas">★ ★ ★ ★ ★</div>
+            <p class="testemunho-text">
+              Fizeram-me o portão da quinta em Marateca. Vieram, mediram, mostraram
+              o desenho, soldaram e instalaram em três semanas certinhas. Pessoa
+              séria, trabalho bem feito.
             </p>
-            <div class="quote-attr">
-              <strong>J. Fonseca</strong> · Fundador · Palmela, MMVI&mdash;MMXXVI
+            <div class="testemunho-attr">
+              <strong>Manuel Barata</strong><br>
+              Quinta em Marateca · 2024
             </div>
-          </div>
+          </article>
+
+          <article class="testemunho reveal">
+            <div class="testemunho-stars" aria-label="5 estrelas">★ ★ ★ ★ ★</div>
+            <p class="testemunho-text">
+              Já é a segunda vez que trabalhamos com o Sr. Fonseca. Fez-nos a
+              estrutura do alpendre e há dois anos o gradeamento da varanda.
+              Trabalho limpo, instalação rápida, preço justo.
+            </p>
+            <div class="testemunho-attr">
+              <strong>Família Pereira</strong><br>
+              Quinta do Anjo · 2023
+            </div>
+          </article>
+
+          <article class="testemunho reveal">
+            <div class="testemunho-stars" aria-label="5 estrelas">★ ★ ★ ★ ★</div>
+            <p class="testemunho-text">
+              Precisava de uma vedação para 1.200 metros de perímetro logístico.
+              Mandei pedido na quarta, na quinta tinha orçamento. Em três semanas
+              estava montada. Recomendo.
+            </p>
+            <div class="testemunho-attr">
+              <strong>L. Mendes</strong><br>
+              Operações · Logística Azambuja · 2022
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         CONTACTO
-         ============================================================ -->
-    <section id="contacto" class="section contacto">
+    <!-- ============= CONTACTO ============= -->
+    <section id="contacto" class="contacto section">
       <div class="container">
-        <div class="section-head reveal" style="margin-bottom:32px;">
-          <div class="section-eyebrow"><span class="label">07 — Contacto</span></div>
-          <div></div>
+        <div class="section-header">
+          <span class="section-eyebrow">Contacto</span>
+          <h2 class="section-title">Diga o que precisa. <span class="accent">Em 24 horas tem preço.</span></h2>
+          <p class="section-lede">
+            Atendimento direto, sem intermediários. Mande memorial, planta ou só
+            uma fotografia do estaleiro — respondemos com proposta orçamentada.
+          </p>
         </div>
 
         <div class="contacto-grid">
-          <div class="reveal">
-            <h2 class="display">Diga<br>o que <em class="editorial-italic">precisa.</em><br>Em 24h<br>tem preço.</h2>
-
-            <p class="hero-meta" style="margin:0 0 8px; max-width:42ch;">
-              Atendimento técnico direto. Mande o memorial, a planta ou só uma
-              fotografia do estaleiro — respondemos com proposta orçamentada.
-            </p>
-
-            <div class="channels">
-              <a class="channel" href="tel:+351263079366">
-                <div>
-                  <span class="channel-label">Atelier · Fixo</span>
-                  <span class="channel-value">+351&nbsp;263&nbsp;079&nbsp;366</span>
-                </div>
-                <span class="channel-arrow" aria-hidden="true">→</span>
-              </a>
-              <a class="channel" href="tel:+351916641573">
-                <div>
-                  <span class="channel-label">Móvel · J. Fonseca</span>
-                  <span class="channel-value">+351&nbsp;916&nbsp;641&nbsp;573</span>
-                </div>
-                <span class="channel-arrow" aria-hidden="true">→</span>
-              </a>
-              <a class="channel" href="mailto:jf@vjfonseca.com">
-                <div>
-                  <span class="channel-label">Orçamentos · Email</span>
-                  <span class="channel-value">jf@vjfonseca.com</span>
-                </div>
-                <span class="channel-arrow" aria-hidden="true">→</span>
-              </a>
-            </div>
+          <div class="telefones">
+            <a class="telefone-card" href="tel:+351263079366">
+              <span class="telefone-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4 Q5 3 6 3 L9 3 Q10 3 10 4 L11 7 Q11 8 10 8.5 L9 9 Q11 13 15 15 L15.5 14 Q16 13 17 13 L20 14 Q21 14 21 15 L21 18 Q21 20 20 20 Q11 20 5 14 Q5 8 5 4 Z"/></svg>
+              </span>
+              <div>
+                <span class="telefone-label">Atelier · Fixo</span>
+                <span class="telefone-num">263 079 366</span>
+              </div>
+              <span class="telefone-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="telefone-card" href="tel:+351916641573">
+              <span class="telefone-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="3" width="12" height="18" rx="2"/><circle cx="12" cy="18" r="0.8" fill="currentColor"/></svg>
+              </span>
+              <div>
+                <span class="telefone-label">Sr. Fonseca · Móvel</span>
+                <span class="telefone-num">916 641 573</span>
+              </div>
+              <span class="telefone-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="telefone-card" href="https://wa.me/351916641573?text=Boa%20tarde%2C%20gostaria%20de%20pedir%20um%20or%C3%A7amento.">
+              <span class="telefone-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.7-.83-2-.92-.27-.1-.46-.15-.65.15s-.75.92-.92 1.1c-.17.2-.34.22-.63.07-.3-.15-1.25-.46-2.4-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.34.44-.52s.2-.3.3-.5c.1-.2.05-.37-.02-.52-.08-.15-.65-1.6-.9-2.2-.24-.57-.48-.5-.66-.5h-.57c-.2 0-.5.07-.78.36-.27.3-1.04.99-1.04 2.42s1.07 2.83 1.21 3.02c.15.2 2.1 3.2 5.07 4.48.7.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.69.25-1.28.17-1.4-.07-.13-.27-.2-.56-.34zm-5.4 7.4a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 0 1 2.2 12c0-5.45 4.43-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.43 9.88-9.88 9.88z"/></svg>
+              </span>
+              <div>
+                <span class="telefone-label">WhatsApp · Mensagem</span>
+                <span class="telefone-num">916 641 573</span>
+              </div>
+              <span class="telefone-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="telefone-card" href="mailto:jf@vjfonseca.com">
+              <span class="telefone-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14"/><path d="M3 6 L12 13 L21 6"/></svg>
+              </span>
+              <div>
+                <span class="telefone-label">Email · Orçamentos</span>
+                <span class="telefone-num">jf@vjfonseca.com</span>
+              </div>
+              <span class="telefone-arrow" aria-hidden="true">→</span>
+            </a>
           </div>
 
-          <aside class="contacto-card reveal">
+          <aside class="morada-card">
             <h3>Atelier · Palmela</h3>
             <p>
               Setúbal · Palmela, Portugal<br>
-              38°&nbsp;34&prime;&nbsp;13&Prime;&nbsp;N · 08°&nbsp;44&prime;&nbsp;57&Prime;&nbsp;W
+              38°&nbsp;34&prime; 13&Prime;&nbsp;N · 08°&nbsp;44&prime; 57&Prime;&nbsp;W
             </p>
-            <div class="hours">
+            <div class="horario">
+              <span class="horario-label">Horário</span>
               <span>Seg–Sex</span><span>08:00 — 18:00</span>
               <span class="closed">Sábado</span><span class="closed">Encerrado</span>
               <span class="closed">Domingo</span><span class="closed">Encerrado</span>
@@ -1341,53 +1284,56 @@
 
   </main>
 
-  <!-- ============================================================
-       FOOTER · colophon
-       ============================================================ -->
+  <!-- ============= FOOTER ============= -->
   <footer>
     <div class="container">
-      <div class="colophon">
-        <div>
-          <h2 class="colophon-brand">V<em>&amp;</em>J Fonseca</h2>
-          <p class="colophon-tag">Serralharia em Palmela.<br>Forjado à mão desde 2003.</p>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="mark">V<span class="amp">&amp;</span>J Fonseca</div>
+          <p>Serralharia em Palmela. Trabalho à medida em ferro e aço, desde 2003.</p>
         </div>
-        <div>
-          <h4>Mapa</h4>
+        <div class="footer-col">
+          <h4>Casa</h4>
           <ul>
-            <li><a href="#manifesto">Manifesto</a></li>
-            <li><a href="#oficio">Ofício</a></li>
+            <li><a href="#sobre">A casa</a></li>
+            <li><a href="#servicos">Serviços</a></li>
             <li><a href="#trabalhos">Trabalhos</a></li>
-            <li><a href="#processo">Processo</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#cobertura">Onde trabalhamos</a></li>
           </ul>
         </div>
-        <div>
-          <h4>Edições</h4>
+        <div class="footer-col">
+          <h4>Contacto</h4>
           <ul>
-            <li><a href="/sites/atelier/">› Edição Atelier (escura)</a></li>
-            <li><a href="/sites/VJ/">› Edição Técnica (blueprint)</a></li>
+            <li><a href="tel:+351263079366">263 079 366</a></li>
+            <li><a href="tel:+351916641573">916 641 573</a></li>
+            <li><a href="mailto:jf@vjfonseca.com">jf@vjfonseca.com</a></li>
+            <li><span>Seg–Sex 08:00 — 18:00</span></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Outras edições</h4>
+          <ul>
+            <li><a href="/sites/editorial/">Edição editorial</a></li>
+            <li><a href="/sites/atelier/">Edição atelier</a></li>
+            <li><a href="/sites/VJ/">Edição técnica</a></li>
           </ul>
         </div>
       </div>
-      <div class="foot-bottom">
-        <span>© 2003 — 2026 · V&amp;J Fonseca · Palmela</span>
-        <span>Edição&nbsp;01 · MMXXVI · Doc.&nbsp;001</span>
+      <div class="footer-bottom">
+        <span>© 2003 — 2026 · V&amp;J Fonseca · Palmela, Portugal</span>
+        <span>Site atualizado em Maio de 2026</span>
       </div>
     </div>
   </footer>
 
   <script>
     (function() {
-      // Sticky header background on scroll
-      const header = document.getElementById('site-header');
-      const onScroll = () => {
-        if (window.scrollY > 24) header.classList.add('scrolled');
-        else header.classList.remove('scrolled');
-      };
-      onScroll();
-      document.addEventListener('scroll', onScroll, { passive: true });
-
-      // Reveal observer with stagger
+      // Reveal subtle on scroll
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduced) {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+        return;
+      }
       const io = new IntersectionObserver((entries) => {
         for (const e of entries) {
           if (e.isIntersecting) {
@@ -1395,26 +1341,22 @@
             io.unobserve(e.target);
           }
         }
-      }, { threshold: 0.12, rootMargin: '0px 0px -80px 0px' });
-      document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-      // Magnetic CTA — subtle pull toward cursor (no Framer, vanilla)
-      // Skip on touch + reduced motion
-      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const canHover = window.matchMedia('(hover: hover)').matches;
-      if (canHover && !reduced) {
-        document.querySelectorAll('.cta-magnet').forEach(btn => {
-          btn.addEventListener('mousemove', (e) => {
-            const r = btn.getBoundingClientRect();
-            const x = (e.clientX - (r.left + r.width / 2)) / (r.width / 2);
-            const y = (e.clientY - (r.top + r.height / 2)) / (r.height / 2);
-            btn.style.transform = `translate(${x * 6}px, ${y * 4}px)`;
-          });
-          btn.addEventListener('mouseleave', () => {
-            btn.style.transform = '';
-          });
+      // Active nav link based on section in view
+      const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+      const sections = Array.from(navLinks).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+      const navIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            navLinks.forEach(l => l.classList.remove('active'));
+            const link = document.querySelector('.nav-links a[href="#' + e.target.id + '"]');
+            if (link) link.classList.add('active');
+          }
         });
-      }
+      }, { rootMargin: '-40% 0px -55% 0px' });
+      sections.forEach(s => navIO.observe(s));
     })();
   </script>
 </body>

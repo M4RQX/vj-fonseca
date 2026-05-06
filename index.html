@@ -11,10 +11,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Roboto+Slab:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="https://picsum.photos/seed/serralharia-vj-oficina/1200/960" fetchpriority="high" />
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23181C20'/%3E%3Ctext x='16' y='22' font-family='Roboto Slab,Georgia,serif' font-size='18' font-weight='800' fill='%23E5E7EA' text-anchor='middle'%3EVJ%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23181C20'/%3E%3Ctext x='16' y='22' font-family='Geist,Helvetica,sans-serif' font-size='18' font-weight='800' fill='%23E5E7EA' text-anchor='middle'%3EVJ%3C/text%3E%3C/svg%3E" />
 
   <style>
     /* ============================================================
@@ -48,11 +48,13 @@
       margin: 0;
       background: var(--paper);
       color: var(--ink);
-      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      font-family: "Geist", system-ui, sans-serif;
       font-size: 17px;
       line-height: 1.6;
+      letter-spacing: -0.012em;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
+      font-feature-settings: "ss01", "ss02";
       overflow-x: hidden;
     }
 
@@ -60,25 +62,28 @@
        TYPE
        ============================================================ */
     .serif {
-      font-family: "Roboto Slab", Georgia, "Times New Roman", serif;
+      font-family: "Geist", Georgia, "Times New Roman", serif;
     }
     .sans {
-      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      font-family: "Geist", system-ui, sans-serif;
     }
     h1, h2, h3 {
-      font-family: "Roboto Slab", Georgia, serif;
+      font-family: "Geist", system-ui, sans-serif;
       font-weight: 700;
-      letter-spacing: -0.005em;
-      line-height: 1.15;
+      letter-spacing: -0.035em;
+      line-height: 1.05;
       margin: 0;
     }
+    h1 { letter-spacing: -0.045em; }
+    h2 { letter-spacing: -0.035em; }
+    h3 { letter-spacing: -0.025em; }
     .label {
-      font-family: "IBM Plex Sans", sans-serif;
+      font-family: "Geist", sans-serif;
       font-size: 12px;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--muted);
-      font-weight: 600;
+      font-weight: 500;
     }
     .num {
       font-variant-numeric: tabular-nums;
@@ -153,16 +158,16 @@
       display: inline-flex; align-items: baseline; gap: 12px;
     }
     .brand .mark {
-      font-family: "Roboto Slab", serif;
+      font-family: "Geist", sans-serif;
       font-weight: 700;
       font-size: 26px;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.045em;
       line-height: 1;
     }
     .brand .mark .amp { color: var(--accent); }
     .brand .sub {
       font-size: 12px;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--muted);
       font-weight: 500;
@@ -218,7 +223,7 @@
       background: var(--paper-warm);
       border: 1px solid var(--rule);
       font-size: 12px;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--ink-soft);
       font-weight: 600;
@@ -229,15 +234,15 @@
       background: var(--accent);
     }
     .hero h1 {
-      font-size: clamp(40px, 5vw, 72px);
-      letter-spacing: -0.015em;
-      line-height: 1.05;
+      font-size: clamp(44px, 6vw, 88px);
+      letter-spacing: -0.05em;
+      line-height: 1;
       margin-bottom: 24px;
+      font-weight: 800;
     }
     .hero h1 .accent {
       color: var(--accent);
-      font-style: italic;
-      font-weight: 600;
+      font-weight: 800;
     }
     .hero-sub {
       font-size: clamp(17px, 1.3vw, 19px);
@@ -311,10 +316,11 @@
     }
     .trust-item:last-child { border-right: 0; }
     .trust-num {
-      font-family: "Roboto Slab", serif;
+      font-family: "Geist", sans-serif;
       font-weight: 700;
-      font-size: clamp(36px, 4vw, 56px);
+      font-size: clamp(38px, 4.4vw, 60px);
       line-height: 1;
+      letter-spacing: -0.045em;
       color: var(--ink);
       margin-bottom: 8px;
       display: block;
@@ -347,17 +353,18 @@
       background: var(--paper-warm);
       border: 1px solid var(--rule);
       font-size: 12px;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--accent);
       font-weight: 600;
       margin-bottom: 16px;
     }
     .section-title {
-      font-size: clamp(32px, 4.4vw, 56px);
-      letter-spacing: -0.015em;
-      line-height: 1.1;
+      font-size: clamp(34px, 4.6vw, 60px);
+      letter-spacing: -0.04em;
+      line-height: 1.02;
       margin-bottom: 16px;
+      font-weight: 700;
     }
     .section-title .accent { color: var(--accent); font-weight: 700; }
     .section-lede {
@@ -397,7 +404,7 @@
       font-size: 13px;
       color: var(--muted);
       font-style: italic;
-      font-family: "Roboto Slab", serif;
+      font-family: "Geist", serif;
     }
     .sobre-text p {
       font-size: clamp(17px, 1.2vw, 19px);
@@ -463,18 +470,20 @@
       margin-bottom: 12px;
     }
     .servico-num {
-      font-family: "Roboto Slab", serif;
-      font-style: italic;
-      font-weight: 600;
-      font-size: 22px;
+      font-family: "Geist", sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
       color: var(--accent);
       line-height: 1;
+      padding-top: 8px;
     }
     .servico-name {
-      font-family: "Roboto Slab", serif;
+      font-family: "Geist", sans-serif;
       font-weight: 700;
       font-size: clamp(22px, 2vw, 28px);
-      letter-spacing: -0.01em;
+      letter-spacing: -0.03em;
       color: var(--ink);
     }
     .servico p {
@@ -533,9 +542,10 @@
       border-top: 1px solid var(--rule);
     }
     .obra-name {
-      font-family: "Roboto Slab", serif;
-      font-weight: 700;
+      font-family: "Geist", sans-serif;
+      font-weight: 600;
       font-size: 17px;
+      letter-spacing: -0.025em;
       color: var(--ink);
       margin: 0 0 4px;
       line-height: 1.2;
@@ -623,14 +633,17 @@
       margin-bottom: 14px;
     }
     .testemunho-text {
-      font-family: "Roboto Slab", serif;
-      font-style: italic;
+      font-family: "Geist", sans-serif;
+      font-weight: 400;
       font-size: 17px;
+      letter-spacing: -0.018em;
       line-height: 1.55;
       color: var(--ink);
       margin: 0 0 22px;
       max-width: 38ch;
     }
+    .testemunho-text::before { content: "“"; color: var(--accent); font-weight: 600; margin-right: 4px; }
+    .testemunho-text::after { content: "”"; color: var(--accent); font-weight: 600; margin-left: 2px; }
     .testemunho-attr {
       font-size: 14px;
       color: var(--muted);
@@ -690,7 +703,7 @@
     .telefone-icon svg { width: 18px; height: 18px; }
     .telefone-label {
       font-size: 12px;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       color: rgba(229,231,234,0.55);
       font-weight: 500;
@@ -698,11 +711,12 @@
       display: block;
     }
     .telefone-num {
-      font-family: "Roboto Slab", serif;
-      font-weight: 700;
+      font-family: "Geist", sans-serif;
+      font-weight: 600;
       font-size: clamp(24px, 2.6vw, 36px);
-      letter-spacing: -0.005em;
+      letter-spacing: -0.04em;
       line-height: 1;
+      font-variant-numeric: tabular-nums;
       transition: color .2s var(--easing);
     }
     .telefone-arrow {
@@ -717,6 +731,7 @@
     }
     .morada-card h3 {
       font-size: 22px;
+      letter-spacing: -0.03em;
       color: var(--paper);
       margin-bottom: 12px;
     }
@@ -738,7 +753,7 @@
     .horario .closed { color: rgba(229,231,234,0.45); }
     .horario-label {
       font-size: 11px;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       color: rgba(229,231,234,0.55);
       font-weight: 600;
@@ -764,10 +779,10 @@
       align-items: start;
     }
     .footer-brand .mark {
-      font-family: "Roboto Slab", serif;
+      font-family: "Geist", sans-serif;
       font-weight: 700;
       font-size: 24px;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.04em;
       margin-bottom: 6px;
     }
     .footer-brand .mark .amp { color: var(--accent); }
@@ -779,10 +794,10 @@
       margin: 8px 0 0;
     }
     .footer-col h4 {
-      font-family: "IBM Plex Sans", sans-serif;
+      font-family: "Geist", sans-serif;
       font-weight: 600;
       font-size: 12px;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--muted);
       margin: 0 0 14px;
@@ -997,7 +1012,7 @@
         <div class="servicos-grid">
           <article class="servico">
             <div class="servico-head">
-              <span class="servico-num">i.</span>
+              <span class="servico-num">01 / Portões</span>
               <h3 class="servico-name">Portões e portas</h3>
             </div>
             <p>Pedonais, automáticos, de batente ou de correr. Em ferro forjado, aço inox ou tubo galvanizado, conforme o uso e a casa.</p>
@@ -1008,7 +1023,7 @@
 
           <article class="servico">
             <div class="servico-head">
-              <span class="servico-num">ii.</span>
+              <span class="servico-num">02 / Gradeamentos</span>
               <h3 class="servico-name">Gradeamentos e corrimãos</h3>
             </div>
             <p>Varandas, escadas, terraços, marquises. Modelos clássicos ou linhas mais simples, sempre tomados à medida.</p>
@@ -1019,7 +1034,7 @@
 
           <article class="servico">
             <div class="servico-head">
-              <span class="servico-num">iii.</span>
+              <span class="servico-num">03 / Estruturas</span>
               <h3 class="servico-name">Estruturas metálicas</h3>
             </div>
             <p>Coberturas, alpendres, naves, mezanines. Perfis HEB, IPE e tubo, galvanizados a quente quando o serviço o exige.</p>
@@ -1030,7 +1045,7 @@
 
           <article class="servico">
             <div class="servico-head">
-              <span class="servico-num">iv.</span>
+              <span class="servico-num">04 / Vedações</span>
               <h3 class="servico-name">Vedações e perímetros</h3>
             </div>
             <p>Quintas, indústrias, recintos. Painel eletrosoldado, malha rede e rede ovelheira, com postes próprios.</p>
@@ -1041,7 +1056,7 @@
 
           <article class="servico" style="grid-column: 1 / -1;">
             <div class="servico-head">
-              <span class="servico-num">v.</span>
+              <span class="servico-num">05 / Reparações</span>
               <h3 class="servico-name">Reparações e retoques</h3>
             </div>
             <p>Soldadura local, recuperação de portões antigos, substituição de fechaduras, repintura. Visita ao terreno quando preciso.</p>
@@ -1171,25 +1186,25 @@
               <path d="M80 220 Q160 215 240 225 Q320 235 400 225" fill="none" stroke="#2A2F35" stroke-width="1" opacity="0.3"/>
               <!-- Lisboa -->
               <circle cx="105" cy="100" r="3" fill="#5A6470"/>
-              <text x="115" y="98" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#2A2F35" font-weight="600">LISBOA</text>
+              <text x="115" y="98" font-family="Geist, sans-serif" font-size="11" fill="#2A2F35" font-weight="600">LISBOA</text>
               <!-- Setúbal -->
               <circle cx="225" cy="240" r="3" fill="#5A6470"/>
-              <text x="234" y="244" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#2A2F35" font-weight="600">SETÚBAL</text>
+              <text x="234" y="244" font-family="Geist, sans-serif" font-size="11" fill="#2A2F35" font-weight="600">SETÚBAL</text>
               <!-- Évora -->
               <circle cx="395" cy="180" r="3" fill="#5A6470"/>
-              <text x="404" y="184" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#2A2F35" font-weight="600">ÉVORA</text>
+              <text x="404" y="184" font-family="Geist, sans-serif" font-size="11" fill="#2A2F35" font-weight="600">ÉVORA</text>
               <!-- PALMELA (highlighted) -->
               <circle cx="225" cy="180" r="5" fill="#9C3F1F"/>
               <circle cx="225" cy="180" r="14" fill="none" stroke="#9C3F1F" stroke-width="1.2"/>
               <circle cx="225" cy="180" r="22" fill="none" stroke="#9C3F1F" stroke-width="0.6" opacity="0.5"/>
               <line x1="225" y1="155" x2="225" y2="172" stroke="#9C3F1F" stroke-width="1"/>
-              <text x="232" y="148" font-family="Roboto Slab, serif" font-size="14" fill="#181C20" font-weight="700">PALMELA · sede</text>
-              <text x="232" y="162" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="#5A6470">38° 34&apos; 13&quot; N · 08° 44&apos; 57&quot; W</text>
+              <text x="232" y="148" font-family="Geist, sans-serif" font-size="14" fill="#181C20" font-weight="700">PALMELA · sede</text>
+              <text x="232" y="162" font-family="Geist, sans-serif" font-size="10" fill="#5A6470">38° 34&apos; 13&quot; N · 08° 44&apos; 57&quot; W</text>
               <!-- North arrow -->
               <g transform="translate(440, 32)">
                 <circle r="14" fill="#E5E7EA" stroke="#2A2F35" stroke-width="0.6"/>
                 <path d="M0 -8 L4 4 L0 1 L-4 4 Z" fill="#181C20"/>
-                <text x="0" y="-18" font-family="IBM Plex Sans, sans-serif" font-size="9" text-anchor="middle" fill="#5A6470" font-weight="600">N</text>
+                <text x="0" y="-18" font-family="Geist, sans-serif" font-size="9" text-anchor="middle" fill="#5A6470" font-weight="600">N</text>
               </g>
             </svg>
           </div>

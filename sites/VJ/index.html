@@ -1,0 +1,2790 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0E1218" />
+  <meta name="description" content="V&J Fonseca · Construção metálica B2B em Setúbal/Palmela. Coberturas, fachadas, vedação e perfis desde 2003." />
+  <meta property="og:title" content="V&J Fonseca · Construção Metálica" />
+  <meta property="og:description" content="Coberturas, fachadas, vedação e perfis metálicos. Palmela, Portugal. Resposta em menos de 24h." />
+  <meta property="og:type" content="website" />
+  <title>V&J Fonseca — Folha técnica · Construção metálica · Palmela</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Big+Shoulders+Display:wght@500;700;800;900&family=Inter:wght@800;900&family=JetBrains+Mono:wght@400;500;600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23EDE6D6'/%3E%3Cpath d='M6 6 L6 26 M6 26 L14 26 M16 6 L16 26 M16 26 L26 26' stroke='%230E1218' stroke-width='3' fill='none'/%3E%3Cpath d='M22 8 L26 8 L26 11' stroke='%23C2410C' stroke-width='1.5' fill='none'/%3E%3C/svg%3E" />
+
+  <style>
+    /* ========= TOKENS ========= */
+    :root {
+      --paper: #F4F4F0;
+      --paper-warm: #EAE8E3;
+      --paper-edge: #D8D6D0;
+      --ink: #050505;
+      --ink-soft: #1A1A1A;
+      --graphite: #6B6B68;
+      --rule: #050505;
+      --blueprint: #050505;
+      --blueprint-deep: #050505;
+      --blueprint-line: #6B6B68;
+      --paper-on-blue: #F4F4F0;
+      --accent: #E61919;
+      --accent-soft: #E61919;
+      --warning: #E61919;
+      --easing: cubic-bezier(.2,.8,.2,1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Inter Tight", system-ui, sans-serif;
+      font-feature-settings: "ss01", "cv11";
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+    }
+
+    /* ========= GRAIN OVERLAY ========= */
+    .grain {
+      position: fixed; inset: 0;
+      pointer-events: none;
+      z-index: 100;
+      opacity: .35;
+      mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.05 0 0 0 0 0.07 0 0 0 0 0.1 0 0 0 .25 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ========= TYPOGRAPHY ========= */
+    .display { font-family: "Big Shoulders Display", "Big Shoulders", system-ui, sans-serif; font-weight: 900; letter-spacing: -0.01em; line-height: 0.85; }
+    .mono { font-family: "JetBrains Mono", ui-monospace, monospace; font-feature-settings: "ss05", "cv01"; }
+
+    .label {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--graphite);
+      font-weight: 500;
+    }
+    .label-light { color: rgba(221,233,242,0.6); }
+    .label-accent { color: var(--accent); }
+
+    .num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+
+    /* ========= LAYOUT ========= */
+    .container { max-width: 1440px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); }
+
+    /* ========= HEADER ========= */
+    .topframe {
+      position: sticky; top: 0; z-index: 50;
+      background: var(--paper);
+      border-bottom: 1px solid var(--ink);
+    }
+    .topframe-inner {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 24px;
+      padding: 14px 0;
+    }
+    .topframe a { color: var(--ink); text-decoration: none; }
+    .topframe .ticker {
+      overflow: hidden;
+      white-space: nowrap;
+      mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+    }
+    .ticker-track {
+      display: inline-flex;
+      gap: 48px;
+      padding-left: 0;
+      animation: ticker 60s linear infinite;
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .nav-link {
+      position: relative;
+      padding: 6px 14px;
+      border: 1px solid var(--ink);
+      transition: all .2s var(--easing);
+    }
+    .nav-link:hover { background: var(--ink); color: var(--paper); }
+    .nav-link.cta { background: var(--ink); color: var(--paper); }
+    .nav-link.cta:hover { background: var(--accent); border-color: var(--accent); }
+
+    /* ========= HERO ========= */
+    .hero {
+      position: relative;
+      padding: clamp(40px, 8vh, 88px) 0 clamp(40px, 6vh, 64px);
+      min-height: calc(100dvh - 51px);
+      display: grid;
+      align-content: space-between;
+      background:
+        linear-gradient(var(--paper-edge) 1px, transparent 1px) 0 0 / 100% 64px,
+        linear-gradient(90deg, var(--paper-edge) 1px, transparent 1px) 0 0 / 64px 100%,
+        var(--paper);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: clamp(24px, 5vw, 64px);
+      align-items: end;
+    }
+    @media (max-width: 880px) {
+      .hero-grid { grid-template-columns: 1fr; }
+    }
+    .hero-title {
+      font-size: clamp(56px, 10vw, 240px);
+      line-height: 0.88;
+      margin: 0;
+    }
+    .hero-title .reveal-line {
+      max-height: 1em;
+    }
+    .hero-title .ampersand {
+      color: var(--accent);
+      font-style: italic;
+      transform: translateY(-0.05em);
+      display: inline-block;
+    }
+    .hero-coords {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 8px 16px;
+      margin-top: 32px;
+      max-width: 540px;
+    }
+    .hero-tagline {
+      margin-top: 28px;
+      font-size: clamp(18px, 1.6vw, 22px);
+      max-width: 28ch;
+      line-height: 1.35;
+      text-wrap: balance;
+      color: var(--ink-soft);
+    }
+
+    .hero-svg {
+      width: 100%;
+      max-width: 560px;
+      justify-self: end;
+      aspect-ratio: 1;
+    }
+    .hero-svg .draw {
+      stroke-dasharray: 1500;
+      stroke-dashoffset: 1500;
+      animation: draw 2.4s var(--easing) .3s forwards;
+    }
+    .hero-svg .draw-late {
+      stroke-dasharray: 800;
+      stroke-dashoffset: 800;
+      animation: draw 1.4s var(--easing) 1.6s forwards;
+    }
+    .hero-svg .fade-in {
+      opacity: 0;
+      animation: fadein .6s var(--easing) 2.2s forwards;
+    }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes fadein { to { opacity: 1; } }
+
+    .north-arrow { animation: spin 80s linear infinite; transform-origin: center; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .reveal-line { overflow: hidden; display: block; }
+    .reveal-line > span {
+      display: inline-block;
+      transform: translateY(110%);
+      animation: rise .9s var(--easing) forwards;
+    }
+    @keyframes rise { to { transform: translateY(0); } }
+
+    /* ========= STATS STRIP ========= */
+    .stats {
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      background: var(--paper-warm);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .stat {
+      padding: clamp(24px, 4vw, 48px) clamp(20px, 3vw, 32px);
+      border-right: 1px solid var(--ink);
+      position: relative;
+    }
+    .stat:last-child { border-right: 0; }
+    .stat .num-big {
+      font-family: "Big Shoulders Display", sans-serif;
+      font-weight: 800;
+      font-size: clamp(48px, 6vw, 96px);
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+    }
+    @media (max-width: 700px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .stat:nth-child(2) { border-right: 0; }
+      .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--ink); }
+    }
+
+    /* ========= SECTION HEADER ========= */
+    .section-tag {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 20px;
+      align-items: center;
+      padding-top: clamp(56px, 9vh, 112px);
+      padding-bottom: 28px;
+    }
+    .section-tag .rule { height: 1px; background: currentColor; opacity: .25; }
+    .section-title {
+      font-size: clamp(48px, 9vw, 144px);
+      line-height: 0.88;
+      margin: 0 0 24px;
+    }
+
+    /* ========= CATALOG (BLUEPRINT) ========= */
+    .catalog {
+      background: var(--blueprint);
+      color: var(--paper-on-blue);
+      position: relative;
+      padding-bottom: clamp(48px, 8vh, 88px);
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+    }
+    .catalog::before {
+      content: "";
+      position: absolute; inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(79,141,186,0.08) 1px, transparent 1px) 0 0 / 100% 32px,
+        linear-gradient(90deg, rgba(79,141,186,0.08) 1px, transparent 1px) 0 0 / 32px 100%;
+    }
+    .catalog .container { position: relative; }
+    .catalog .section-title { color: var(--paper-on-blue); }
+    .catalog .section-tag .label { color: rgba(221,233,242,0.65); }
+    .catalog .rule { background: rgba(221,233,242,.35); }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(20px, 2.5vw, 36px);
+    }
+    @media (max-width: 880px) {
+      .catalog-grid { grid-template-columns: 1fr; }
+    }
+
+    .product {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(79,141,186,0.45);
+      padding: clamp(24px, 3vw, 40px);
+      position: relative;
+      transition: background .3s var(--easing), border-color .3s var(--easing);
+    }
+    .product:hover {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(221,233,242,0.55);
+    }
+    .product .pmeta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    .product h3 {
+      font-family: "Big Shoulders Display", sans-serif;
+      font-weight: 800;
+      font-size: clamp(36px, 4vw, 56px);
+      line-height: 0.9;
+      letter-spacing: -0.01em;
+      margin: 0 0 16px;
+      color: var(--paper-on-blue);
+    }
+    .product p {
+      max-width: 42ch;
+      line-height: 1.5;
+      color: rgba(221,233,242,0.85);
+      margin: 0 0 24px;
+    }
+    .spec-list {
+      list-style: none;
+      padding: 0; margin: 0;
+      display: grid;
+      gap: 8px;
+    }
+    .spec-list li {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 12px;
+      align-items: baseline;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 13px;
+      padding: 6px 0;
+      border-bottom: 1px dashed rgba(79,141,186,0.3);
+    }
+    .spec-list .k { color: rgba(221,233,242,0.55); text-transform: uppercase; letter-spacing: 0.08em; }
+    .spec-list .v { text-align: right; color: var(--paper-on-blue); font-weight: 500; }
+    .product svg {
+      width: 100%;
+      height: 140px;
+      margin-bottom: 24px;
+    }
+    .product svg .draw-on-view {
+      stroke-dasharray: 600;
+      stroke-dashoffset: 600;
+      transition: stroke-dashoffset 1.6s var(--easing);
+    }
+    .product.in-view svg .draw-on-view {
+      stroke-dashoffset: 0;
+    }
+
+    .product-index {
+      position: absolute;
+      top: -1px; right: -1px;
+      background: var(--paper-on-blue);
+      color: var(--blueprint-deep);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      padding: 6px 12px;
+    }
+
+    /* ========= SPEC TABLE ========= */
+    .specs {
+      padding-top: clamp(56px, 9vh, 112px);
+      padding-bottom: clamp(56px, 9vh, 112px);
+    }
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 14px;
+    }
+    .specs-table th, .specs-table td {
+      border-bottom: 1px solid var(--rule);
+      padding: 18px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .specs-table th {
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--graphite);
+      border-bottom: 2px solid var(--ink);
+    }
+    .specs-table tbody tr {
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity .5s var(--easing), transform .5s var(--easing);
+    }
+    .specs-table.in-view tbody tr { opacity: 1; transform: translateY(0); }
+    .specs-table.in-view tbody tr:nth-child(1) { transition-delay: .05s; }
+    .specs-table.in-view tbody tr:nth-child(2) { transition-delay: .12s; }
+    .specs-table.in-view tbody tr:nth-child(3) { transition-delay: .19s; }
+    .specs-table.in-view tbody tr:nth-child(4) { transition-delay: .26s; }
+    .specs-table.in-view tbody tr:nth-child(5) { transition-delay: .33s; }
+    .specs-table.in-view tbody tr:nth-child(6) { transition-delay: .40s; }
+    .specs-table .num { font-weight: 600; color: var(--ink); }
+    .specs-table .ref { color: var(--accent); }
+
+    /* ========= OBRAS ========= */
+    .obras {
+      background: var(--paper-warm);
+      border-top: 1px solid var(--ink);
+      padding-bottom: clamp(56px, 9vh, 112px);
+    }
+    .obras-list {
+      list-style: none;
+      padding: 0; margin: 0;
+      counter-reset: obra;
+    }
+    .obras-list li {
+      display: grid;
+      grid-template-columns: 56px 1fr auto auto;
+      gap: clamp(16px, 2vw, 32px);
+      align-items: center;
+      padding: clamp(20px, 3vh, 32px) 0;
+      border-bottom: 1px solid var(--rule);
+      counter-increment: obra;
+      cursor: default;
+      transition: padding-left .3s var(--easing), background .3s var(--easing);
+    }
+    .obras-list li:first-child { border-top: 1px solid var(--ink); }
+    .obras-list li:hover {
+      padding-left: 16px;
+      background: rgba(194,65,12,0.03);
+    }
+    .obras-list li::before {
+      content: counter(obra, decimal-leading-zero);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 13px;
+      color: var(--graphite);
+      letter-spacing: 0.05em;
+    }
+    .obra-name {
+      font-family: "Big Shoulders Display", sans-serif;
+      font-weight: 700;
+      font-size: clamp(24px, 3vw, 40px);
+      line-height: 1;
+    }
+    .obra-meta { display: flex; gap: 20px; font-family: "JetBrains Mono", monospace; font-size: 12px; color: var(--graphite); }
+    .obra-arrow {
+      width: 32px; height: 32px;
+      display: grid; place-items: center;
+      transition: transform .3s var(--easing), color .3s var(--easing);
+      color: var(--graphite);
+    }
+    .obras-list li:hover .obra-arrow {
+      transform: translateX(4px);
+      color: var(--accent);
+    }
+    @media (max-width: 720px) {
+      .obras-list li { grid-template-columns: 40px 1fr auto; }
+      .obra-meta { display: none; }
+    }
+
+    /* ========= MANIFESTO ========= */
+    .manifest {
+      border-top: 1px solid var(--ink);
+      padding-bottom: clamp(56px, 9vh, 112px);
+    }
+    .manifest-list {
+      list-style: none; padding: 0; margin: 0;
+      display: grid; gap: 0;
+    }
+    .manifest-list li {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: clamp(20px, 3vw, 56px);
+      padding: clamp(28px, 4vh, 48px) 0;
+      border-bottom: 1px solid var(--ink);
+      align-items: start;
+    }
+    .manifest-list li:first-child { border-top: 1px solid var(--ink); }
+    .manifest-list .m-num {
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size: clamp(18px, 1.6vw, 24px);
+      letter-spacing: 0.02em;
+      color: var(--accent);
+      font-weight: 600;
+      padding-top: 6px;
+    }
+    .manifest-list h3 {
+      font-family: var(--font-display), system-ui, sans-serif;
+      font-weight: var(--display-weight);
+      letter-spacing: var(--display-tracking);
+      font-size: clamp(28px, 3.4vw, 56px);
+      line-height: 0.95;
+      margin: 0 0 12px;
+      text-transform: uppercase;
+      text-wrap: balance;
+    }
+    .manifest-list p {
+      font-size: clamp(15px, 1.2vw, 18px);
+      line-height: 1.5;
+      max-width: 56ch;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+    @media (max-width: 640px) {
+      .manifest-list li { grid-template-columns: 56px 1fr; gap: 14px; }
+      .manifest-list .m-num { font-size: 16px; }
+    }
+
+    /* ========= SPECIMEN ========= */
+    .specimen {
+      border-top: 1px solid var(--ink);
+      padding-bottom: clamp(56px, 9vh, 112px);
+      background: var(--paper);
+    }
+    .specimen-grid {
+      display: grid;
+      grid-template-columns: 1px 1fr;
+      gap: 1px;
+      background: var(--ink);
+      border: 1px solid var(--ink);
+    }
+    .specimen-grid > div {
+      background: var(--paper);
+      padding: clamp(20px, 3vw, 36px);
+    }
+    .specimen-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 24px;
+      align-items: baseline;
+      border-bottom: 1px solid var(--ink);
+      padding: clamp(16px, 2.5vh, 32px) 0;
+    }
+    .specimen-row:last-child { border-bottom: 0; }
+    .specimen-row .lbl {
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--graphite);
+      min-width: 88px;
+    }
+    .specimen-row .glyph {
+      font-family: var(--font-display), system-ui, sans-serif;
+      font-weight: var(--display-weight);
+      letter-spacing: var(--display-tracking);
+      line-height: 0.85;
+      text-transform: uppercase;
+    }
+    .specimen-row.s-xl .glyph { font-size: clamp(72px, 12vw, 200px); }
+    .specimen-row.s-l  .glyph { font-size: clamp(40px, 6vw, 96px); }
+    .specimen-row.s-m  .glyph { font-size: clamp(20px, 2.4vw, 36px); }
+
+    /* ========= CONTACTO ========= */
+    .contact {
+      background: var(--ink);
+      color: var(--paper);
+      padding: clamp(64px, 10vh, 120px) 0 0;
+      border-top: 1px solid var(--ink);
+    }
+    .contact .label { color: rgba(237,230,214,0.55); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: clamp(32px, 4vw, 64px);
+      padding-bottom: clamp(64px, 10vh, 120px);
+    }
+    @media (max-width: 880px) { .contact-grid { grid-template-columns: 1fr; } }
+
+    .contact h2 {
+      font-family: "Big Shoulders Display", sans-serif;
+      font-weight: 900;
+      font-size: clamp(48px, 8vw, 128px);
+      line-height: 0.85;
+      margin: 0 0 32px;
+      letter-spacing: -0.01em;
+    }
+    .contact h2 em {
+      font-style: italic;
+      color: var(--accent-soft);
+    }
+    .contact-channels {
+      display: grid;
+      gap: 0;
+      margin-top: 32px;
+    }
+    .channel {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 18px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(237,230,214,0.15);
+      align-items: center;
+      text-decoration: none;
+      transition: padding-left .25s var(--easing);
+    }
+    .channel:hover { padding-left: 12px; }
+    .channel-label { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: 0.12em; color: rgba(237,230,214,0.5); text-transform: uppercase; }
+    .channel-value {
+      font-family: "Big Shoulders Display", sans-serif;
+      font-weight: 700;
+      font-size: clamp(20px, 2.4vw, 32px);
+      letter-spacing: -0.005em;
+      color: var(--paper);
+      transition: color .2s var(--easing);
+    }
+    .channel:hover .channel-value { color: var(--accent-soft); }
+    .channel-icon {
+      width: 36px; height: 36px;
+      border: 1px solid rgba(237,230,214,0.25);
+      display: grid; place-items: center;
+      color: rgba(237,230,214,0.55);
+    }
+
+    .contact-card {
+      border: 1px solid rgba(237,230,214,0.2);
+      padding: clamp(24px, 3vw, 36px);
+      position: relative;
+      background: rgba(237,230,214,0.02);
+    }
+    .contact-card .pmeta { display: flex; justify-content: space-between; margin-bottom: 24px; }
+    .contact-card h3 {
+      font-family: "Big Shoulders Display", sans-serif;
+      font-weight: 700;
+      font-size: clamp(28px, 3vw, 40px);
+      line-height: 1;
+      margin: 0 0 16px;
+    }
+    .hours {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 6px 16px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 13px;
+      color: rgba(237,230,214,0.8);
+      margin-top: 20px;
+    }
+    .hours .closed { color: rgba(237,230,214,0.35); }
+
+    /* ========= FOOTER (TITLE BLOCK) ========= */
+    .titleblock {
+      border-top: 1px solid rgba(237,230,214,0.15);
+      padding: 32px 0 40px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      color: rgba(237,230,214,0.55);
+      letter-spacing: 0.08em;
+    }
+    .titleblock-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      align-items: end;
+    }
+    .titleblock-grid > div { border-top: 1px solid rgba(237,230,214,0.15); padding-top: 14px; }
+    .titleblock-grid .field-label { display: block; font-size: 9px; margin-bottom: 6px; text-transform: uppercase; }
+    .titleblock-grid .field-value { color: var(--paper); font-size: 13px; letter-spacing: 0; }
+    @media (max-width: 720px) { .titleblock-grid { grid-template-columns: 1fr 1fr; } }
+
+    /* ========= ANIMATION CLASSES (scroll-driven) ========= */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .8s var(--easing), transform .8s var(--easing); }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+    /* Focus rings */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 8px;
+      background: var(--ink);
+      color: var(--paper);
+      padding: 8px 14px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      z-index: 200;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 8px; }
+
+    /* Reduce motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .ticker-track { animation: none; }
+      .hero-svg .draw, .hero-svg .draw-late { stroke-dashoffset: 0; }
+    }
+
+    /* ==================================================================
+       STUDIO TOKENS — overridable by panel
+       ================================================================== */
+    :root {
+      --font-display: "Archivo Black";
+      --font-body: "Inter Tight";
+      --font-mono: "JetBrains Mono";
+      --display-weight: 900;
+      --display-tracking: -0.04em;
+      --grid-size: 64px;
+      --grain-opacity: 0.35;
+      --density-pad: 1;
+      --radius: 0px;
+    }
+    /* Map fonts wherever used (override hardcoded family names) */
+    body { font-family: var(--font-body), system-ui, sans-serif; }
+    .display, .hero-title, .product h3, .obra-name, .stat .num-big,
+    .contact h2, .contact-card h3, .channel-value {
+      font-family: var(--font-display), system-ui, sans-serif !important;
+      font-weight: var(--display-weight) !important;
+      letter-spacing: var(--display-tracking) !important;
+    }
+    .mono, .label, .channel-label, .field-label, .field-value,
+    .hero-coords, .obra-meta, .specs-table, .spec-list li, .ticker-track,
+    .hours, [data-count], .num-big {
+      font-family: var(--font-mono), ui-monospace, monospace !important;
+    }
+    /* Grid + grain overrides */
+    .hero {
+      background:
+        linear-gradient(var(--paper-edge) 1px, transparent 1px) 0 0 / 100% var(--grid-size),
+        linear-gradient(90deg, var(--paper-edge) 1px, transparent 1px) 0 0 / var(--grid-size) 100%,
+        var(--paper);
+    }
+    .grain { opacity: var(--grain-opacity); }
+    /* Radius applied to interactive surfaces */
+    .nav-link, .product, .channel-icon, .contact-card, .studio-fab,
+    .studio-btn, .palette-chip, .studio-chip {
+      border-radius: var(--radius);
+    }
+
+    /* ==================================================================
+       STUDIO — floating control panel
+       ================================================================== */
+    .studio-fab {
+      position: fixed; bottom: 24px; right: 24px; z-index: 198;
+      background: var(--ink); color: var(--paper);
+      border: 1px solid var(--accent);
+      padding: 12px 18px; cursor: pointer;
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: all .25s var(--easing);
+      display: inline-flex; align-items: center; gap: 8px;
+      box-shadow: 0 6px 24px rgba(0,0,0,.25);
+    }
+    .studio-fab .dot {
+      width: 8px; height: 8px; background: var(--accent); border-radius: 50%;
+      animation: pulse 1.6s var(--easing) infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .4; transform: scale(.8); }
+    }
+    .studio-fab:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
+    .studio-open .studio-fab { right: calc(min(420px, 100vw) + 24px); }
+
+    .studio {
+      position: fixed; top: 0; right: 0; bottom: 0;
+      width: min(420px, 100vw);
+      background: #16181D; color: #DDE9F2;
+      z-index: 199;
+      transform: translateX(102%);
+      transition: transform .35s var(--easing);
+      display: flex; flex-direction: column;
+      box-shadow: -10px 0 40px rgba(0,0,0,.5);
+      font-family: "Inter Tight", system-ui, sans-serif;
+    }
+    .studio-open .studio { transform: translateX(0); }
+    .studio-head {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 22px; border-bottom: 1px solid #2A2D33;
+      gap: 16px;
+    }
+    .studio-head h2 {
+      margin: 0;
+      font-family: "Big Shoulders Display", system-ui, sans-serif;
+      font-size: 24px; font-weight: 800; letter-spacing: -0.005em;
+      line-height: 1;
+    }
+    .studio-head .v {
+      color: #6E737B; font-family: "JetBrains Mono", monospace;
+      font-size: 10px; letter-spacing: .14em; margin-top: 4px;
+    }
+    .studio-close {
+      background: transparent; border: 1px solid #34383F; color: #DDE9F2;
+      width: 30px; height: 30px; display: grid; place-items: center;
+      font-family: "JetBrains Mono", monospace; font-size: 13px; cursor: pointer;
+      transition: all .15s;
+    }
+    .studio-close:hover { background: var(--accent); border-color: var(--accent); }
+
+    .studio-body { flex: 1; overflow-y: auto; }
+    .studio-body::-webkit-scrollbar { width: 8px; }
+    .studio-body::-webkit-scrollbar-track { background: #1A1D22; }
+    .studio-body::-webkit-scrollbar-thumb { background: #34383F; }
+
+    .studio details { border-bottom: 1px solid #24272D; }
+    .studio summary {
+      padding: 14px 22px; cursor: pointer; user-select: none; list-style: none;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+      color: #B0B7C0;
+      display: flex; justify-content: space-between; align-items: center;
+      transition: background .15s, color .15s;
+    }
+    .studio summary::-webkit-details-marker { display: none; }
+    .studio summary::after { content: "+"; color: var(--accent); font-size: 16px; transition: transform .2s; }
+    .studio details[open] summary::after { content: "–"; }
+    .studio details[open] summary { color: #fff; background: #1B1E24; border-bottom: 1px solid #24272D; }
+    .studio summary .badge {
+      background: #2A2D33; color: #B0B7C0;
+      padding: 2px 6px; font-size: 9px; margin-left: 8px;
+      border-radius: 2px;
+    }
+
+    .studio-section { padding: 18px 22px 22px; display: grid; gap: 14px; }
+    .studio-row {
+      display: grid; grid-template-columns: 1fr auto; gap: 12px;
+      align-items: center;
+    }
+    .studio-row.full { grid-template-columns: 1fr; }
+    .studio-row label, .studio-row .lbl {
+      font-size: 12px; color: #B0B7C0;
+    }
+    .studio-row .v {
+      font-family: "JetBrains Mono", monospace; font-size: 11px;
+      color: #6E737B; letter-spacing: .05em; min-width: 36px; text-align: right;
+    }
+
+    .studio input[type="color"] {
+      width: 34px; height: 24px; border: 1px solid #34383F; padding: 0;
+      background: #1A1D22; cursor: pointer;
+    }
+    .studio input[type="text"], .studio input[type="number"], .studio textarea, .studio select {
+      background: #1A1D22; border: 1px solid #2D3137; color: #DDE9F2;
+      padding: 7px 10px; font-family: "JetBrains Mono", monospace; font-size: 12px;
+      width: 100%; box-sizing: border-box;
+    }
+    .studio input:focus, .studio textarea:focus, .studio select:focus {
+      outline: 1px solid var(--accent); outline-offset: 1px;
+      border-color: var(--accent);
+    }
+    .studio input[type="range"] {
+      width: 100%; accent-color: var(--accent); height: 18px;
+    }
+    .studio textarea { resize: vertical; min-height: 64px; line-height: 1.5; }
+
+    .studio-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .studio-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      border: 1px solid #2D3137;
+      padding: 6px 10px; cursor: pointer; background: transparent;
+      transition: all .15s;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px; color: #B0B7C0;
+      letter-spacing: .08em; text-transform: uppercase;
+    }
+    .studio-chip:hover { border-color: var(--accent); color: #fff; }
+    .studio-chip.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    .studio-toggle {
+      position: relative; width: 32px; height: 18px;
+      background: #2D3137; border: 0; padding: 0;
+      border-radius: 10px; cursor: pointer;
+      transition: background .2s;
+    }
+    .studio-toggle::after {
+      content: ""; position: absolute; top: 2px; left: 2px;
+      width: 14px; height: 14px; background: #DDE9F2; border-radius: 50%;
+      transition: transform .2s;
+    }
+    .studio-toggle[aria-checked="true"] { background: var(--accent); }
+    .studio-toggle[aria-checked="true"]::after { transform: translateX(14px); }
+
+    .studio-btn {
+      background: transparent; border: 1px solid #2D3137; color: #DDE9F2;
+      padding: 9px 12px; cursor: pointer;
+      font-family: "JetBrains Mono", monospace; font-size: 10px;
+      letter-spacing: .12em; text-transform: uppercase;
+      transition: all .15s;
+    }
+    .studio-btn:hover { background: #1B1E24; border-color: var(--accent); color: #fff; }
+    .studio-btn.primary { background: var(--accent); border-color: var(--accent); }
+    .studio-btn.primary:hover { background: #DC4A1F; }
+    .studio-btn.danger { border-color: #DC4A1F; color: #DC4A1F; }
+    .studio-btn.danger:hover { background: #DC4A1F; color: #fff; }
+
+    .studio-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .studio-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .studio-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+
+    .studio-foot {
+      padding: 14px 22px; border-top: 1px solid #2A2D33;
+      display: flex; gap: 8px;
+      background: #14171B;
+      flex-wrap: wrap;
+    }
+
+    .palette-chip {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      padding: 0; border: 1px solid #2D3137; cursor: pointer;
+      transition: all .15s;
+      background: transparent;
+      overflow: hidden;
+      height: 28px;
+    }
+    .palette-chip:hover { border-color: var(--accent); transform: translateY(-1px); }
+    .palette-chip > b { display: block; height: 100%; }
+
+    .studio-toast {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(20px);
+      background: var(--ink); color: var(--paper);
+      border: 1px solid var(--accent);
+      padding: 10px 18px;
+      font-family: "JetBrains Mono", monospace; font-size: 11px;
+      letter-spacing: .12em; text-transform: uppercase;
+      z-index: 250; opacity: 0; pointer-events: none;
+      transition: all .25s var(--easing);
+    }
+    .studio-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* Style cards (presets) */
+    .styles-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .style-card {
+      border: 1px solid #2D3137;
+      background: transparent;
+      padding: 12px;
+      cursor: pointer;
+      transition: all .2s var(--easing);
+      display: grid;
+      gap: 8px;
+      text-align: left;
+      font-family: "Inter Tight", system-ui, sans-serif;
+      color: #DDE9F2;
+    }
+    .style-card:hover {
+      border-color: var(--accent);
+      background: #1B1E24;
+      transform: translateY(-1px);
+    }
+    .style-card.active {
+      border-color: var(--accent);
+      background: #1B1E24;
+      box-shadow: inset 0 0 0 1px var(--accent);
+    }
+    .style-card .sc-swatches {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: #2D3137;
+      height: 18px;
+      border: 1px solid #2D3137;
+    }
+    .style-card .sc-swatches > b { display: block; }
+    .style-card .sc-name {
+      font-family: "Big Shoulders Display", system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 14px;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+    }
+    .style-card .sc-desc {
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size: 9.5px;
+      letter-spacing: 0.04em;
+      color: #8A9099;
+      line-height: 1.4;
+    }
+
+    /* Body class effects */
+    .effects-invert { filter: invert(1) hue-rotate(180deg); }
+    .effects-sepia { filter: sepia(0.6); }
+    .effects-contrast { filter: contrast(1.4); }
+    .effects-cb-protanopia { filter: url(#cb-prot); }
+    .effects-cb-deuteranopia { filter: url(#cb-deut); }
+    .effects-cb-tritanopia { filter: url(#cb-trit); }
+    .effects-cb-achromatopsia { filter: grayscale(1); }
+    .crosshair, .crosshair * { cursor: crosshair !important; }
+    .no-grid .hero { background: var(--paper) !important; }
+    .no-grain .grain { display: none; }
+    .no-anim *, .no-anim *::before, .no-anim *::after {
+      animation: none !important;
+      transition-duration: .01ms !important;
+    }
+    .anim-slow .hero-svg .draw { animation-duration: 5s !important; }
+    .anim-slow .hero-svg .draw-late { animation-duration: 3s !important; }
+    .anim-slow .reveal-line > span { animation-duration: 2s !important; }
+    .anim-slow .ticker-track { animation-duration: 120s !important; }
+    .anim-fast .hero-svg .draw { animation-duration: 0.9s !important; }
+    .anim-fast .hero-svg .draw-late { animation-duration: 0.5s !important; }
+    .anim-fast .reveal-line > span { animation-duration: 0.4s !important; }
+    .anim-fast .ticker-track { animation-duration: 24s !important; }
+    .no-ticker .ticker { display: none; }
+    .no-north .north-arrow { animation: none; }
+    .print-mode { filter: contrast(1.05) saturate(0.6); }
+    .print-mode::after {
+      content: ""; position: fixed; inset: 0;
+      pointer-events: none; z-index: 90;
+      background:
+        repeating-linear-gradient(0deg, rgba(0,0,0,0) 0, rgba(0,0,0,0) 14px, rgba(0,0,0,.04) 14px, rgba(0,0,0,.04) 15px),
+        repeating-linear-gradient(90deg, rgba(0,0,0,0) 0, rgba(0,0,0,0) 14px, rgba(0,0,0,.04) 14px, rgba(0,0,0,.04) 15px);
+    }
+
+    /* Section hide */
+    .hide-stats .stats { display: none; }
+    .hide-catalog #catalogo { display: none; }
+    .hide-specs .specs { display: none; }
+    .hide-obras .obras { display: none; }
+    .hide-contact #contacto { display: none; }
+
+    /* Density */
+    .density-compact { --density-pad: 0.6; }
+    .density-spacious { --density-pad: 1.4; }
+    .density-compact .hero, .density-compact .specs, .density-compact .obras,
+    .density-compact .catalog, .density-compact .contact {
+      padding-top: calc(clamp(40px, 6vh, 88px) * var(--density-pad));
+      padding-bottom: calc(clamp(32px, 5vh, 64px) * var(--density-pad));
+    }
+    .density-spacious .hero, .density-spacious .specs, .density-spacious .obras,
+    .density-spacious .catalog, .density-spacious .contact {
+      padding-top: calc(clamp(56px, 9vh, 112px) * var(--density-pad));
+      padding-bottom: calc(clamp(56px, 9vh, 112px) * var(--density-pad));
+    }
+
+    /* Edit mode visual cue */
+    .edit-mode [data-edit] {
+      outline: 1px dashed rgba(194,65,12,0.5);
+      outline-offset: 4px;
+      cursor: text;
+    }
+    .edit-mode [data-edit]:focus {
+      outline: 2px solid var(--accent);
+      background: rgba(194,65,12,0.05);
+    }
+
+    @media (max-width: 480px) {
+      .studio { width: 100vw; }
+      .studio-open .studio-fab { right: 16px; bottom: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#catalogo">Saltar para conteúdo</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============= TOP FRAME ============= -->
+  <header class="topframe" role="banner">
+    <div class="container">
+      <div class="topframe-inner">
+        <div class="label num" aria-label="Referência do documento">DOC&nbsp;001 · REV&nbsp;2026.05</div>
+        <div class="ticker" aria-hidden="true">
+          <div class="ticker-track label">
+            <span>V&amp;J&nbsp;FONSECA</span><span>·</span>
+            <span>CONSTRUÇÃO&nbsp;METÁLICA</span><span>·</span>
+            <span>PALMELA&nbsp;38.5704°N&nbsp;8.7493°W</span><span>·</span>
+            <span>EST.&nbsp;2003</span><span>·</span>
+            <span>RESPOSTA&nbsp;&lt;24H</span><span>·</span>
+            <span>V&amp;J&nbsp;FONSECA</span><span>·</span>
+            <span>CONSTRUÇÃO&nbsp;METÁLICA</span><span>·</span>
+            <span>PALMELA&nbsp;38.5704°N&nbsp;8.7493°W</span><span>·</span>
+            <span>EST.&nbsp;2003</span><span>·</span>
+            <span>RESPOSTA&nbsp;&lt;24H</span><span>·</span>
+          </div>
+        </div>
+        <nav class="topframe-nav" aria-label="Principal" style="display:flex; gap:8px;">
+          <a class="nav-link label" href="#catalogo">Catálogo</a>
+          <a class="nav-link cta label" href="#contacto">Pedir orçamento</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============= HERO ============= -->
+  <main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <!-- Top metadata row -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-bottom:clamp(40px, 8vh, 96px);">
+        <div>
+          <div class="label">[ FOLHA · 01 / 07 ]</div>
+          <div class="label" style="margin-top:6px;">>>> ESCALA 1:50</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="label">Cliente · B2B</div>
+          <div class="label" style="margin-top:6px;">Lat&nbsp;38.5704°&nbsp;N · Lng&nbsp;8.7493°&nbsp;W</div>
+        </div>
+      </div>
+
+      <div class="hero-grid">
+        <div>
+          <h1 id="hero-title" class="display hero-title">
+            <span class="reveal-line"><span style="animation-delay:.1s">V</span><span class="ampersand" style="animation-delay:.25s">&amp;</span><span style="animation-delay:.4s">J</span></span>
+            <span class="reveal-line"><span style="animation-delay:.55s">FONSECA</span></span>
+          </h1>
+          <p class="hero-tagline">
+            Construção metálica para quem mede em milímetros.<br>
+            Coberturas, fachadas, vedações e perfis — Palmela, desde&nbsp;2003.
+          </p>
+
+          <dl class="hero-coords mono" style="font-size:12px;">
+            <dt class="label" style="margin:0;">Sede</dt>
+            <dd style="margin:0;">Setúbal · Palmela, Portugal</dd>
+            <dt class="label" style="margin:0;">Mercado</dt>
+            <dd style="margin:0;">Lisboa · Setúbal · Alentejo Litoral</dd>
+            <dt class="label" style="margin:0;">Tipologia</dt>
+            <dd style="margin:0;">B2B · Industrial · Logística · Agrícola</dd>
+          </dl>
+        </div>
+
+        <!-- HERO TECHNICAL DRAWING -->
+        <svg class="hero-svg" viewBox="0 0 400 400" fill="none" stroke="var(--ink)" stroke-width="1" aria-label="Desenho técnico de viga em I com cotas">
+          <g class="fade-in" stroke-width="0.6" opacity="0.4">
+            <path d="M0 20 H20 M20 0 V20"/>
+            <path d="M380 0 V20 M380 20 H400"/>
+            <path d="M0 380 H20 M20 380 V400"/>
+            <path d="M380 380 H400 M380 380 V400"/>
+          </g>
+
+          <rect class="draw" x="40" y="40" width="320" height="320" stroke-width="1.2"/>
+
+          <path class="draw" d="M100 130 L300 130 L300 158 L100 158 Z" stroke-width="1.5"/>
+          <path class="draw" d="M188 158 L212 158 L212 242 L188 242 Z" stroke-width="1.5"/>
+          <path class="draw" d="M100 242 L300 242 L300 270 L100 270 Z" stroke-width="1.5"/>
+
+          <g class="draw-late" stroke-width="0.5" opacity="0.5">
+            <path d="M105 158 L140 130 M125 158 L160 130 M145 158 L180 130 M165 158 L200 130 M185 158 L220 130 M205 158 L240 130 M225 158 L260 130 M245 158 L280 130 M265 158 L298 132 M285 158 L298 152"/>
+            <path d="M105 270 L140 242 M125 270 L160 242 M145 270 L180 242 M165 270 L200 242 M185 270 L220 242 M205 270 L240 242 M225 270 L260 242 M245 270 L280 242 M265 270 L298 244 M285 270 L298 264"/>
+          </g>
+
+          <g class="draw-late" stroke="var(--accent)" stroke-width="0.8">
+            <path d="M100 90 L300 90"/>
+            <path d="M100 86 L100 94 M300 86 L300 94"/>
+            <path d="M100 90 L100 130 M300 90 L300 130" stroke-dasharray="2 3" opacity="0.6"/>
+            <path d="M340 130 L340 270"/>
+            <path d="M336 130 L344 130 M336 270 L344 270"/>
+            <path d="M300 130 L340 130 M300 270 L340 270" stroke-dasharray="2 3" opacity="0.6"/>
+          </g>
+
+          <g class="fade-in" font-family="JetBrains Mono, monospace" font-size="10" fill="var(--accent)">
+            <rect x="180" y="80" width="40" height="14" fill="var(--paper)" stroke="none"/>
+            <text x="200" y="90" text-anchor="middle" alignment-baseline="middle">200&nbsp;mm</text>
+            <rect x="320" y="193" width="40" height="14" fill="var(--paper)" stroke="none"/>
+            <text x="340" y="200" text-anchor="middle" alignment-baseline="middle">140&nbsp;mm</text>
+          </g>
+
+          <g class="fade-in" font-family="JetBrains Mono, monospace" fill="var(--ink)">
+            <line x1="60" y1="320" x2="200" y2="320" stroke-width="0.6"/>
+            <text x="60" y="338" font-size="9" letter-spacing="1.5">SECÇÃO&nbsp;A — A&prime;</text>
+            <text x="60" y="352" font-size="8" letter-spacing="1" fill="var(--graphite)">PERFIL&nbsp;HEB&nbsp;200 · CONFORME&nbsp;EN&nbsp;10025</text>
+          </g>
+
+          <g class="fade-in" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600" fill="var(--accent)">
+            <circle cx="60" cy="200" r="9" fill="var(--paper)" stroke="var(--accent)" stroke-width="1"/>
+            <text x="60" y="200" text-anchor="middle" alignment-baseline="middle">A</text>
+            <circle cx="340" cy="200" r="9" fill="var(--paper)" stroke="var(--accent)" stroke-width="1"/>
+            <text x="340" y="200" text-anchor="middle" alignment-baseline="middle">A&prime;</text>
+          </g>
+
+          <g transform="translate(360, 60)" class="fade-in">
+            <g class="north-arrow">
+              <circle cx="0" cy="0" r="14" fill="var(--paper)" stroke="var(--ink)" stroke-width="0.6"/>
+              <path d="M0 -10 L4 0 L0 -3 L-4 0 Z" fill="var(--ink)"/>
+              <path d="M0 10 L4 0 L0 3 L-4 0 Z" fill="none" stroke="var(--ink)" stroke-width="0.6"/>
+            </g>
+            <text y="-18" font-family="JetBrains Mono" font-size="8" text-anchor="middle" fill="var(--graphite)">N</text>
+          </g>
+        </svg>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:end; margin-top:clamp(40px, 6vh, 64px); gap:24px; flex-wrap:wrap;">
+        <div class="label">↓ Catálogo, Especificações, Obras, Contacto</div>
+        <div class="label" style="text-align:right;">DESENHADO&nbsp;POR · J.&nbsp;FONSECA</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= STATS ============= -->
+  <section class="stats" aria-label="Indicadores">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="label" style="margin-bottom:14px;">Fundada</div>
+          <div class="num-big num"><span data-count="2003">2003</span></div>
+          <div class="mono num" style="font-size:12px; color:var(--graphite); margin-top:8px;">22+ anos no setor</div>
+        </div>
+        <div class="stat">
+          <div class="label" style="margin-bottom:14px;">Linhas</div>
+          <div class="num-big num"><span data-count="11">11</span></div>
+          <div class="mono num" style="font-size:12px; color:var(--graphite); margin-top:8px;">produtos em catálogo</div>
+        </div>
+        <div class="stat">
+          <div class="label" style="margin-bottom:14px;">Resposta</div>
+          <div class="num-big num"><span data-count="24" data-suffix="h">24h</span></div>
+          <div class="mono num" style="font-size:12px; color:var(--graphite); margin-top:8px;">orçamento técnico médio</div>
+        </div>
+        <div class="stat">
+          <div class="label" style="margin-bottom:14px;">Foco</div>
+          <div class="num-big num"><span data-count="100" data-suffix="%">100%</span></div>
+          <div class="mono num" style="font-size:12px; color:var(--graphite); margin-top:8px;">B2B · empresa-a-empresa</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= MANIFESTO ============= -->
+  <section class="manifest" aria-labelledby="manifest-title">
+    <div class="container">
+      <div class="section-tag">
+        <span class="label">[ MANIFESTO / 02 ]</span>
+        <span class="rule"></span>
+        <span class="label">/// CINCO REGRAS DA CASA</span>
+      </div>
+      <h2 id="manifest-title" class="display section-title">Como<br>trabalhamos.</h2>
+
+      <ol class="manifest-list">
+        <li>
+          <span class="m-num">01.</span>
+          <div>
+            <h3>Falamos com quem desenha.</h3>
+            <p>Sem call-center. O técnico que atende o telefone é o mesmo que mede a obra e fecha o orçamento. Resposta em menos de 24&nbsp;horas.</p>
+          </div>
+        </li>
+        <li>
+          <span class="m-num">02.</span>
+          <div>
+            <h3>Stock real, não folheto.</h3>
+            <p>O catálogo só lista o que sai do estaleiro. Painel sandwich, perfil galvanizado e malha eletrosoldada — em armazém ou produção rápida.</p>
+          </div>
+        </li>
+        <li>
+          <span class="m-num">03.</span>
+          <div>
+            <h3>Documento por documento.</h3>
+            <p>Cada entrega vem com ficha técnica, declaração de desempenho (DoP) e certificados RAL. Passa em qualquer fiscalização.</p>
+          </div>
+        </li>
+        <li>
+          <span class="m-num">04.</span>
+          <div>
+            <h3>Sem pena de medir duas vezes.</h3>
+            <p>Visita técnica gratuita em obra. Se a planta tem ambiguidade, vamos lá e levantamos o que é preciso antes de cortar chapa.</p>
+          </div>
+        </li>
+        <li>
+          <span class="m-num">05.</span>
+          <div>
+            <h3>Vinte e dois anos no terreno.</h3>
+            <p>Pavilhões, naves, vedações e recintos desde 2003. O mesmo nome no telefone, a mesma morada em Palmela.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============= CATÁLOGO ============= -->
+  <section id="catalogo" class="catalog" aria-labelledby="cat-title">
+    <div class="container">
+      <div class="section-tag">
+        <span class="label">[ CATÁLOGO / 03 ]</span>
+        <span class="rule"></span>
+        <span class="label">>>> FOLHA 03 / 07 · ESCALA 1:20</span>
+      </div>
+      <h2 id="cat-title" class="display section-title">Catálogo<br>técnico.</h2>
+      <p style="max-width:48ch; color:rgba(221,233,242,.75); margin:0 0 clamp(40px, 5vh, 56px); font-size:18px; line-height:1.5;">
+        Quatro famílias de produto para cobrir, fechar, dividir e estruturar.
+        Tudo certificado, em stock ou produção rápida.
+      </p>
+
+      <div class="catalog-grid">
+
+        <!-- 01 COBERTURAS -->
+        <article class="product">
+          <div class="product-index">001</div>
+          <div class="pmeta">
+            <span class="label label-light">Cobertura</span>
+            <span class="label label-light">EN&nbsp;14509</span>
+          </div>
+          <svg viewBox="0 0 300 100" fill="none" stroke="var(--paper-on-blue)" stroke-width="1.2" aria-hidden="true">
+            <path class="draw-on-view" d="M10 40 L290 40 L290 60 L10 60 Z"/>
+            <path class="draw-on-view" d="M10 40 L290 40" stroke="var(--blueprint-line)"/>
+            <path class="draw-on-view" d="M10 60 L290 60" stroke="var(--blueprint-line)"/>
+            <g class="draw-on-view" stroke-width="0.4" opacity="0.6">
+              <path d="M20 42 L20 58 M40 42 L40 58 M60 42 L60 58 M80 42 L80 58 M100 42 L100 58 M120 42 L120 58 M140 42 L140 58 M160 42 L160 58 M180 42 L180 58 M200 42 L200 58 M220 42 L220 58 M240 42 L240 58 M260 42 L260 58 M280 42 L280 58"/>
+            </g>
+            <path class="draw-on-view" d="M10 40 L40 28 L70 40 L100 28 L130 40 L160 28 L190 40 L220 28 L250 40 L280 28 L290 40" stroke="var(--paper-on-blue)" stroke-width="1.5"/>
+            <path class="draw-on-view" d="M10 80 L290 80" stroke="var(--accent-soft)" stroke-width="0.6"/>
+            <path class="draw-on-view" d="M10 76 L10 84 M290 76 L290 84" stroke="var(--accent-soft)" stroke-width="0.6"/>
+            <text x="150" y="76" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="var(--accent-soft)" stroke="none">L&nbsp;até&nbsp;13.500&nbsp;mm</text>
+          </svg>
+          <h3>Coberturas</h3>
+          <p>Painéis sandwich, imitação de telha, alveolares e térmicos. Para naves industriais, pavilhões agrícolas e logística.</p>
+          <ul class="spec-list mono">
+            <li><span class="k">Esp.</span><span></span><span class="v">30 — 200&nbsp;mm</span></li>
+            <li><span class="k">Núcleo</span><span></span><span class="v">PIR · PUR · Lã&nbsp;Mineral</span></li>
+            <li><span class="k">λ térmico</span><span></span><span class="v">0.022&nbsp;W/m·K</span></li>
+            <li><span class="k">Reação fogo</span><span></span><span class="v">B-s2,d0 · A2-s1,d0</span></li>
+            <li><span class="k">Comprimento</span><span></span><span class="v">≤&nbsp;13.500&nbsp;mm</span></li>
+          </ul>
+        </article>
+
+        <!-- 02 FACHADAS -->
+        <article class="product">
+          <div class="product-index">002</div>
+          <div class="pmeta">
+            <span class="label label-light">Fachada</span>
+            <span class="label label-light">EN&nbsp;14782</span>
+          </div>
+          <svg viewBox="0 0 300 100" fill="none" stroke="var(--paper-on-blue)" stroke-width="1.2" aria-hidden="true">
+            <g class="draw-on-view">
+              <rect x="10" y="20" width="58" height="60" />
+              <rect x="74" y="20" width="58" height="60" />
+              <rect x="138" y="20" width="58" height="60" />
+              <rect x="202" y="20" width="58" height="60" />
+            </g>
+            <g class="draw-on-view" fill="var(--accent-soft)" stroke="none">
+              <circle cx="20" cy="30" r="1.5"/>
+              <circle cx="58" cy="30" r="1.5"/>
+              <circle cx="20" cy="70" r="1.5"/>
+              <circle cx="58" cy="70" r="1.5"/>
+              <circle cx="84" cy="30" r="1.5"/>
+              <circle cx="122" cy="30" r="1.5"/>
+              <circle cx="84" cy="70" r="1.5"/>
+              <circle cx="122" cy="70" r="1.5"/>
+            </g>
+            <g class="draw-on-view" stroke="var(--blueprint-line)" stroke-width="0.6">
+              <path d="M68 20 L68 80 M132 20 L132 80 M196 20 L196 80"/>
+            </g>
+          </svg>
+          <h3>Fachadas</h3>
+          <p>Sistemas de fixação visível e oculta, chapas lacadas mono e bi-face. Acabamento RAL completo.</p>
+          <ul class="spec-list mono">
+            <li><span class="k">Fixação</span><span></span><span class="v">Visível · Oculta</span></li>
+            <li><span class="k">Espessura</span><span></span><span class="v">0.5 — 1.0&nbsp;mm</span></li>
+            <li><span class="k">Lacagem</span><span></span><span class="v">Poliéster 25&nbsp;µm</span></li>
+            <li><span class="k">Garantia cor</span><span></span><span class="v">10 anos</span></li>
+            <li><span class="k">Catálogo RAL</span><span></span><span class="v">Standard · Premium</span></li>
+          </ul>
+        </article>
+
+        <!-- 03 VEDAÇÃO -->
+        <article class="product">
+          <div class="product-index">003</div>
+          <div class="pmeta">
+            <span class="label label-light">Vedação</span>
+            <span class="label label-light">EN&nbsp;10223</span>
+          </div>
+          <svg viewBox="0 0 300 100" fill="none" stroke="var(--paper-on-blue)" stroke-width="1.2" aria-hidden="true">
+            <g class="draw-on-view" stroke-width="0.8">
+              <path d="M30 20 L30 80 M60 20 L60 80 M90 20 L90 80 M120 20 L120 80 M150 20 L150 80 M180 20 L180 80 M210 20 L210 80 M240 20 L240 80 M270 20 L270 80"/>
+              <path d="M10 32 L290 32 M10 50 L290 50 M10 68 L290 68"/>
+            </g>
+            <g class="draw-on-view" stroke-width="2">
+              <rect x="14" y="10" width="6" height="80" fill="var(--paper-on-blue)" opacity="0.85"/>
+              <rect x="280" y="10" width="6" height="80" fill="var(--paper-on-blue)" opacity="0.85"/>
+            </g>
+            <path class="draw-on-view" d="M0 90 L300 90" stroke="var(--accent-soft)" stroke-width="0.8"/>
+            <g class="draw-on-view" stroke="var(--accent-soft)" stroke-width="0.4">
+              <path d="M5 92 L0 96 M15 92 L10 96 M25 92 L20 96 M35 92 L30 96 M45 92 L40 96 M55 92 L50 96 M65 92 L60 96 M75 92 L70 96 M85 92 L80 96 M95 92 L90 96 M105 92 L100 96 M115 92 L110 96 M125 92 L120 96 M135 92 L130 96 M145 92 L140 96 M155 92 L150 96 M165 92 L160 96 M175 92 L170 96 M185 92 L180 96 M195 92 L190 96 M205 92 L200 96 M215 92 L210 96 M225 92 L220 96 M235 92 L230 96 M245 92 L240 96 M255 92 L250 96 M265 92 L260 96 M275 92 L270 96 M285 92 L280 96 M295 92 L290 96"/>
+            </g>
+          </svg>
+          <h3>Vedação</h3>
+          <p>Painéis de perímetro robustos e malha eletrosoldada. Para fronteiras industriais, agrícolas e de segurança.</p>
+          <ul class="spec-list mono">
+            <li><span class="k">Tipo</span><span></span><span class="v">Painel · Malha</span></li>
+            <li><span class="k">Altura</span><span></span><span class="v">1.0 — 2.5&nbsp;m</span></li>
+            <li><span class="k">Diâmetro fio</span><span></span><span class="v">3 — 5&nbsp;mm</span></li>
+            <li><span class="k">Acabamento</span><span></span><span class="v">Galvanizado · PVC</span></li>
+            <li><span class="k">Postes</span><span></span><span class="v">Ø48 · 60 × 40 · 80 × 60</span></li>
+          </ul>
+        </article>
+
+        <!-- 04 PERFIS -->
+        <article class="product">
+          <div class="product-index">004</div>
+          <div class="pmeta">
+            <span class="label label-light">Perfis Metálicos</span>
+            <span class="label label-light">EN&nbsp;10162</span>
+          </div>
+          <svg viewBox="0 0 300 100" fill="none" stroke="var(--paper-on-blue)" stroke-width="1.5" aria-hidden="true">
+            <g class="draw-on-view">
+              <path d="M30 70 L30 50 L20 50 L20 30 L50 30 L50 50 L40 50 L40 70 Z"/>
+              <text x="35" y="86" font-family="JetBrains Mono" font-size="8" text-anchor="middle" fill="var(--blueprint-line)" stroke="none">Ω</text>
+            </g>
+            <g class="draw-on-view">
+              <path d="M120 30 L120 70 L160 70 L160 30 L155 30 L155 65 L125 65 L125 30 Z"/>
+              <text x="140" y="86" font-family="JetBrains Mono" font-size="8" text-anchor="middle" fill="var(--blueprint-line)" stroke="none">U</text>
+            </g>
+            <g class="draw-on-view">
+              <path d="M240 30 L240 70 L280 70 L280 65 L245 65 L245 35 L280 35 L280 30 Z"/>
+              <text x="260" y="86" font-family="JetBrains Mono" font-size="8" text-anchor="middle" fill="var(--blueprint-line)" stroke="none">C</text>
+            </g>
+            <path class="draw-on-view" d="M85 20 L85 80 M195 20 L195 80" stroke="var(--blueprint-line)" stroke-width="0.4" stroke-dasharray="2 3"/>
+          </svg>
+          <h3>Perfis metálicos</h3>
+          <p>Ómega, U e C galvanizados a quente. Estrutura para coberturas, divisórias e revestimentos.</p>
+          <ul class="spec-list mono">
+            <li><span class="k">Ómega</span><span></span><span class="v">25/35 · 30/40 · 35/50</span></li>
+            <li><span class="k">U galv.</span><span></span><span class="v">40 · 50 · 70 · 80&nbsp;mm</span></li>
+            <li><span class="k">C galv.</span><span></span><span class="v">100 · 150 · 200&nbsp;mm</span></li>
+            <li><span class="k">Espessura</span><span></span><span class="v">1.0 — 3.0&nbsp;mm</span></li>
+            <li><span class="k">Comprimento</span><span></span><span class="v">por medida</span></li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= ESPECIFICAÇÕES ============= -->
+  <section class="specs" aria-labelledby="spec-title">
+    <div class="container">
+      <div class="section-tag">
+        <span class="label">[ ESPECIFICAÇÕES / 04 ]</span>
+        <span class="rule"></span>
+        <span class="label">>>> FOLHA 04 / 07 · TABELA DE REFERÊNCIA</span>
+      </div>
+      <h2 id="spec-title" class="display section-title">Especificações<br>técnicas.</h2>
+
+      <table class="specs-table" data-animate-rows>
+        <thead>
+          <tr>
+            <th style="width:8%;">Ref.</th>
+            <th style="width:24%;">Produto</th>
+            <th style="width:20%;">Norma</th>
+            <th style="width:20%;">Espessura</th>
+            <th style="width:14%;">Largura útil</th>
+            <th style="width:14%;">Acabamento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="ref num">SW-PIR</td>
+            <td>Painel sandwich PIR cobertura</td>
+            <td>EN&nbsp;14509</td>
+            <td class="num">40 · 60 · 80 · 100&nbsp;mm</td>
+            <td class="num">1.000&nbsp;mm</td>
+            <td>Lacado RAL</td>
+          </tr>
+          <tr>
+            <td class="ref num">SW-LM</td>
+            <td>Painel sandwich lã mineral</td>
+            <td>EN&nbsp;14509</td>
+            <td class="num">50 · 80 · 100 · 120&nbsp;mm</td>
+            <td class="num">1.000&nbsp;mm</td>
+            <td>Lacado · Inox</td>
+          </tr>
+          <tr>
+            <td class="ref num">FA-OC</td>
+            <td>Chapa lacada bi-face fixação oculta</td>
+            <td>EN&nbsp;14782</td>
+            <td class="num">0.6 · 0.7 · 0.8&nbsp;mm</td>
+            <td class="num">1.100&nbsp;mm</td>
+            <td>Poliéster 25µm</td>
+          </tr>
+          <tr>
+            <td class="ref num">VD-PA</td>
+            <td>Painel de vedação eletrosoldado</td>
+            <td>EN&nbsp;10223</td>
+            <td class="num">Ø&nbsp;4 · 5&nbsp;mm</td>
+            <td class="num">2.500&nbsp;mm</td>
+            <td>Galv. · PVC verde</td>
+          </tr>
+          <tr>
+            <td class="ref num">PF-Ω</td>
+            <td>Perfil ómega galvanizado</td>
+            <td>EN&nbsp;10162</td>
+            <td class="num">1.0 · 1.5 · 2.0&nbsp;mm</td>
+            <td class="num">25 — 50&nbsp;mm</td>
+            <td>Galv. a quente</td>
+          </tr>
+          <tr>
+            <td class="ref num">PF-C</td>
+            <td>Perfil C galvanizado estrutural</td>
+            <td>EN&nbsp;10162</td>
+            <td class="num">1.5 · 2.0 · 3.0&nbsp;mm</td>
+            <td class="num">100 — 200&nbsp;mm</td>
+            <td>Galv. a quente</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="mono" style="font-size:11px; color:var(--graphite); margin-top:24px; max-width:60ch;">
+        Tabela&nbsp;01 · Resumo de família. Especificações completas, ensaios e fichas técnicas individuais entregues com cada orçamento (RAL, ETA, DoP).
+      </p>
+    </div>
+  </section>
+
+  <!-- ============= OBRAS ============= -->
+  <section class="obras" aria-labelledby="obras-title">
+    <div class="container">
+      <div class="section-tag">
+        <span class="label">[ OBRAS / 05 ]</span>
+        <span class="rule"></span>
+        <span class="label">>>> FOLHA 05 / 07 · MAPA DE INTERVENÇÃO</span>
+      </div>
+      <h2 id="obras-title" class="display section-title">Obras de<br>referência.</h2>
+      <p style="max-width:50ch; color:var(--graphite); margin:0 0 clamp(32px, 5vh, 56px); font-size:18px; line-height:1.5;">
+        Doze projetos selecionados na faixa Lisboa — Setúbal — Alentejo Litoral.
+        Cada um com a sua escala, prazo e exigência.
+      </p>
+
+      <ul class="obras-list reveal">
+        <li>
+          <span class="obra-name">Pavilhão&nbsp;logístico · Marateca</span>
+          <span class="obra-meta mono"><span>4.200&nbsp;m²</span><span>Cobertura&nbsp;+&nbsp;Fachada</span><span>2024</span></span>
+          <span class="obra-arrow" aria-hidden="true">→</span>
+        </li>
+        <li>
+          <span class="obra-name">Centro de distribuição · Palmela</span>
+          <span class="obra-meta mono"><span>6.800&nbsp;m²</span><span>Painel SW-PIR&nbsp;100</span><span>2024</span></span>
+          <span class="obra-arrow" aria-hidden="true">→</span>
+        </li>
+        <li>
+          <span class="obra-name">Complexo desportivo · Pinhal Novo</span>
+          <span class="obra-meta mono"><span>2.100&nbsp;m²</span><span>Cobertura&nbsp;arqueada</span><span>2023</span></span>
+          <span class="obra-arrow" aria-hidden="true">→</span>
+        </li>
+        <li>
+          <span class="obra-name">Nave industrial alimentar · Setúbal</span>
+          <span class="obra-meta mono"><span>3.400&nbsp;m²</span><span>SW-LM&nbsp;100 · Inox</span><span>2023</span></span>
+          <span class="obra-arrow" aria-hidden="true">→</span>
+        </li>
+        <li>
+          <span class="obra-name">Quinta vinícola · Vendas&nbsp;Novas</span>
+          <span class="obra-meta mono"><span>1.600&nbsp;m²</span><span>Telha&nbsp;cerâmica imitação</span><span>2023</span></span>
+          <span class="obra-arrow" aria-hidden="true">→</span>
+        </li>
+        <li>
+          <span class="obra-name">Armazém oficina auto · Alcochete</span>
+          <span class="obra-meta mono"><span>980&nbsp;m²</span><span>Sandwich&nbsp;+&nbsp;chapa lacada</span><span>2022</span></span>
+          <span class="obra-arrow" aria-hidden="true">→</span>
+        </li>
+        <li>
+          <span class="obra-name">Vedação perímetro logístico · Azambuja</span>
+          <span class="obra-meta mono"><span>1.200&nbsp;m</span><span>Painel&nbsp;Ø5 + postes&nbsp;60×40</span><span>2022</span></span>
+          <span class="obra-arrow" aria-hidden="true">→</span>
+        </li>
+        <li>
+          <span class="obra-name">Pavilhão agropecuário · Évora</span>
+          <span class="obra-meta mono"><span>2.800&nbsp;m²</span><span>Cobertura&nbsp;ventilada</span><span>2022</span></span>
+          <span class="obra-arrow" aria-hidden="true">→</span>
+        </li>
+        <li>
+          <span class="obra-name">Estrutura comercial · Almada</span>
+          <span class="obra-meta mono"><span>1.450&nbsp;m²</span><span>Fachada&nbsp;ventilada oculta</span><span>2021</span></span>
+          <span class="obra-arrow" aria-hidden="true">→</span>
+        </li>
+        <li>
+          <span class="obra-name">Recinto hípico · Montijo</span>
+          <span class="obra-meta mono"><span>2.300&nbsp;m²</span><span>Cobertura&nbsp;arqueada + perfis</span><span>2021</span></span>
+          <span class="obra-arrow" aria-hidden="true">→</span>
+        </li>
+        <li>
+          <span class="obra-name">Naves serralharia · Quinta&nbsp;do&nbsp;Anjo</span>
+          <span class="obra-meta mono"><span>1.900&nbsp;m²</span><span>Estrutura&nbsp;C&nbsp;200 + cobertura</span><span>2020</span></span>
+          <span class="obra-arrow" aria-hidden="true">→</span>
+        </li>
+        <li>
+          <span class="obra-name">Centro técnico municipal · Moita</span>
+          <span class="obra-meta mono"><span>1.100&nbsp;m²</span><span>Cobertura&nbsp;+ vedação completa</span><span>2020</span></span>
+          <span class="obra-arrow" aria-hidden="true">→</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============= SPECIMEN ============= -->
+  <section class="specimen" aria-labelledby="specimen-title">
+    <div class="container">
+      <div class="section-tag">
+        <span class="label">[ SPECIMEN / 06 ]</span>
+        <span class="rule"></span>
+        <span class="label">/// FAMÍLIA TIPOGRÁFICA · DISPLAY</span>
+      </div>
+      <h2 id="specimen-title" class="display section-title">A&nbsp;letra<br>fala&nbsp;sozinha.</h2>
+
+      <div class="specimen-grid" role="presentation">
+        <div></div>
+        <div>
+          <div class="specimen-row s-xl">
+            <span class="lbl">A&nbsp;Z&nbsp;Ω</span>
+            <span class="glyph">VJF</span>
+          </div>
+          <div class="specimen-row s-l">
+            <span class="lbl">DÍGITOS</span>
+            <span class="glyph mono num">38°34&prime;13&Prime;N · 2003 — 2026</span>
+          </div>
+          <div class="specimen-row s-m">
+            <span class="lbl">CASE</span>
+            <span class="glyph">CONSTRUÇÃO METÁLICA · PALMELA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= CONTACTO ============= -->
+  <section id="contacto" class="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="section-tag" style="color:var(--paper); padding-top:0;">
+        <span class="label">[ CONTACTO / 07 ]</span>
+        <span class="rule" style="background:rgba(244,244,240,.3);"></span>
+        <span class="label">>>> PEDIDO DE ORÇAMENTO</span>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <h2 id="contact-title" class="display">Diga<br>o&nbsp;que&nbsp;<em>precisa</em>.<br>Em&nbsp;24h<br>tem&nbsp;preço.</h2>
+          <p style="max-width:42ch; color:rgba(237,230,214,0.7); font-size:18px; line-height:1.55; margin-top:24px;">
+            Atendimento técnico direto, sem intermediários. Mande o memorial, a planta ou só
+            uma fotografia do estaleiro — respondemos com proposta orçamentada.
+          </p>
+
+          <div class="contact-channels">
+            <a class="channel" href="tel:+351263079366">
+              <span class="channel-icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 4 Q3 3 4 3 L6 3 Q7 3 7 4 L7.5 6 Q7.5 7 6.5 7.5 L6 8 Q7 10 9 11 L9.5 10.5 Q10 9.5 11 9.5 L13 10 Q14 10 14 11 L14 13 Q14 14 13 14 Q7 14 3 10 Q3 6 3 4 Z"/></svg>
+              </span>
+              <div>
+                <div class="channel-label">Geral · Fixo</div>
+                <div class="channel-value">+351&nbsp;263&nbsp;079&nbsp;366</div>
+              </div>
+              <span class="label" style="color:rgba(237,230,214,0.4);">→</span>
+            </a>
+            <a class="channel" href="tel:+351916641573">
+              <span class="channel-icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2" width="8" height="12" rx="1.5"/><circle cx="8" cy="12" r=".6" fill="currentColor"/></svg>
+              </span>
+              <div>
+                <div class="channel-label">Comercial · Móvel</div>
+                <div class="channel-value">+351&nbsp;916&nbsp;641&nbsp;573</div>
+              </div>
+              <span class="label" style="color:rgba(237,230,214,0.4);">→</span>
+            </a>
+            <a class="channel" href="mailto:jf@vjfonseca.com">
+              <span class="channel-icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="3.5" width="12" height="9"/><path d="M2 4 L8 9 L14 4"/></svg>
+              </span>
+              <div>
+                <div class="channel-label">Orçamentos · Email</div>
+                <div class="channel-value">jf@vjfonseca.com</div>
+              </div>
+              <span class="label" style="color:rgba(237,230,214,0.4);">→</span>
+            </a>
+          </div>
+        </div>
+
+        <aside class="contact-card">
+          <div class="pmeta">
+            <span class="label" style="color:rgba(237,230,214,0.55);">Estaleiro · Sede</span>
+            <span class="label" style="color:rgba(237,230,214,0.55);">REF · GEO-001</span>
+          </div>
+
+          <h3>Setúbal · Palmela</h3>
+          <p class="mono num" style="font-size:13px; color:rgba(237,230,214,0.7); margin:0 0 24px; line-height:1.6;">
+            38°&nbsp;34&prime;&nbsp;13&Prime;&nbsp;N<br>
+            08°&nbsp;44&prime;&nbsp;57&Prime;&nbsp;W
+          </p>
+
+          <svg viewBox="0 0 240 140" fill="none" stroke="rgba(237,230,214,0.35)" stroke-width="0.6" aria-hidden="true" style="width:100%; height:auto; margin-bottom:16px;">
+            <path d="M0 30 Q40 20 80 35 Q120 50 160 40 Q200 35 240 50" stroke="rgba(237,230,214,0.5)" stroke-width="1"/>
+            <path d="M40 110 Q80 100 120 110 Q160 115 200 100" stroke="rgba(237,230,214,0.4)" stroke-width="0.8"/>
+            <path d="M0 130 L240 130" stroke-dasharray="2 3" />
+            <g>
+              <circle cx="115" cy="78" r="3" fill="var(--accent-soft)" stroke="none"/>
+              <circle cx="115" cy="78" r="9" stroke="var(--accent-soft)" stroke-width="0.8" fill="none"/>
+              <line x1="115" y1="60" x2="115" y2="69" stroke="var(--accent-soft)"/>
+              <text x="125" y="72" font-family="JetBrains Mono" font-size="9" fill="var(--accent-soft)" stroke="none">PALMELA</text>
+            </g>
+            <g>
+              <circle cx="115" cy="105" r="1.5" fill="rgba(237,230,214,0.55)" stroke="none"/>
+              <text x="125" y="108" font-family="JetBrains Mono" font-size="8" fill="rgba(237,230,214,0.55)" stroke="none">SETÚBAL</text>
+            </g>
+            <g>
+              <circle cx="55" cy="40" r="1.5" fill="rgba(237,230,214,0.5)" stroke="none"/>
+              <text x="62" y="38" font-family="JetBrains Mono" font-size="8" fill="rgba(237,230,214,0.5)" stroke="none">LISBOA</text>
+            </g>
+            <g transform="translate(220,18)">
+              <circle r="6" fill="none" stroke="rgba(237,230,214,0.45)"/>
+              <path d="M0 -4 L2 0 L0 -1.5 L-2 0 Z" fill="rgba(237,230,214,0.7)"/>
+              <text y="-9" font-family="JetBrains Mono" font-size="6" text-anchor="middle" fill="rgba(237,230,214,0.5)">N</text>
+            </g>
+          </svg>
+
+          <div class="hours">
+            <span>Seg</span><span>08:00 — 18:00</span>
+            <span>Ter</span><span>08:00 — 18:00</span>
+            <span>Qua</span><span>08:00 — 18:00</span>
+            <span>Qui</span><span>08:00 — 18:00</span>
+            <span>Sex</span><span>08:00 — 18:00</span>
+            <span class="closed">Sáb</span><span class="closed">Encerrado</span>
+            <span class="closed">Dom</span><span class="closed">Encerrado</span>
+          </div>
+        </aside>
+      </div>
+
+      <!-- ============= TITLE BLOCK ============= -->
+      <div class="titleblock">
+        <div class="titleblock-grid">
+          <div><span class="field-label">Projeto</span><span class="field-value">V&amp;J Fonseca · Folha técnica</span></div>
+          <div><span class="field-label">Cliente</span><span class="field-value">B2B · Construção metálica</span></div>
+          <div><span class="field-label">Desenhado</span><span class="field-value">J. Fonseca · 2026</span></div>
+          <div><span class="field-label">Revisão</span><span class="field-value">2026.05 · vigente</span></div>
+          <div><span class="field-label">Documento</span><span class="field-value">DOC-001 · Rev.05</span></div>
+          <div><span class="field-label">Folhas</span><span class="field-value">04 / 04</span></div>
+          <div><span class="field-label">Escala</span><span class="field-value">Variável · 1:50 · 1:20</span></div>
+          <div><span class="field-label">Verificado</span><span class="field-value">© 2003 — 2026</span></div>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:32px; padding-top:18px; border-top:1px solid rgba(237,230,214,0.15); flex-wrap:wrap; gap:16px;">
+          <span>V&amp;J FONSECA · Construção metálica · Palmela, Portugal</span>
+          <span style="display:flex; gap:24px;">
+            <a href="#main" style="color:rgba(237,230,214,0.5); text-decoration:none;">↑ Topo</a>
+            <span>Privacidade</span>
+            <span>Termos</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- ============= JS: scroll observers, counters ============= -->
+  <script>
+    (function() {
+      const io = new IntersectionObserver((entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            e.target.classList.add('in-view');
+            io.unobserve(e.target);
+          }
+        }
+      }, { threshold: 0.18 });
+
+      document.querySelectorAll('.product, .specs-table[data-animate-rows], .reveal').forEach(el => io.observe(el));
+
+      const counterIO = new IntersectionObserver((entries) => {
+        for (const e of entries) {
+          if (!e.isIntersecting) continue;
+          const el = e.target;
+          const target = parseInt(el.dataset.count, 10);
+          const suffix = el.dataset.suffix || '';
+          const isYear = target >= 1900 && target <= 2100;
+          const duration = 1400;
+          const start = performance.now();
+          const startVal = isYear ? target - 30 : 0;
+          const ease = (t) => 1 - Math.pow(1 - t, 3);
+
+          function step(now) {
+            const t = Math.min(1, (now - start) / duration);
+            const v = Math.round(startVal + (target - startVal) * ease(t));
+            el.textContent = v + (t === 1 ? suffix : '');
+            if (t < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+          counterIO.unobserve(el);
+        }
+      }, { threshold: 0.5 });
+
+      document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+    })();
+  </script>
+
+  <!-- ============================================================
+       STUDIO — live customization panel
+       ============================================================ -->
+
+  <!-- Color blindness SVG filters -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="cb-prot"><feColorMatrix type="matrix" values="0.567,0.433,0,0,0  0.558,0.442,0,0,0  0,0.242,0.758,0,0  0,0,0,1,0"/></filter>
+      <filter id="cb-deut"><feColorMatrix type="matrix" values="0.625,0.375,0,0,0  0.7,0.3,0,0,0  0,0.3,0.7,0,0  0,0,0,1,0"/></filter>
+      <filter id="cb-trit"><feColorMatrix type="matrix" values="0.95,0.05,0,0,0  0,0.433,0.567,0,0  0,0.475,0.525,0,0  0,0,0,1,0"/></filter>
+    </defs>
+  </svg>
+
+  <button class="studio-fab" id="studio-fab" aria-label="Abrir Studio" aria-controls="studio">
+    <span class="dot" aria-hidden="true"></span>
+    <span>Studio</span>
+  </button>
+
+  <aside class="studio" id="studio" aria-label="Painel de customização">
+    <div class="studio-head">
+      <div>
+        <h2>STUDIO</h2>
+        <div class="v">CONTROLO · 50+ AJUSTES</div>
+      </div>
+      <button class="studio-close" id="studio-close" aria-label="Fechar">×</button>
+    </div>
+
+    <div class="studio-body">
+
+      <!-- ============ STYLE PRESETS ============ -->
+      <details open>
+        <summary>00 · Estilo <span class="badge">8</span></summary>
+        <div class="studio-section">
+          <div class="lbl" style="font-size:10px; color:#6E737B; letter-spacing:.14em; text-transform:uppercase;">Aplica tudo de uma vez · paleta + fontes + densidade</div>
+          <div class="styles-grid" id="styles-grid"></div>
+        </div>
+      </details>
+
+      <!-- ============ THEME ============ -->
+      <details>
+        <summary>01 · Paleta <span class="badge">15</span></summary>
+        <div class="studio-section">
+
+          <div class="lbl" style="font-size:10px; color:#6E737B; letter-spacing:.14em; text-transform:uppercase;">Presets</div>
+          <div class="studio-grid-3" id="palette-presets"></div>
+
+          <div class="studio-row full">
+            <button class="studio-btn" id="palette-random">⚄ Paleta aleatória</button>
+          </div>
+
+          <div class="lbl" style="font-size:10px; color:#6E737B; letter-spacing:.14em; text-transform:uppercase; margin-top:6px;">Cores individuais</div>
+
+          <div class="studio-row">
+            <label for="c-paper">Papel (fundo)</label>
+            <input type="color" id="c-paper" data-var="--paper" value="#EDE6D6"/>
+          </div>
+          <div class="studio-row">
+            <label for="c-paperWarm">Papel quente</label>
+            <input type="color" id="c-paperWarm" data-var="--paper-warm" value="#E4DCC9"/>
+          </div>
+          <div class="studio-row">
+            <label for="c-ink">Tinta (texto)</label>
+            <input type="color" id="c-ink" data-var="--ink" value="#0E1218"/>
+          </div>
+          <div class="studio-row">
+            <label for="c-graphite">Grafite</label>
+            <input type="color" id="c-graphite" data-var="--graphite" value="#5C6370"/>
+          </div>
+          <div class="studio-row">
+            <label for="c-blueprint">Blueprint</label>
+            <input type="color" id="c-blueprint" data-var="--blueprint" value="#0C2741"/>
+          </div>
+          <div class="studio-row">
+            <label for="c-paperOnBlue">Texto sobre blueprint</label>
+            <input type="color" id="c-paperOnBlue" data-var="--paper-on-blue" value="#DDE9F2"/>
+          </div>
+          <div class="studio-row">
+            <label for="c-accent">Acento</label>
+            <input type="color" id="c-accent" data-var="--accent" value="#C2410C"/>
+          </div>
+          <div class="studio-row">
+            <label for="c-accentSoft">Acento soft</label>
+            <input type="color" id="c-accentSoft" data-var="--accent-soft" value="#DC4A1F"/>
+          </div>
+        </div>
+      </details>
+
+      <!-- ============ TYPOGRAPHY ============ -->
+      <details>
+        <summary>02 · Tipografia <span class="badge">7</span></summary>
+        <div class="studio-section">
+          <div class="studio-row">
+            <label for="font-display">Display</label>
+            <select id="font-display" style="max-width:180px;">
+              <option>Big Shoulders Display</option>
+              <option>Anton</option>
+              <option>Bebas Neue</option>
+              <option>Archivo Black</option>
+              <option>Oswald</option>
+              <option>Saira Condensed</option>
+              <option>Bowlby One</option>
+              <option>Russo One</option>
+              <option>Black Ops One</option>
+              <option>Syne</option>
+              <option>Fraunces</option>
+              <option>Outfit</option>
+            </select>
+          </div>
+          <div class="studio-row">
+            <label for="font-body">Corpo</label>
+            <select id="font-body" style="max-width:180px;">
+              <option>Inter Tight</option>
+              <option>Geist</option>
+              <option>Outfit</option>
+              <option>Manrope</option>
+              <option>Plus Jakarta Sans</option>
+              <option>DM Sans</option>
+            </select>
+          </div>
+          <div class="studio-row">
+            <label for="font-mono">Mono</label>
+            <select id="font-mono" style="max-width:180px;">
+              <option>JetBrains Mono</option>
+              <option>IBM Plex Mono</option>
+              <option>Space Mono</option>
+              <option>Fira Code</option>
+              <option>Roboto Mono</option>
+            </select>
+          </div>
+          <div class="studio-row">
+            <label for="display-weight">Peso display</label>
+            <span class="v"><span id="display-weight-v">900</span></span>
+          </div>
+          <div class="studio-row full">
+            <input type="range" id="display-weight" min="400" max="900" step="100" value="900"/>
+          </div>
+          <div class="studio-row">
+            <label for="display-tracking">Tracking display</label>
+            <span class="v"><span id="display-tracking-v">-1%</span></span>
+          </div>
+          <div class="studio-row full">
+            <input type="range" id="display-tracking" min="-30" max="20" step="1" value="-10"/>
+          </div>
+        </div>
+      </details>
+
+      <!-- ============ LAYOUT ============ -->
+      <details>
+        <summary>03 · Layout <span class="badge">7</span></summary>
+        <div class="studio-section">
+          <div class="lbl" style="font-size:10px; color:#6E737B; letter-spacing:.14em; text-transform:uppercase;">Densidade</div>
+          <div class="studio-chips" id="density-chips">
+            <button class="studio-chip" data-density="compact">Compact</button>
+            <button class="studio-chip active" data-density="normal">Normal</button>
+            <button class="studio-chip" data-density="spacious">Spacious</button>
+          </div>
+
+          <div class="studio-row">
+            <label for="radius">Border radius</label>
+            <span class="v"><span id="radius-v">0</span>px</span>
+          </div>
+          <div class="studio-row full">
+            <input type="range" id="radius" min="0" max="32" step="1" value="0"/>
+          </div>
+
+          <div class="studio-row">
+            <label for="grid-toggle">Grelha do hero</label>
+            <button class="studio-toggle" id="grid-toggle" aria-checked="true" aria-label="Toggle grelha"></button>
+          </div>
+          <div class="studio-row">
+            <label for="grid-size">Tamanho grelha</label>
+            <span class="v"><span id="grid-size-v">64</span>px</span>
+          </div>
+          <div class="studio-row full">
+            <input type="range" id="grid-size" min="16" max="160" step="4" value="64"/>
+          </div>
+
+          <div class="studio-row">
+            <label for="grain-toggle">Granulado</label>
+            <button class="studio-toggle" id="grain-toggle" aria-checked="true" aria-label="Toggle grain"></button>
+          </div>
+          <div class="studio-row">
+            <label for="grain-opacity">Intensidade</label>
+            <span class="v"><span id="grain-opacity-v">35</span>%</span>
+          </div>
+          <div class="studio-row full">
+            <input type="range" id="grain-opacity" min="0" max="100" step="1" value="35"/>
+          </div>
+        </div>
+      </details>
+
+      <!-- ============ CONTENT ============ -->
+      <details>
+        <summary>04 · Conteúdo <span class="badge">12</span></summary>
+        <div class="studio-section">
+          <div class="lbl" style="font-size:10px; color:#6E737B; letter-spacing:.14em; text-transform:uppercase;">Título principal (4 caracteres)</div>
+          <div class="studio-grid-4">
+            <input type="text" id="title-1" maxlength="3" value="V"/>
+            <input type="text" id="title-2" maxlength="3" value="&"/>
+            <input type="text" id="title-3" maxlength="3" value="J"/>
+            <input type="text" id="title-4" maxlength="12" value="FONSECA"/>
+          </div>
+
+          <div class="studio-row full">
+            <label for="tagline">Subtítulo</label>
+          </div>
+          <div class="studio-row full">
+            <textarea id="tagline">Construção metálica para quem mede em milímetros.
+Coberturas, fachadas, vedações e perfis — Palmela, desde 2003.</textarea>
+          </div>
+
+          <div class="studio-row full">
+            <label for="phone-fixed">Telefone fixo</label>
+          </div>
+          <div class="studio-row full">
+            <input type="text" id="phone-fixed" value="+351 263 079 366"/>
+          </div>
+          <div class="studio-row full">
+            <label for="phone-mobile">Telefone móvel</label>
+          </div>
+          <div class="studio-row full">
+            <input type="text" id="phone-mobile" value="+351 916 641 573"/>
+          </div>
+          <div class="studio-row full">
+            <label for="email">Email</label>
+          </div>
+          <div class="studio-row full">
+            <input type="text" id="email" value="jf@vjfonseca.com"/>
+          </div>
+
+          <div class="lbl" style="font-size:10px; color:#6E737B; letter-spacing:.14em; text-transform:uppercase; margin-top:8px;">Mostrar secções</div>
+          <div class="studio-row">
+            <label>Estatísticas</label>
+            <button class="studio-toggle" data-section="stats" aria-checked="true"></button>
+          </div>
+          <div class="studio-row">
+            <label>Catálogo</label>
+            <button class="studio-toggle" data-section="catalog" aria-checked="true"></button>
+          </div>
+          <div class="studio-row">
+            <label>Especificações</label>
+            <button class="studio-toggle" data-section="specs" aria-checked="true"></button>
+          </div>
+          <div class="studio-row">
+            <label>Obras</label>
+            <button class="studio-toggle" data-section="obras" aria-checked="true"></button>
+          </div>
+          <div class="studio-row">
+            <label>Contacto</label>
+            <button class="studio-toggle" data-section="contact" aria-checked="true"></button>
+          </div>
+
+          <div class="studio-row full">
+            <button class="studio-btn" id="edit-mode-toggle">✎ Editar texto inline</button>
+          </div>
+        </div>
+      </details>
+
+      <!-- ============ MOTION ============ -->
+      <details>
+        <summary>05 · Animações <span class="badge">5</span></summary>
+        <div class="studio-section">
+          <div class="lbl" style="font-size:10px; color:#6E737B; letter-spacing:.14em; text-transform:uppercase;">Velocidade</div>
+          <div class="studio-chips" id="anim-chips">
+            <button class="studio-chip" data-anim="off">Off</button>
+            <button class="studio-chip" data-anim="slow">Slow</button>
+            <button class="studio-chip active" data-anim="normal">Normal</button>
+            <button class="studio-chip" data-anim="fast">Fast</button>
+          </div>
+          <div class="studio-row">
+            <label for="ticker-toggle">Ticker no header</label>
+            <button class="studio-toggle" id="ticker-toggle" aria-checked="true"></button>
+          </div>
+          <div class="studio-row">
+            <label for="north-toggle">Bússola rotativa</label>
+            <button class="studio-toggle" id="north-toggle" aria-checked="true"></button>
+          </div>
+          <div class="studio-row full">
+            <button class="studio-btn" id="replay-anim">↻ Repetir animação de entrada</button>
+          </div>
+        </div>
+      </details>
+
+      <!-- ============ EFFECTS ============ -->
+      <details>
+        <summary>06 · Efeitos <span class="badge">8</span></summary>
+        <div class="studio-section">
+          <div class="studio-row">
+            <label for="cursor-toggle">Cursor crosshair</label>
+            <button class="studio-toggle" id="cursor-toggle" aria-checked="false"></button>
+          </div>
+          <div class="studio-row">
+            <label for="print-toggle">Modo impressão</label>
+            <button class="studio-toggle" id="print-toggle" aria-checked="false"></button>
+          </div>
+          <div class="studio-row">
+            <label for="invert-toggle">Inverter cores</label>
+            <button class="studio-toggle" id="invert-toggle" aria-checked="false"></button>
+          </div>
+          <div class="studio-row">
+            <label for="sepia-toggle">Sépia</label>
+            <button class="studio-toggle" id="sepia-toggle" aria-checked="false"></button>
+          </div>
+          <div class="studio-row">
+            <label for="contrast-toggle">Alto contraste</label>
+            <button class="studio-toggle" id="contrast-toggle" aria-checked="false"></button>
+          </div>
+
+          <div class="lbl" style="font-size:10px; color:#6E737B; letter-spacing:.14em; text-transform:uppercase;">Daltonismo (simulação)</div>
+          <div class="studio-chips" id="cb-chips">
+            <button class="studio-chip active" data-cb="none">Nenhum</button>
+            <button class="studio-chip" data-cb="protanopia">Prot.</button>
+            <button class="studio-chip" data-cb="deuteranopia">Deut.</button>
+            <button class="studio-chip" data-cb="tritanopia">Trit.</button>
+            <button class="studio-chip" data-cb="achromatopsia">Acro.</button>
+          </div>
+        </div>
+      </details>
+
+      <!-- ============ STATE ============ -->
+      <details>
+        <summary>07 · Sessão & Export <span class="badge">6</span></summary>
+        <div class="studio-section">
+          <div class="studio-row full">
+            <button class="studio-btn primary" id="save-preset">💾 Guardar preset</button>
+          </div>
+          <div class="studio-row full">
+            <select id="preset-list">
+              <option value="">— presets guardados —</option>
+            </select>
+          </div>
+          <div class="studio-grid-2">
+            <button class="studio-btn" id="load-preset">↥ Carregar</button>
+            <button class="studio-btn danger" id="delete-preset">✕ Apagar</button>
+          </div>
+
+          <div class="studio-row full" style="margin-top:8px;">
+            <button class="studio-btn primary" id="export-html">⬇ Exportar HTML</button>
+          </div>
+          <div class="studio-grid-2">
+            <button class="studio-btn" id="copy-css">⎘ Copiar CSS</button>
+            <button class="studio-btn" id="share-url">🔗 Link partilha</button>
+          </div>
+
+          <div class="studio-row full" style="margin-top:14px;">
+            <button class="studio-btn danger" id="reset-all">↺ Reset total</button>
+          </div>
+        </div>
+      </details>
+
+    </div>
+
+    <div class="studio-foot">
+      <span class="lbl" style="font-size:10px; color:#6E737B; letter-spacing:.14em; text-transform:uppercase; align-self:center;">v0.1 · live</span>
+      <span style="margin-left:auto; font-family: 'JetBrains Mono', monospace; font-size:10px; color:#6E737B;">
+        ⌘ + K · open
+      </span>
+    </div>
+  </aside>
+
+  <div class="studio-toast" id="studio-toast" role="status" aria-live="polite"></div>
+
+  <script id="studio-script">
+  (function() {
+    'use strict';
+
+    // ===========================================================
+    // CONFIG
+    // ===========================================================
+    const STORAGE_KEY = 'vjf-studio-v2';
+    const PRESETS_KEY = 'vjf-studio-presets-v1';
+
+    const PALETTES = [
+      { name: 'Swiss Print', paper:'#F4F4F0', paperWarm:'#EAE8E3', paperEdge:'#D8D6D0', ink:'#050505', graphite:'#6B6B68', blueprint:'#050505', paperOnBlue:'#F4F4F0', accent:'#E61919', accentSoft:'#E61919' },
+      { name: 'Blueprint',  paper:'#EDE6D6', paperWarm:'#E4DCC9', paperEdge:'#D8CFB8', ink:'#0E1218', graphite:'#5C6370', blueprint:'#0C2741', paperOnBlue:'#DDE9F2', accent:'#C2410C', accentSoft:'#DC4A1F' },
+      { name: 'Carbon',     paper:'#F5F5F5', paperWarm:'#EAEAEA', paperEdge:'#D8D8D8', ink:'#0A0A0A', graphite:'#666666', blueprint:'#171717', paperOnBlue:'#EDEDED', accent:'#DC2626', accentSoft:'#EF4444' },
+      { name: 'Pantone',    paper:'#FAFAF7', paperWarm:'#EFEDE2', paperEdge:'#DCD9CB', ink:'#161616', graphite:'#5A5A5A', blueprint:'#0F1626', paperOnBlue:'#FAFAF7', accent:'#FF6B00', accentSoft:'#FF8533' },
+      { name: 'Mediterrâneo', paper:'#F2EBDB', paperWarm:'#E8DEC5', paperEdge:'#D4C7A8', ink:'#0A1628', graphite:'#4A6378', blueprint:'#143256', paperOnBlue:'#F2EBDB', accent:'#E76F51', accentSoft:'#F4A261' },
+      { name: 'Olive',      paper:'#EFE9D5', paperWarm:'#E2D9BC', paperEdge:'#C9BD92', ink:'#1A1F0E', graphite:'#5C6444', blueprint:'#3D4A1E', paperOnBlue:'#EFE9D5', accent:'#9C2A20', accentSoft:'#B8392E' },
+      { name: 'Mono',       paper:'#F8F8F8', paperWarm:'#EFEFEF', paperEdge:'#DDDDDD', ink:'#000000', graphite:'#555555', blueprint:'#1A1A1A', paperOnBlue:'#F8F8F8', accent:'#000000', accentSoft:'#333333' },
+    ];
+
+    const STYLES = [
+      {
+        id:'swiss-print', name:'Swiss Print', desc:'Newsprint · Archivo Black · hazard red',
+        paper:'#F4F4F0', paperWarm:'#EAE8E3', paperEdge:'#D8D6D0', ink:'#050505', graphite:'#6B6B68',
+        blueprint:'#050505', paperOnBlue:'#F4F4F0', accent:'#E61919', accentSoft:'#E61919',
+        fontDisplay:'Archivo Black', fontBody:'Inter Tight', fontMono:'JetBrains Mono',
+        displayWeight:900, displayTracking:-40, density:'normal', radius:0,
+      },
+      {
+        id:'blueprint', name:'Engineering Blueprint', desc:'Cream · azul técnico · Big Shoulders',
+        paper:'#EDE6D6', paperWarm:'#E4DCC9', paperEdge:'#D8CFB8', ink:'#0E1218', graphite:'#5C6370',
+        blueprint:'#0C2741', paperOnBlue:'#DDE9F2', accent:'#C2410C', accentSoft:'#DC4A1F',
+        fontDisplay:'Big Shoulders Display', fontBody:'Inter Tight', fontMono:'JetBrains Mono',
+        displayWeight:900, displayTracking:-10, density:'normal', radius:0,
+      },
+      {
+        id:'carbon', name:'Carbon Black', desc:'Anton · cinza · vermelho industrial',
+        paper:'#F5F5F5', paperWarm:'#EAEAEA', paperEdge:'#D8D8D8', ink:'#0A0A0A', graphite:'#666666',
+        blueprint:'#171717', paperOnBlue:'#EDEDED', accent:'#DC2626', accentSoft:'#EF4444',
+        fontDisplay:'Anton', fontBody:'Inter Tight', fontMono:'JetBrains Mono',
+        displayWeight:400, displayTracking:-20, density:'normal', radius:0,
+      },
+      {
+        id:'editorial', name:'Editorial Serif', desc:'Fraunces · papel quente · terracota',
+        paper:'#F5EFE2', paperWarm:'#EAE0CB', paperEdge:'#D5C9AB', ink:'#1A1612', graphite:'#5E534A',
+        blueprint:'#3D3128', paperOnBlue:'#F5EFE2', accent:'#A0522D', accentSoft:'#B8693D',
+        fontDisplay:'Fraunces', fontBody:'Inter Tight', fontMono:'JetBrains Mono',
+        displayWeight:800, displayTracking:-30, density:'spacious', radius:0,
+      },
+      {
+        id:'crt', name:'CRT Terminal', desc:'Phosphor green · tudo monoespaçado',
+        paper:'#0A0F0A', paperWarm:'#10180F', paperEdge:'#1A2418', ink:'#33FF66', graphite:'#1F8A3A',
+        blueprint:'#0A0F0A', paperOnBlue:'#33FF66', accent:'#FFB000', accentSoft:'#FFD659',
+        fontDisplay:'JetBrains Mono', fontBody:'JetBrains Mono', fontMono:'JetBrains Mono',
+        displayWeight:600, displayTracking:0, density:'normal', radius:0,
+      },
+      {
+        id:'soft-apple', name:'Soft Apple', desc:'Off-white · radius suave · Outfit',
+        paper:'#FAFAF8', paperWarm:'#F1F1EE', paperEdge:'#E5E5E1', ink:'#1D1D1F', graphite:'#86868B',
+        blueprint:'#1D1D1F', paperOnBlue:'#F5F5F7', accent:'#0066CC', accentSoft:'#0A84FF',
+        fontDisplay:'Outfit', fontBody:'Outfit', fontMono:'JetBrains Mono',
+        displayWeight:700, displayTracking:-20, density:'spacious', radius:14,
+      },
+      {
+        id:'safety-yellow', name:'Safety Yellow', desc:'Industrial · amarelo de obra · Bebas',
+        paper:'#FFFCEB', paperWarm:'#FFF6C9', paperEdge:'#F5E68A', ink:'#0A0A0A', graphite:'#5C5C5C',
+        blueprint:'#0A0A0A', paperOnBlue:'#FFFCEB', accent:'#FFD60A', accentSoft:'#FFE53D',
+        fontDisplay:'Bebas Neue', fontBody:'Inter Tight', fontMono:'JetBrains Mono',
+        displayWeight:400, displayTracking:0, density:'normal', radius:0,
+      },
+      {
+        id:'newspaper', name:'Newspaper', desc:'Jornal antigo · Bowlby · vermelho clássico',
+        paper:'#F5F0E8', paperWarm:'#EAE3D5', paperEdge:'#D5C8B0', ink:'#1C1815', graphite:'#6B6258',
+        blueprint:'#1C1815', paperOnBlue:'#F5F0E8', accent:'#B91C1C', accentSoft:'#DC2626',
+        fontDisplay:'Bowlby One', fontBody:'Inter Tight', fontMono:'IBM Plex Mono',
+        displayWeight:400, displayTracking:-20, density:'normal', radius:0,
+      },
+    ];
+
+    const FONT_URLS = {
+      'Big Shoulders Display': 'Big+Shoulders+Display:wght@500;700;800;900',
+      'Anton': 'Anton',
+      'Bebas Neue': 'Bebas+Neue',
+      'Archivo Black': 'Archivo+Black',
+      'Oswald': 'Oswald:wght@500;600;700',
+      'Saira Condensed': 'Saira+Condensed:wght@600;700;800;900',
+      'Bowlby One': 'Bowlby+One',
+      'Russo One': 'Russo+One',
+      'Black Ops One': 'Black+Ops+One',
+      'Syne': 'Syne:wght@700;800',
+      'Fraunces': 'Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900',
+      'Inter Tight': 'Inter+Tight:wght@400;500;600;700',
+      'Geist': 'Geist:wght@400;500;600;700',
+      'Outfit': 'Outfit:wght@400;500;600;700',
+      'Manrope': 'Manrope:wght@400;500;600;700',
+      'Plus Jakarta Sans': 'Plus+Jakarta+Sans:wght@400;500;600;700',
+      'DM Sans': 'DM+Sans:wght@400;500;600;700',
+      'JetBrains Mono': 'JetBrains+Mono:wght@400;500;600',
+      'IBM Plex Mono': 'IBM+Plex+Mono:wght@400;500;600',
+      'Space Mono': 'Space+Mono:wght@400;700',
+      'Fira Code': 'Fira+Code:wght@400;500;600',
+      'Roboto Mono': 'Roboto+Mono:wght@400;500;600',
+    };
+
+    const DEFAULTS = {
+      ...PALETTES[0],
+      fontDisplay: 'Archivo Black',
+      fontBody: 'Inter Tight',
+      fontMono: 'JetBrains Mono',
+      displayWeight: 900,
+      displayTracking: -40,
+      density: 'normal',
+      radius: 0,
+      grid: true, gridSize: 64,
+      grain: true, grainOpacity: 35,
+      title1: 'V', title2: '&', title3: 'J', title4: 'FONSECA',
+      tagline: 'Construção metálica para quem mede em milímetros.\nCoberturas, fachadas, vedações e perfis — Palmela, desde 2003.',
+      phoneFixed: '+351 263 079 366',
+      phoneMobile: '+351 916 641 573',
+      email: 'jf@vjfonseca.com',
+      sections: { stats:true, catalog:true, specs:true, obras:true, contact:true },
+      anim: 'normal',
+      ticker: true, north: true,
+      cursor: false, print: false, invert: false, sepia: false, contrast: false,
+      cb: 'none',
+    };
+
+    let state = {};
+
+    // ===========================================================
+    // HELPERS
+    // ===========================================================
+    const $ = (s) => document.querySelector(s);
+    const $$ = (s) => Array.from(document.querySelectorAll(s));
+
+    function setVar(name, value) {
+      document.documentElement.style.setProperty(name, value);
+    }
+
+    function loadFont(name) {
+      if (!FONT_URLS[name]) return;
+      const id = 'gf-' + name.replace(/\W/g, '');
+      if (document.getElementById(id)) return;
+      const link = document.createElement('link');
+      link.id = id; link.rel = 'stylesheet';
+      link.href = 'https://fonts.googleapis.com/css2?family=' + FONT_URLS[name] + '&display=swap';
+      document.head.appendChild(link);
+    }
+
+    function toast(msg) {
+      const t = $('#studio-toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      clearTimeout(toast._tid);
+      toast._tid = setTimeout(() => t.classList.remove('show'), 2200);
+    }
+
+    function persist() {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+    }
+
+    function loadPersisted() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) return JSON.parse(raw);
+      } catch(e) {}
+      return null;
+    }
+
+    // ===========================================================
+    // APPLIERS — write state → DOM
+    // ===========================================================
+    function applyPalette(p) {
+      setVar('--paper', p.paper);
+      setVar('--paper-warm', p.paperWarm);
+      setVar('--paper-edge', p.paperEdge);
+      setVar('--ink', p.ink);
+      setVar('--ink-soft', p.ink);
+      setVar('--rule', p.ink);
+      setVar('--graphite', p.graphite);
+      setVar('--blueprint', p.blueprint);
+      setVar('--blueprint-deep', p.blueprint);
+      setVar('--paper-on-blue', p.paperOnBlue);
+      setVar('--accent', p.accent);
+      setVar('--accent-soft', p.accentSoft);
+      // Sync color inputs
+      const m = { paper:'#c-paper', paperWarm:'#c-paperWarm', ink:'#c-ink', graphite:'#c-graphite', blueprint:'#c-blueprint', paperOnBlue:'#c-paperOnBlue', accent:'#c-accent', accentSoft:'#c-accentSoft' };
+      for (const k in m) {
+        const el = $(m[k]); if (el) el.value = p[k];
+      }
+    }
+
+    function applyFonts() {
+      loadFont(state.fontDisplay); loadFont(state.fontBody); loadFont(state.fontMono);
+      setVar('--font-display', `"${state.fontDisplay}"`);
+      setVar('--font-body', `"${state.fontBody}"`);
+      setVar('--font-mono', `"${state.fontMono}"`);
+      setVar('--display-weight', state.displayWeight);
+      setVar('--display-tracking', (state.displayTracking / 1000) + 'em');
+    }
+
+    function applyLayout() {
+      setVar('--radius', state.radius + 'px');
+      setVar('--grid-size', state.gridSize + 'px');
+      setVar('--grain-opacity', (state.grainOpacity / 100));
+      const html = document.documentElement;
+      html.classList.toggle('no-grid', !state.grid);
+      html.classList.toggle('no-grain', !state.grain);
+      html.classList.remove('density-compact', 'density-normal', 'density-spacious');
+      html.classList.add('density-' + state.density);
+    }
+
+    function applyContent() {
+      const titles = $$('#hero-title .reveal-line > span');
+      const vals = [state.title1, state.title2, state.title3, state.title4];
+      titles.forEach((el, i) => { if (vals[i] !== undefined) el.textContent = vals[i]; });
+      const tagline = $('.hero-tagline');
+      if (tagline) tagline.innerHTML = state.tagline.split('\n').map(s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;')).join('<br>');
+      const channels = $$('.contact-channels .channel');
+      if (channels[0]) {
+        channels[0].href = 'tel:' + state.phoneFixed.replace(/\s/g, '');
+        channels[0].querySelector('.channel-value').textContent = state.phoneFixed;
+      }
+      if (channels[1]) {
+        channels[1].href = 'tel:' + state.phoneMobile.replace(/\s/g, '');
+        channels[1].querySelector('.channel-value').textContent = state.phoneMobile;
+      }
+      if (channels[2]) {
+        channels[2].href = 'mailto:' + state.email;
+        channels[2].querySelector('.channel-value').textContent = state.email;
+      }
+      const html = document.documentElement;
+      ['stats','catalog','specs','obras','contact'].forEach(s => {
+        html.classList.toggle('hide-'+s, !state.sections[s]);
+      });
+    }
+
+    function applyMotion() {
+      const html = document.documentElement;
+      html.classList.remove('no-anim', 'anim-slow', 'anim-fast');
+      if (state.anim === 'off') html.classList.add('no-anim');
+      else if (state.anim === 'slow') html.classList.add('anim-slow');
+      else if (state.anim === 'fast') html.classList.add('anim-fast');
+      html.classList.toggle('no-ticker', !state.ticker);
+      html.classList.toggle('no-north', !state.north);
+    }
+
+    function applyEffects() {
+      const html = document.documentElement;
+      html.classList.toggle('crosshair', state.cursor);
+      html.classList.toggle('print-mode', state.print);
+      html.classList.toggle('effects-invert', state.invert);
+      html.classList.toggle('effects-sepia', state.sepia);
+      html.classList.toggle('effects-contrast', state.contrast);
+      html.classList.remove('effects-cb-protanopia','effects-cb-deuteranopia','effects-cb-tritanopia','effects-cb-achromatopsia');
+      if (state.cb !== 'none') html.classList.add('effects-cb-' + state.cb);
+    }
+
+    function applyAll() {
+      applyPalette({ paper: state.paper, paperWarm: state.paperWarm, paperEdge: state.paperEdge, ink: state.ink, graphite: state.graphite, blueprint: state.blueprint, paperOnBlue: state.paperOnBlue, accent: state.accent, accentSoft: state.accentSoft });
+      applyFonts();
+      applyLayout();
+      applyContent();
+      applyMotion();
+      applyEffects();
+      // sync UI inputs
+      $('#font-display').value = state.fontDisplay;
+      $('#font-body').value = state.fontBody;
+      $('#font-mono').value = state.fontMono;
+      $('#display-weight').value = state.displayWeight;
+      $('#display-weight-v').textContent = state.displayWeight;
+      $('#display-tracking').value = state.displayTracking;
+      $('#display-tracking-v').textContent = (state.displayTracking / 10).toFixed(1) + '%';
+      $('#radius').value = state.radius;
+      $('#radius-v').textContent = state.radius;
+      $('#grid-size').value = state.gridSize;
+      $('#grid-size-v').textContent = state.gridSize;
+      $('#grain-opacity').value = state.grainOpacity;
+      $('#grain-opacity-v').textContent = state.grainOpacity;
+      $('#title-1').value = state.title1; $('#title-2').value = state.title2;
+      $('#title-3').value = state.title3; $('#title-4').value = state.title4;
+      $('#tagline').value = state.tagline;
+      $('#phone-fixed').value = state.phoneFixed;
+      $('#phone-mobile').value = state.phoneMobile;
+      $('#email').value = state.email;
+      $$('#density-chips .studio-chip').forEach(c => c.classList.toggle('active', c.dataset.density === state.density));
+      $$('#anim-chips .studio-chip').forEach(c => c.classList.toggle('active', c.dataset.anim === state.anim));
+      $$('#cb-chips .studio-chip').forEach(c => c.classList.toggle('active', c.dataset.cb === state.cb));
+      $('#grid-toggle').setAttribute('aria-checked', state.grid);
+      $('#grain-toggle').setAttribute('aria-checked', state.grain);
+      $('#ticker-toggle').setAttribute('aria-checked', state.ticker);
+      $('#north-toggle').setAttribute('aria-checked', state.north);
+      $('#cursor-toggle').setAttribute('aria-checked', state.cursor);
+      $('#print-toggle').setAttribute('aria-checked', state.print);
+      $('#invert-toggle').setAttribute('aria-checked', state.invert);
+      $('#sepia-toggle').setAttribute('aria-checked', state.sepia);
+      $('#contrast-toggle').setAttribute('aria-checked', state.contrast);
+      $$('[data-section]').forEach(b => b.setAttribute('aria-checked', state.sections[b.dataset.section]));
+      persist();
+    }
+
+    // ===========================================================
+    // PALETTE PRESETS UI
+    // ===========================================================
+    function buildStyles() {
+      const wrap = $('#styles-grid');
+      if (!wrap) return;
+      wrap.innerHTML = '';
+      STYLES.forEach(s => {
+        const btn = document.createElement('button');
+        btn.className = 'style-card';
+        btn.dataset.styleId = s.id;
+        btn.innerHTML = '<div class="sc-swatches">' +
+          '<b style="background:'+s.paper+'"></b>' +
+          '<b style="background:'+s.ink+'"></b>' +
+          '<b style="background:'+s.blueprint+'"></b>' +
+          '<b style="background:'+s.accent+'"></b>' +
+        '</div>' +
+        '<div class="sc-name">'+s.name+'</div>' +
+        '<div class="sc-desc">'+s.desc+'</div>';
+        btn.addEventListener('click', () => applyStyle(s));
+        wrap.appendChild(btn);
+      });
+    }
+
+    function applyStyle(s) {
+      const keys = ['paper','paperWarm','paperEdge','ink','graphite','blueprint','paperOnBlue','accent','accentSoft','fontDisplay','fontBody','fontMono','displayWeight','displayTracking','density','radius'];
+      keys.forEach(k => { if (s[k] !== undefined) state[k] = s[k]; });
+      applyAll();
+      $$('#styles-grid .style-card').forEach(c => c.classList.toggle('active', c.dataset.styleId === s.id));
+      toast('Estilo · ' + s.name);
+    }
+
+    function buildPalettePresets() {
+      const wrap = $('#palette-presets');
+      wrap.innerHTML = '';
+      PALETTES.forEach(p => {
+        const btn = document.createElement('button');
+        btn.className = 'palette-chip';
+        btn.title = p.name;
+        btn.innerHTML = `<b style="background:${p.paper}"></b><b style="background:${p.ink}"></b><b style="background:${p.blueprint}"></b><b style="background:${p.accent}"></b>`;
+        btn.addEventListener('click', () => {
+          Object.assign(state, p);
+          applyAll();
+          toast('Paleta · ' + p.name);
+        });
+        wrap.appendChild(btn);
+      });
+    }
+
+    // ===========================================================
+    // RANDOM PALETTE
+    // ===========================================================
+    function randomPalette() {
+      const baseHue = Math.floor(Math.random() * 360);
+      const accentHue = (baseHue + 180 + (Math.random() * 30 - 15)) % 360;
+      const hsl = (h, s, l) => {
+        const r = (l + s * Math.min(l, 1-l)) | 0;
+        return `hsl(${h}, ${s}%, ${l}%)`;
+      };
+      const isDark = Math.random() > 0.7;
+      state.paper       = hsl(baseHue, 12 + Math.random()*15, isDark ? 8 + Math.random()*8 : 88 + Math.random()*7);
+      state.paperWarm   = hsl(baseHue, 14, isDark ? 13 : 84);
+      state.paperEdge   = hsl(baseHue, 18, isDark ? 22 : 76);
+      state.ink         = hsl(baseHue, 30, isDark ? 92 : 8);
+      state.graphite    = hsl(baseHue, 8, isDark ? 60 : 40);
+      state.blueprint   = hsl((baseHue + 200) % 360, 55, 20);
+      state.paperOnBlue = hsl(baseHue, 20, 90);
+      state.accent      = hsl(accentHue, 75, 45);
+      state.accentSoft  = hsl(accentHue, 70, 55);
+      applyAll();
+      toast('Paleta aleatória');
+    }
+
+    // ===========================================================
+    // EVENT WIRING
+    // ===========================================================
+    function wire() {
+      // Open/close
+      $('#studio-fab').addEventListener('click', openStudio);
+      $('#studio-close').addEventListener('click', closeStudio);
+      // Cmd/Ctrl + K
+      document.addEventListener('keydown', (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+          e.preventDefault();
+          document.documentElement.classList.contains('studio-open') ? closeStudio() : openStudio();
+        }
+        if (e.key === 'Escape') closeStudio();
+      });
+
+      // Color pickers
+      $$('input[type="color"][data-var]').forEach(input => {
+        input.addEventListener('input', () => {
+          const k = input.id.replace('c-', '');
+          state[k] = input.value;
+          setVar(input.dataset.var, input.value);
+          if (input.dataset.var === '--ink') { setVar('--ink-soft', input.value); setVar('--rule', input.value); }
+          if (input.dataset.var === '--blueprint') setVar('--blueprint-deep', input.value);
+          persist();
+        });
+      });
+
+      $('#palette-random').addEventListener('click', randomPalette);
+
+      // Fonts
+      $('#font-display').addEventListener('change', e => { state.fontDisplay = e.target.value; applyFonts(); persist(); });
+      $('#font-body').addEventListener('change', e => { state.fontBody = e.target.value; applyFonts(); persist(); });
+      $('#font-mono').addEventListener('change', e => { state.fontMono = e.target.value; applyFonts(); persist(); });
+      $('#display-weight').addEventListener('input', e => { state.displayWeight = +e.target.value; $('#display-weight-v').textContent = state.displayWeight; applyFonts(); persist(); });
+      $('#display-tracking').addEventListener('input', e => { state.displayTracking = +e.target.value; $('#display-tracking-v').textContent = (state.displayTracking/10).toFixed(1)+'%'; applyFonts(); persist(); });
+
+      // Layout
+      $$('#density-chips .studio-chip').forEach(c => c.addEventListener('click', () => {
+        state.density = c.dataset.density;
+        $$('#density-chips .studio-chip').forEach(x => x.classList.toggle('active', x === c));
+        applyLayout(); persist();
+      }));
+      $('#radius').addEventListener('input', e => { state.radius = +e.target.value; $('#radius-v').textContent = state.radius; setVar('--radius', state.radius+'px'); persist(); });
+      $('#grid-size').addEventListener('input', e => { state.gridSize = +e.target.value; $('#grid-size-v').textContent = state.gridSize; setVar('--grid-size', state.gridSize+'px'); persist(); });
+      $('#grain-opacity').addEventListener('input', e => { state.grainOpacity = +e.target.value; $('#grain-opacity-v').textContent = state.grainOpacity; setVar('--grain-opacity', state.grainOpacity/100); persist(); });
+
+      // Toggles (boolean state map)
+      const toggles = [
+        ['grid-toggle', 'grid', applyLayout],
+        ['grain-toggle', 'grain', applyLayout],
+        ['ticker-toggle', 'ticker', applyMotion],
+        ['north-toggle', 'north', applyMotion],
+        ['cursor-toggle', 'cursor', applyEffects],
+        ['print-toggle', 'print', applyEffects],
+        ['invert-toggle', 'invert', applyEffects],
+        ['sepia-toggle', 'sepia', applyEffects],
+        ['contrast-toggle', 'contrast', applyEffects],
+      ];
+      toggles.forEach(([id, key, fn]) => {
+        $('#' + id).addEventListener('click', () => {
+          state[key] = !state[key];
+          $('#' + id).setAttribute('aria-checked', state[key]);
+          fn(); persist();
+        });
+      });
+
+      // Section toggles
+      $$('[data-section]').forEach(btn => btn.addEventListener('click', () => {
+        const k = btn.dataset.section;
+        state.sections[k] = !state.sections[k];
+        btn.setAttribute('aria-checked', state.sections[k]);
+        applyContent(); persist();
+      }));
+
+      // Content inputs
+      ['title-1','title-2','title-3','title-4'].forEach((id, i) => {
+        $('#' + id).addEventListener('input', e => {
+          state['title' + (i+1)] = e.target.value;
+          applyContent(); persist();
+        });
+      });
+      $('#tagline').addEventListener('input', e => { state.tagline = e.target.value; applyContent(); persist(); });
+      $('#phone-fixed').addEventListener('input', e => { state.phoneFixed = e.target.value; applyContent(); persist(); });
+      $('#phone-mobile').addEventListener('input', e => { state.phoneMobile = e.target.value; applyContent(); persist(); });
+      $('#email').addEventListener('input', e => { state.email = e.target.value; applyContent(); persist(); });
+
+      // Edit mode (contenteditable)
+      $('#edit-mode-toggle').addEventListener('click', () => {
+        const html = document.documentElement;
+        const on = !html.classList.contains('edit-mode');
+        html.classList.toggle('edit-mode', on);
+        const targets = $$('h1, h2, h3, .hero-tagline, .obra-name, .product p, .stat .label, .channel-label, .obra-meta');
+        targets.forEach(t => t.contentEditable = on ? 'true' : 'false');
+        toast(on ? 'Modo edição ON · clica para editar' : 'Modo edição OFF');
+      });
+
+      // Animation chips
+      $$('#anim-chips .studio-chip').forEach(c => c.addEventListener('click', () => {
+        state.anim = c.dataset.anim;
+        $$('#anim-chips .studio-chip').forEach(x => x.classList.toggle('active', x === c));
+        applyMotion(); persist();
+      }));
+      $('#replay-anim').addEventListener('click', () => {
+        $$('.hero-svg .draw, .hero-svg .draw-late, .hero-svg .fade-in, .reveal-line > span').forEach(el => {
+          const an = el.style.animation;
+          el.style.animation = 'none';
+          void el.offsetWidth;
+          el.style.animation = '';
+        });
+        toast('Animação repetida');
+      });
+
+      // Color blindness chips
+      $$('#cb-chips .studio-chip').forEach(c => c.addEventListener('click', () => {
+        state.cb = c.dataset.cb;
+        $$('#cb-chips .studio-chip').forEach(x => x.classList.toggle('active', x === c));
+        applyEffects(); persist();
+      }));
+
+      // STATE — presets
+      refreshPresetList();
+      $('#save-preset').addEventListener('click', () => {
+        const name = prompt('Nome do preset?');
+        if (!name) return;
+        const presets = loadPresets();
+        presets[name] = JSON.parse(JSON.stringify(state));
+        savePresets(presets); refreshPresetList();
+        toast('Preset guardado: ' + name);
+      });
+      $('#load-preset').addEventListener('click', () => {
+        const sel = $('#preset-list').value;
+        if (!sel) return toast('Escolhe um preset');
+        const presets = loadPresets();
+        if (presets[sel]) { state = JSON.parse(JSON.stringify(presets[sel])); applyAll(); toast('Preset carregado: ' + sel); }
+      });
+      $('#delete-preset').addEventListener('click', () => {
+        const sel = $('#preset-list').value;
+        if (!sel) return;
+        const presets = loadPresets();
+        delete presets[sel];
+        savePresets(presets); refreshPresetList();
+        toast('Preset apagado');
+      });
+
+      $('#export-html').addEventListener('click', exportHTML);
+      $('#copy-css').addEventListener('click', copyCSSVars);
+      $('#share-url').addEventListener('click', shareURL);
+      $('#reset-all').addEventListener('click', () => {
+        if (!confirm('Reset total às definições originais?')) return;
+        state = JSON.parse(JSON.stringify(DEFAULTS));
+        applyAll(); toast('Reset · originais');
+      });
+    }
+
+    function openStudio() { document.documentElement.classList.add('studio-open'); }
+    function closeStudio() { document.documentElement.classList.remove('studio-open'); }
+
+    // ===========================================================
+    // PRESETS PERSISTENCE
+    // ===========================================================
+    function loadPresets() {
+      try { return JSON.parse(localStorage.getItem(PRESETS_KEY)) || {}; }
+      catch(e) { return {}; }
+    }
+    function savePresets(p) { try { localStorage.setItem(PRESETS_KEY, JSON.stringify(p)); } catch(e){} }
+    function refreshPresetList() {
+      const sel = $('#preset-list');
+      const presets = loadPresets();
+      sel.innerHTML = '<option value="">— presets guardados —</option>';
+      Object.keys(presets).forEach(k => {
+        const o = document.createElement('option'); o.value = k; o.textContent = k;
+        sel.appendChild(o);
+      });
+    }
+
+    // ===========================================================
+    // EXPORT / SHARE
+    // ===========================================================
+    function buildOverrideStyle() {
+      return `:root {
+  --paper: ${state.paper};
+  --paper-warm: ${state.paperWarm};
+  --paper-edge: ${state.paperEdge};
+  --ink: ${state.ink};
+  --ink-soft: ${state.ink};
+  --rule: ${state.ink};
+  --graphite: ${state.graphite};
+  --blueprint: ${state.blueprint};
+  --blueprint-deep: ${state.blueprint};
+  --paper-on-blue: ${state.paperOnBlue};
+  --accent: ${state.accent};
+  --accent-soft: ${state.accentSoft};
+  --font-display: "${state.fontDisplay}";
+  --font-body: "${state.fontBody}";
+  --font-mono: "${state.fontMono}";
+  --display-weight: ${state.displayWeight};
+  --display-tracking: ${(state.displayTracking/1000)}em;
+  --grid-size: ${state.gridSize}px;
+  --grain-opacity: ${state.grainOpacity/100};
+  --radius: ${state.radius}px;
+}`;
+    }
+
+    function exportHTML() {
+      const clone = document.documentElement.cloneNode(true);
+      // Remove studio
+      clone.querySelectorAll('#studio, #studio-fab, #studio-toast, #studio-script, svg[width="0"]').forEach(n => n.remove());
+      // Remove studio-open class
+      clone.classList.remove('studio-open','no-anim','anim-slow','anim-fast','edit-mode','effects-invert','effects-sepia','effects-contrast','print-mode','crosshair','no-grid','no-grain','no-ticker','no-north');
+      // Keep section hide & density (those are the user's choice)
+      // Inject override style
+      const head = clone.querySelector('head');
+      const styleEl = document.createElement('style');
+      styleEl.id = 'studio-state';
+      styleEl.textContent = buildOverrideStyle();
+      head.appendChild(styleEl);
+      // Add fonts link if non-default fonts
+      const fontsNeeded = [state.fontDisplay, state.fontBody, state.fontMono].filter(f => FONT_URLS[f]);
+      const fontLink = document.createElement('link');
+      fontLink.rel = 'stylesheet';
+      fontLink.href = 'https://fonts.googleapis.com/css2?' + fontsNeeded.map(f => 'family=' + FONT_URLS[f]).join('&') + '&display=swap';
+      head.appendChild(fontLink);
+
+      const html = '<!doctype html>\n' + clone.outerHTML;
+      const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'vj-fonseca-custom.html';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+      toast('HTML exportado');
+    }
+
+    function copyCSSVars() {
+      const css = buildOverrideStyle();
+      navigator.clipboard.writeText(css).then(
+        () => toast('CSS copiado para clipboard'),
+        () => toast('Falha a copiar')
+      );
+    }
+
+    function shareURL() {
+      try {
+        const compact = JSON.stringify(state);
+        const hash = '#s=' + btoa(unescape(encodeURIComponent(compact)));
+        const url = location.origin + location.pathname + hash;
+        navigator.clipboard.writeText(url).then(
+          () => toast('Link copiado · contém o teu design'),
+          () => { history.replaceState(null,'',hash); toast('URL atualizado'); }
+        );
+      } catch(e) { toast('Falha a partilhar'); }
+    }
+
+    function loadFromHash() {
+      if (!location.hash.startsWith('#s=')) return null;
+      try {
+        return JSON.parse(decodeURIComponent(escape(atob(location.hash.slice(3)))));
+      } catch(e) { return null; }
+    }
+
+    // ===========================================================
+    // INIT
+    // ===========================================================
+    function init() {
+      const fromHash = loadFromHash();
+      const persisted = loadPersisted();
+      state = fromHash || persisted || JSON.parse(JSON.stringify(DEFAULTS));
+      // Backfill any missing keys with defaults
+      for (const k in DEFAULTS) {
+        if (state[k] === undefined) state[k] = DEFAULTS[k];
+        if (k === 'sections' && state.sections) {
+          for (const s in DEFAULTS.sections) {
+            if (state.sections[s] === undefined) state.sections[s] = DEFAULTS.sections[s];
+          }
+        }
+      }
+      buildStyles();
+      buildPalettePresets();
+      wire();
+      applyAll();
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+  })();
+  </script>
+</body>
+</html>

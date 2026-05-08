@@ -957,20 +957,20 @@
        CONTACTO  ·  três telefones gigantes + morada
        ============================================================ */
     .contacto {
-      /* HARDCODED — sempre escuro, em ambos os modos.
-         Funciona como banda CTA permanente. Não usa var(--ink) porque
-         este flipa em dark mode e tornaria a secção branca. */
-      background: #181C20;
-      color: #E5E7EA;
+      /* HARDCODED — sempre escuro em ambos os modos. CTA banda permanente.
+         Per craft/color.md: bg #0F0F0F (não puro #000), fg #F0F0F0 (não puro #fff),
+         borders rgba(255,255,255,0.08–0.18). */
+      background: #0F0F0F;
+      color: #F0F0F0;
     }
     .contacto .section-eyebrow {
-      background: rgba(229,231,234,0.06);
-      border-color: rgba(229,231,234,0.18);
-      color: #E5E7EA;
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.18);
+      color: #F0F0F0;
     }
-    .contacto .section-title { color: #E5E7EA; }
+    .contacto .section-title { color: #F0F0F0; }
     .contacto .section-title .accent { color: #C75D34; }
-    .contacto .section-lede { color: rgba(229,231,234,0.7); }
+    .contacto .section-lede { color: rgba(240,240,240,0.72); }
 
     .contacto-grid {
       display: grid;
@@ -981,32 +981,35 @@
     .telefones {
       display: grid; gap: 4px;
     }
+    /* All inner text in .contacto uses HARDCODED light tones per color.md:
+       fg #F0F0F0 (not pure white), borders rgba(255,255,255,0.08–0.18).
+       Tokens are not used here because the section bg is hardcoded dark. */
     .telefone-card {
       display: grid;
       grid-template-columns: auto 1fr auto;
       gap: 20px;
       padding: 24px 0;
-      border-bottom: 1px solid rgba(229,231,234,0.12);
+      border-bottom: 1px solid rgba(255,255,255,0.10);
       align-items: end;
       text-decoration: none;
-      color: var(--paper);
+      color: #F0F0F0;
       transition: padding-left .2s var(--easing);
     }
-    .telefone-card:first-child { border-top: 1px solid rgba(229,231,234,0.12); }
+    .telefone-card:first-child { border-top: 1px solid rgba(255,255,255,0.10); }
     .telefone-card:hover { padding-left: 8px; }
     .telefone-card:hover .telefone-num { color: #C75D34; }
     .telefone-icon {
       width: 44px; height: 44px;
-      border: 1px solid rgba(229,231,234,0.25);
+      border: 1px solid rgba(255,255,255,0.20);
       display: grid; place-items: center;
-      color: rgba(229,231,234,0.7);
+      color: rgba(240,240,240,0.78);
     }
     .telefone-icon svg { width: 18px; height: 18px; }
     .telefone-label {
       font-size: 12px;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: rgba(229,231,234,0.55);
+      color: rgba(240,240,240,0.62);
       font-weight: 500;
       margin-bottom: 6px;
       display: block;
@@ -1018,27 +1021,28 @@
       letter-spacing: -0.04em;
       line-height: 1;
       font-variant-numeric: tabular-nums;
+      color: #F0F0F0;
       transition: color .2s var(--easing);
     }
     .telefone-arrow {
       font-size: 22px;
-      color: rgba(229,231,234,0.4);
+      color: rgba(240,240,240,0.5);
     }
 
     .morada-card {
-      background: rgba(229,231,234,0.05);
-      border: 1px solid rgba(229,231,234,0.15);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
       padding: clamp(24px, 3vw, 36px);
     }
     .morada-card h3 {
       font-size: 22px;
       letter-spacing: -0.03em;
-      color: var(--paper);
+      color: #F0F0F0;
       margin-bottom: 12px;
     }
     .morada-card p {
       font-size: 15px;
-      color: rgba(229,231,234,0.85);
+      color: rgba(240,240,240,0.88);
       line-height: 1.6;
       margin: 0 0 24px;
     }
@@ -1047,16 +1051,16 @@
       grid-template-columns: auto 1fr;
       gap: 8px 24px;
       padding: 16px 0 0;
-      border-top: 1px solid rgba(229,231,234,0.15);
+      border-top: 1px solid rgba(255,255,255,0.12);
       font-size: 14px;
-      color: var(--paper);
+      color: #F0F0F0;
     }
-    .horario .closed { color: rgba(229,231,234,0.45); }
+    .horario .closed { color: rgba(240,240,240,0.5); }
     .horario-label {
       font-size: 11px;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: rgba(229,231,234,0.55);
+      color: rgba(240,240,240,0.62);
       font-weight: 600;
       margin-bottom: 8px;
       grid-column: 1 / -1;
@@ -1144,9 +1148,10 @@
       left: 16px; right: 16px; bottom: 16px;
       max-width: 720px;
       margin: 0 auto;
-      /* HARDCODED — banner sempre escuro, ambos os modos */
-      background: #181C20;
-      color: #E5E7EA;
+      /* HARDCODED — banner sempre escuro, ambos os modos.
+         Per craft/color.md: bg #0F0F0F + fg #F0F0F0 */
+      background: #0F0F0F;
+      color: #F0F0F0;
       padding: 22px 24px;
       box-shadow: 0 12px 40px -8px rgba(0,0,0,0.4);
       z-index: 100;
@@ -1166,17 +1171,17 @@
       font-size: 16px;
       letter-spacing: -0.02em;
       margin: 0 0 8px;
-      color: var(--paper);
+      color: #F0F0F0;
     }
     .cookie-banner p {
       font-size: 14px;
       line-height: 1.55;
-      color: rgba(229,231,234,0.78);
+      color: rgba(240,240,240,0.78);
       margin: 0 0 16px;
       max-width: 64ch;
     }
     .cookie-banner p a {
-      color: var(--paper);
+      color: #F0F0F0;
       text-decoration: underline;
       text-underline-offset: 3px;
     }
@@ -1189,25 +1194,25 @@
       font-weight: 500;
       letter-spacing: -0.01em;
       padding: 10px 18px;
-      border: 1px solid rgba(229,231,234,0.25);
+      border: 1px solid rgba(255,255,255,0.20);
       background: transparent;
-      color: var(--paper);
+      color: #F0F0F0;
       cursor: pointer;
       transition: all .2s var(--easing);
     }
     .cookie-banner-actions button:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+      border-color: #C75D34;
+      color: #C75D34;
     }
     .cookie-banner-actions button.primary {
-      background: var(--paper);
-      color: var(--ink);
-      border-color: var(--paper);
+      background: #F0F0F0;
+      color: #0F0F0F;
+      border-color: #F0F0F0;
     }
     .cookie-banner-actions button.primary:hover {
-      background: var(--accent);
-      color: var(--paper);
-      border-color: var(--accent);
+      background: #C75D34;
+      color: #F0F0F0;
+      border-color: #C75D34;
     }
 
     /* Map placeholder when consent not yet given */

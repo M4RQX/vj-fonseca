@@ -40,6 +40,76 @@
       --rule-on-ink:      rgba(229,231,234,0.18);
       --rule-on-ink-soft: rgba(229,231,234,0.12);
       --easing:       ease;
+      color-scheme: light;
+    }
+
+    /* ============================================================
+       DARK MODE — invertido com manutenção do iron-oxide
+       ============================================================ */
+    :root[data-theme="dark"] {
+      --paper:        #0E1116;   /* off-black não-puro */
+      --paper-warm:   #161A20;   /* surface elevada 1 */
+      --paper-deep:   #1F252D;   /* surface elevada 2 */
+      --ink:          #E5E7EA;   /* texto principal */
+      --ink-soft:     #C9CCD1;
+      --muted:        #8A929E;   /* AA on dark — 4.74:1 */
+      --rule:         rgba(229,231,234,0.10);
+      --rule-soft:    rgba(229,231,234,0.06);
+      --accent:       #E26A47;   /* iron oxide ampliado para escuro — 6.1:1 */
+      --accent-warm:  #FF8052;
+      --green-trust:  #4FAE63;
+      --paper-on-ink-hi:  rgba(14,17,22,0.85);
+      --paper-on-ink-md:  rgba(14,17,22,0.7);
+      --paper-on-ink-lo:  rgba(14,17,22,0.55);
+      --paper-on-ink-mute: rgba(14,17,22,0.45);
+      --rule-on-ink:      rgba(14,17,22,0.18);
+      --rule-on-ink-soft: rgba(14,17,22,0.12);
+      color-scheme: dark;
+    }
+
+    /* Dark mode: contacto inversion fixes + photo dim
+       (the contacto section uses --ink as bg, which inverts to light in dark mode;
+       its hardcoded rgbas of paper-color need flipping to ink-color rgbas) */
+    [data-theme="dark"] .contacto .section-eyebrow {
+      background: rgba(14,17,22,0.05);
+      border-color: rgba(14,17,22,0.15);
+    }
+    [data-theme="dark"] .contacto .section-lede { color: rgba(14,17,22,0.7); }
+    [data-theme="dark"] .telefone-card { border-bottom-color: rgba(14,17,22,0.12); }
+    [data-theme="dark"] .telefone-card:first-child { border-top-color: rgba(14,17,22,0.12); }
+    [data-theme="dark"] .telefone-icon {
+      border-color: rgba(14,17,22,0.25);
+      color: rgba(14,17,22,0.7);
+    }
+    [data-theme="dark"] .telefone-label,
+    [data-theme="dark"] .horario-label { color: rgba(14,17,22,0.55); }
+    [data-theme="dark"] .telefone-arrow,
+    [data-theme="dark"] .horario .closed { color: rgba(14,17,22,0.45); }
+    [data-theme="dark"] .morada-card {
+      background: rgba(14,17,22,0.05);
+      border-color: rgba(14,17,22,0.15);
+    }
+    [data-theme="dark"] .morada-card p { color: rgba(14,17,22,0.85); }
+    [data-theme="dark"] .horario {
+      border-top-color: rgba(14,17,22,0.15);
+      color: rgba(14,17,22,0.85);
+    }
+
+    /* Photos breathe softer in dark mode */
+    [data-theme="dark"] .hero-photo img,
+    [data-theme="dark"] .sobre-photo img,
+    [data-theme="dark"] .obra img {
+      filter: contrast(1.04) saturate(0.85) brightness(0.82);
+    }
+
+    /* Theme transition (skip on user preference for reduced motion) */
+    @media (prefers-reduced-motion: no-preference) {
+      html, body, header, footer, .topbar, .trust, .servicos, .processo,
+      .cobertura, .historia, .contacto, .servico, .obra, .obra-cap,
+      .testemunho, .map-static, .morada-card, .contacto-card,
+      .header-cta, .btn, .channel, .telefone-card, .telefone-icon {
+        transition: background-color .35s var(--easing), border-color .35s var(--easing), color .35s var(--easing);
+      }
     }
 
     * { box-sizing: border-box; }
@@ -197,7 +267,32 @@
       font-size: 14px; font-weight: 600;
       transition: background .15s var(--easing);
     }
-    .header-cta:hover { background: #2A3F58; }
+    .header-cta:hover { background: var(--accent); }
+
+    .nav-actions {
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .theme-toggle {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px;
+      border: 1px solid var(--rule);
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+      transition: border-color .2s var(--easing), background .2s var(--easing), color .2s var(--easing);
+      padding: 0;
+    }
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .theme-toggle svg {
+      width: 18px; height: 18px;
+      transition: transform .4s var(--easing);
+    }
+    [data-theme="dark"] .theme-toggle svg { transform: rotate(180deg); }
+    .theme-toggle .disc { fill: currentColor; }
+    .theme-toggle .ring { fill: none; stroke: currentColor; stroke-width: 1.5; }
 
     @media (max-width: 720px) {
       .nav-links { display: none; }
@@ -608,7 +703,34 @@
       position: relative;
       overflow: hidden;
     }
-    .map-static svg { width: 100%; height: 100%; display: block; }
+    .map-embed {
+      width: 100%; height: 100%;
+      display: block;
+      border: 0;
+      transition: filter .35s var(--easing);
+    }
+    [data-theme="dark"] .map-embed {
+      filter: invert(0.92) hue-rotate(180deg) saturate(0.65) brightness(.95);
+    }
+    .map-link {
+      position: absolute;
+      bottom: 12px; right: 12px;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: "Geist", sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      padding: 8px 12px;
+      text-decoration: none;
+      box-shadow: 0 2px 12px -2px rgba(24,28,32,0.4);
+      transition: all .2s var(--easing);
+      z-index: 2;
+    }
+    .map-link:hover {
+      background: var(--accent);
+      transform: translateY(-1px);
+    }
     @media (max-width: 880px) {
       .cobertura-grid { grid-template-columns: 1fr; }
     }
@@ -891,7 +1013,15 @@
           <a href="#cobertura">Onde trabalhamos</a>
           <a href="#contacto">Contacto</a>
         </div>
-        <a class="header-cta" href="#contacto">Pedir orçamento</a>
+        <div class="nav-actions">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar entre modo claro e escuro" title="Modo claro/escuro">
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <circle class="ring" cx="10" cy="10" r="8"/>
+              <path class="disc" d="M10 2 a8 8 0 0 1 0 16 z"/>
+            </svg>
+          </button>
+          <a class="header-cta" href="#contacto">Pedir orçamento</a>
+        </div>
       </nav>
     </div>
   </header>
@@ -1176,37 +1306,17 @@
             <li>Évora <span class="km">75 km</span></li>
           </ul>
 
-          <div class="map-static" aria-hidden="true">
-            <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
-              <!-- Coastline -->
-              <path d="M0 280 Q80 270 140 285 Q220 300 280 295 Q360 290 480 305" fill="none" stroke="#5A6470" stroke-width="0.8" opacity="0.5"/>
-              <path d="M0 320 L480 320" fill="none" stroke="#5A6470" stroke-dasharray="3 4" stroke-width="0.6" opacity="0.4"/>
-              <!-- Rivers (Tagus + Sado) -->
-              <path d="M0 90 Q80 80 160 95 Q240 110 320 100 Q400 95 480 110" fill="none" stroke="#2A2F35" stroke-width="1.2" opacity="0.4"/>
-              <path d="M80 220 Q160 215 240 225 Q320 235 400 225" fill="none" stroke="#2A2F35" stroke-width="1" opacity="0.3"/>
-              <!-- Lisboa -->
-              <circle cx="105" cy="100" r="3" fill="#5A6470"/>
-              <text x="115" y="98" font-family="Geist, sans-serif" font-size="11" fill="#2A2F35" font-weight="600">LISBOA</text>
-              <!-- Setúbal -->
-              <circle cx="225" cy="240" r="3" fill="#5A6470"/>
-              <text x="234" y="244" font-family="Geist, sans-serif" font-size="11" fill="#2A2F35" font-weight="600">SETÚBAL</text>
-              <!-- Évora -->
-              <circle cx="395" cy="180" r="3" fill="#5A6470"/>
-              <text x="404" y="184" font-family="Geist, sans-serif" font-size="11" fill="#2A2F35" font-weight="600">ÉVORA</text>
-              <!-- PALMELA (highlighted) -->
-              <circle cx="225" cy="180" r="5" fill="#9C3F1F"/>
-              <circle cx="225" cy="180" r="14" fill="none" stroke="#9C3F1F" stroke-width="1.2"/>
-              <circle cx="225" cy="180" r="22" fill="none" stroke="#9C3F1F" stroke-width="0.6" opacity="0.5"/>
-              <line x1="225" y1="155" x2="225" y2="172" stroke="#9C3F1F" stroke-width="1"/>
-              <text x="232" y="148" font-family="Geist, sans-serif" font-size="14" fill="#181C20" font-weight="700">PALMELA · sede</text>
-              <text x="232" y="162" font-family="Geist, sans-serif" font-size="10" fill="#5A6470">38° 34&apos; 13&quot; N · 08° 44&apos; 57&quot; W</text>
-              <!-- North arrow -->
-              <g transform="translate(440, 32)">
-                <circle r="14" fill="#E5E7EA" stroke="#2A2F35" stroke-width="0.6"/>
-                <path d="M0 -8 L4 4 L0 1 L-4 4 Z" fill="#181C20"/>
-                <text x="0" y="-18" font-family="Geist, sans-serif" font-size="9" text-anchor="middle" fill="#5A6470" font-weight="600">N</text>
-              </g>
-            </svg>
+          <div class="map-static">
+            <iframe
+              class="map-embed"
+              src="https://www.google.com/maps?q=Palmela,+Portugal&t=&z=11&ie=UTF8&iwloc=&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="V&amp;J Fonseca · Atelier em Palmela · Cobertura geográfica"
+              allowfullscreen></iframe>
+            <a class="map-link" href="https://www.google.com/maps/place/Palmela,+Portugal" target="_blank" rel="noopener noreferrer" aria-label="Abrir no Google Maps em separador novo">
+              Abrir no Google Maps&nbsp;→
+            </a>
           </div>
         </div>
       </div>
@@ -1381,7 +1491,51 @@
   </footer>
 
   <script>
+    // ============================================================
+    // THEME — early init to avoid FOUC (runs before paint)
+    // ============================================================
     (function() {
+      const KEY = 'vjf-theme';
+      const stored = (function() { try { return localStorage.getItem(KEY); } catch(e) { return null; } })();
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = stored || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      // Sync meta theme-color
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', theme === 'dark' ? '#0E1116' : '#181C20');
+    })();
+  </script>
+  <script>
+    (function() {
+      // Theme toggle wiring
+      const KEY = 'vjf-theme';
+      const btn = document.getElementById('theme-toggle');
+      const meta = document.querySelector('meta[name="theme-color"]');
+      function setTheme(t, persist) {
+        document.documentElement.setAttribute('data-theme', t);
+        if (meta) meta.setAttribute('content', t === 'dark' ? '#0E1116' : '#181C20');
+        if (persist) { try { localStorage.setItem(KEY, t); } catch(e){} }
+        if (btn) {
+          const next = t === 'dark' ? 'claro' : 'escuro';
+          btn.setAttribute('aria-label', 'Mudar para modo ' + next);
+          btn.title = 'Modo ' + next;
+        }
+      }
+      // Initial label sync
+      setTheme(document.documentElement.getAttribute('data-theme') || 'light', false);
+      if (btn) {
+        btn.addEventListener('click', () => {
+          const current = document.documentElement.getAttribute('data-theme');
+          setTheme(current === 'dark' ? 'light' : 'dark', true);
+        });
+      }
+      // Follow system changes only if user hasn't explicitly chosen
+      const mq = window.matchMedia('(prefers-color-scheme: dark)');
+      mq.addEventListener && mq.addEventListener('change', (e) => {
+        let stored; try { stored = localStorage.getItem(KEY); } catch(e2) {}
+        if (!stored) setTheme(e.matches ? 'dark' : 'light', false);
+      });
+
       // Reveal subtle on scroll
       const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (reduced) {

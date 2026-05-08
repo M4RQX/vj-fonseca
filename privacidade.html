@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#181C20" />
+  <meta name="description" content="V&J Fonseca · Política de Privacidade conforme RGPD e Lei 58/2019." />
+  <meta name="robots" content="index, follow" />
+  <title>Política de Privacidade · V&J Fonseca</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23181C20'/%3E%3Ctext x='16' y='22' font-family='Geist,Helvetica,sans-serif' font-size='18' font-weight='800' fill='%23E5E7EA' text-anchor='middle'%3EVJ%3C/text%3E%3C/svg%3E" />
+
+  <style>
+    :root {
+      --paper: #E5E7EA; --paper-warm: #D8DBE0; --paper-deep: #C4C9D0;
+      --ink: #181C20; --ink-soft: #2A2F35; --muted: #5A6470;
+      --rule: rgba(24,28,32,0.14); --rule-soft: rgba(24,28,32,0.07);
+      --accent: #9C3F1F; --accent-warm: #C75D34;
+      --easing: ease;
+      color-scheme: light;
+    }
+    :root[data-theme="dark"] {
+      --paper: #0E1116; --paper-warm: #161A20; --paper-deep: #1F252D;
+      --ink: #E5E7EA; --ink-soft: #C9CCD1; --muted: #8A929E;
+      --rule: rgba(229,231,234,0.10); --rule-soft: rgba(229,231,234,0.06);
+      --accent: #E26A47; --accent-warm: #FF8052;
+      color-scheme: dark;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      html, body { transition: background-color .35s var(--easing), color .35s var(--easing); }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--paper); color: var(--ink);
+      font-family: "Geist", system-ui, sans-serif;
+      font-size: 17px; line-height: 1.65;
+      letter-spacing: -0.012em;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px); }
+    .topbar-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 0; font-size: 13px; color: var(--muted);
+      text-decoration: none; transition: color .2s var(--easing);
+    }
+    .topbar-link:hover { color: var(--accent); }
+    header.legal-head { padding: 56px 0 32px; border-bottom: 1px solid var(--rule); }
+    header.legal-head .eyebrow {
+      font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--muted); font-weight: 500; margin-bottom: 14px;
+    }
+    h1 {
+      font-size: clamp(36px, 5.2vw, 64px);
+      letter-spacing: -0.045em; line-height: 1.05;
+      margin: 0 0 16px; font-weight: 700;
+    }
+    .updated { font-size: 14px; color: var(--muted); margin: 0; }
+    main.legal-body { padding: 48px 0 80px; }
+    h2 {
+      font-size: clamp(22px, 2.4vw, 28px);
+      letter-spacing: -0.025em; font-weight: 600;
+      margin: 48px 0 12px;
+    }
+    h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; margin: 28px 0 8px; }
+    p, li { color: var(--ink-soft); }
+    p { margin: 0 0 16px; max-width: 64ch; }
+    ul, ol { margin: 0 0 20px; padding-left: 22px; }
+    li { margin-bottom: 8px; max-width: 60ch; }
+    a {
+      color: var(--accent); text-decoration: underline;
+      text-underline-offset: 3px; text-decoration-thickness: 1px;
+    }
+    a:hover { color: var(--accent-warm); }
+    .placeholder {
+      display: inline-block;
+      padding: 1px 8px; background: rgba(156,63,31,0.08);
+      border: 1px dashed var(--accent);
+      color: var(--accent);
+      font-size: 0.92em; font-family: "Geist", monospace;
+      letter-spacing: 0.02em;
+    }
+    [data-theme="dark"] .placeholder { background: rgba(226,106,71,0.12); }
+    .info-card {
+      margin: 32px 0; padding: 20px 24px;
+      background: var(--paper-warm); border-left: 3px solid var(--accent);
+      font-size: 15px; line-height: 1.55;
+    }
+    .info-card strong { color: var(--ink); }
+    footer.legal-foot {
+      border-top: 1px solid var(--rule); padding: 32px 0;
+      font-size: 13px; color: var(--muted);
+    }
+    footer.legal-foot .row {
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    footer.legal-foot a { color: var(--muted); text-decoration: none; }
+    footer.legal-foot a:hover { color: var(--accent); }
+    .skip-link {
+      position: absolute; top: -40px; left: 8px;
+      background: var(--ink); color: var(--paper);
+      padding: 8px 14px; font-size: 13px;
+      z-index: 200; text-decoration: none;
+    }
+    .skip-link:focus { top: 8px; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  </style>
+  <script>
+    (function() {
+      const KEY = 'vjf-theme';
+      const stored = (function() { try { return localStorage.getItem(KEY); } catch(e) { return null; } })();
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = stored || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', theme === 'dark' ? '#0E1116' : '#181C20');
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar para conteúdo</a>
+
+  <div class="container">
+    <a class="topbar-link" href="index.html">← V&amp;J Fonseca · voltar à página inicial</a>
+  </div>
+
+  <header class="legal-head">
+    <div class="container">
+      <div class="eyebrow">Documentos legais</div>
+      <h1>Política de Privacidade</h1>
+      <p class="updated">Última atualização: Maio de 2026 · Versão 1.0</p>
+    </div>
+  </header>
+
+  <main class="legal-body" id="main">
+    <div class="container">
+
+      <p>
+        Esta Política descreve como a <strong>V&amp;J Fonseca</strong>
+        (adiante, “nós”) trata os dados pessoais que recolhe através deste website,
+        em conformidade com o
+        <a href="https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32016R0679" target="_blank" rel="noopener">Regulamento (UE) 2016/679 (RGPD)</a>
+        e a <a href="https://dre.pt/dre/legislacao-consolidada/lei/2019-124136289" target="_blank" rel="noopener">Lei n.º 58/2019, de 8 de agosto</a>.
+      </p>
+
+      <div class="info-card">
+        <strong>Em resumo:</strong> Não recolhemos dados para te enviar publicidade.
+        Só usamos os dados que tu nos dás voluntariamente (telefone, email, descrição
+        da obra) para te enviar um orçamento. Não vendemos nem partilhamos os teus
+        dados com terceiros.
+      </div>
+
+      <h2>1. Quem é o responsável pelo tratamento</h2>
+      <p>
+        <strong>V&amp;J Fonseca</strong><br>
+        NIF: <span class="placeholder">[NIF a confirmar pela empresa]</span><br>
+        Sede: <span class="placeholder">[morada completa a confirmar]</span>, Palmela, Portugal<br>
+        CAE: <span class="placeholder">[CAE principal a confirmar — ex. 25110]</span><br>
+        Capital social: <span class="placeholder">[montante a confirmar]</span> €<br>
+        Conservatória do Registo Comercial: <span class="placeholder">[a confirmar]</span><br>
+        Contacto: <a href="mailto:jf@vjfonseca.com">jf@vjfonseca.com</a> · <a href="tel:+351263079366">+351 263 079 366</a>
+      </p>
+
+      <h2>2. Que dados pessoais recolhemos</h2>
+      <p>Apenas os dados que <strong>tu</strong> nos forneces voluntariamente:</p>
+      <ul>
+        <li><strong>Identificação e contacto:</strong> nome, telefone, email, morada da obra (quando os escreves num email, mensagem WhatsApp, ou nos dás por telefone).</li>
+        <li><strong>Descrição da obra:</strong> medidas, plantas, fotografias, especificações que partilhes connosco.</li>
+        <li><strong>Dados técnicos do navegador:</strong> endereço IP, tipo de navegador e sistema operativo, para fins de segurança e estatísticas agregadas. Não usamos analytics que te identifique pessoalmente.</li>
+      </ul>
+
+      <h2>3. Para que usamos os teus dados</h2>
+      <ul>
+        <li>Responder ao teu pedido de orçamento ou esclarecimento.</li>
+        <li>Executar o contrato (se contratares trabalho connosco): emitir factura, agendar visita, instalar a obra, dar assistência pós-venda.</li>
+        <li>Cumprir obrigações legais (faturação, contabilidade, registos fiscais).</li>
+      </ul>
+      <p>Não usamos os teus dados para marketing automático, perfilamento, decisões automatizadas, ou venda a terceiros.</p>
+
+      <h2>4. Fundamento legal</h2>
+      <ul>
+        <li><strong>Execução de contrato</strong> ou diligências pré-contratuais a teu pedido (art. 6.º, n.º 1, al. b) do RGPD).</li>
+        <li><strong>Cumprimento de obrigação legal</strong> (art. 6.º, n.º 1, al. c) do RGPD) — faturação, retenção de documentos contabilísticos.</li>
+        <li><strong>Consentimento</strong> (art. 6.º, n.º 1, al. a) do RGPD) — apenas para cookies não-essenciais (Google Maps).</li>
+      </ul>
+
+      <h2>5. Por quanto tempo guardamos os teus dados</h2>
+      <ul>
+        <li><strong>Pedidos de orçamento sem contratação:</strong> até 2 anos a contar da última comunicação.</li>
+        <li><strong>Clientes com obra contratada:</strong> 10 anos após a entrega da obra (art. 123.º do CIRC).</li>
+        <li><strong>Garantias e responsabilidade civil:</strong> 5 anos após a obra (art. 1225.º do Código Civil).</li>
+      </ul>
+
+      <h2>6. Com quem partilhamos os teus dados</h2>
+      <p>Apenas com entidades estritamente necessárias, ao abrigo de contratos de subcontratação (art. 28.º RGPD):</p>
+      <ul>
+        <li>Contabilista certificado da empresa, para faturação e obrigações fiscais.</li>
+        <li>Operadores de pagamento bancário, quando aplicável.</li>
+        <li>Autoridade Tributária, Segurança Social e outras entidades públicas, quando legalmente obrigatório.</li>
+      </ul>
+      <p><strong>Não vendemos, alugamos nem trocamos os teus dados</strong> com terceiros para fins comerciais.</p>
+
+      <h2>7. Os teus direitos (RGPD)</h2>
+      <ul>
+        <li><strong>Acesso</strong> aos teus dados pessoais.</li>
+        <li><strong>Retificação</strong> de dados incorretos ou desatualizados.</li>
+        <li><strong>Apagamento</strong> (“direito a ser esquecido”), quando aplicável.</li>
+        <li><strong>Limitação</strong> do tratamento.</li>
+        <li><strong>Portabilidade</strong> dos teus dados.</li>
+        <li><strong>Oposição</strong> ao tratamento.</li>
+        <li><strong>Retirar o consentimento</strong> a qualquer momento.</li>
+      </ul>
+      <p>
+        Para exercer qualquer destes direitos, basta enviar email para
+        <a href="mailto:jf@vjfonseca.com">jf@vjfonseca.com</a> ou carta para a sede.
+        Respondemos no prazo de um mês.
+      </p>
+
+      <h2>8. Reclamações</h2>
+      <p>
+        Se considerares que os teus dados não estão a ser tratados corretamente,
+        podes apresentar reclamação à autoridade de controlo nacional:
+      </p>
+      <p>
+        <strong>Comissão Nacional de Proteção de Dados (CNPD)</strong><br>
+        Av. D. Carlos I, 134 — 1.º · 1200-651 Lisboa<br>
+        Tel.: +351 213 928 400 · <a href="https://www.cnpd.pt" target="_blank" rel="noopener">www.cnpd.pt</a>
+      </p>
+
+      <h2>9. Segurança</h2>
+      <p>
+        Aplicamos medidas técnicas e organizativas razoáveis para proteger os teus
+        dados — armazenamento em sistemas com acesso restrito, encriptação em
+        trânsito (HTTPS). Em caso de violação grave, notificamos a CNPD nos termos
+        do art. 33.º do RGPD.
+      </p>
+
+      <h2>10. Cookies</h2>
+      <p>
+        Este site usa apenas cookies técnicos por defeito. Cookies de terceiros
+        (Google Maps) só são carregados após o teu consentimento explícito.
+        Vê detalhes em <a href="cookies.html">Política de Cookies</a>.
+      </p>
+
+      <h2>11. Alterações a esta Política</h2>
+      <p>
+        Esta Política pode ser revista a qualquer momento. A data da última revisão
+        consta no topo. Recomendamos consulta periódica.
+      </p>
+
+      <div class="info-card">
+        <strong>Dúvidas?</strong> Liga <a href="tel:+351916641573">+351 916 641 573</a>
+        ou escreve para <a href="mailto:jf@vjfonseca.com">jf@vjfonseca.com</a>.
+        Falas directamente com o Sr. Fonseca.
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="legal-foot">
+    <div class="container">
+      <div class="row">
+        <span>© 2003 — 2026 · V&amp;J Fonseca · Palmela, Portugal</span>
+        <span>
+          <a href="index.html">Início</a> ·
+          <a href="cookies.html">Cookies</a> ·
+          <a href="termos.html">Termos</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

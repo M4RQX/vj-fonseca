@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#181C20" />
+  <meta name="description" content="V&J Fonseca · Política de Cookies conforme RGPD e Lei 41/2004." />
+  <meta name="robots" content="index, follow" />
+  <title>Política de Cookies · V&J Fonseca</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23181C20'/%3E%3Ctext x='16' y='22' font-family='Geist,Helvetica,sans-serif' font-size='18' font-weight='800' fill='%23E5E7EA' text-anchor='middle'%3EVJ%3C/text%3E%3C/svg%3E" />
+
+  <style>
+    :root {
+      --paper: #E5E7EA; --paper-warm: #D8DBE0; --paper-deep: #C4C9D0;
+      --ink: #181C20; --ink-soft: #2A2F35; --muted: #5A6470;
+      --rule: rgba(24,28,32,0.14); --rule-soft: rgba(24,28,32,0.07);
+      --accent: #9C3F1F; --accent-warm: #C75D34;
+      --easing: ease;
+      color-scheme: light;
+    }
+    :root[data-theme="dark"] {
+      --paper: #0E1116; --paper-warm: #161A20; --paper-deep: #1F252D;
+      --ink: #E5E7EA; --ink-soft: #C9CCD1; --muted: #8A929E;
+      --rule: rgba(229,231,234,0.10); --rule-soft: rgba(229,231,234,0.06);
+      --accent: #E26A47; --accent-warm: #FF8052;
+      color-scheme: dark;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      html, body { transition: background-color .35s var(--easing), color .35s var(--easing); }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--paper); color: var(--ink);
+      font-family: "Geist", system-ui, sans-serif;
+      font-size: 17px; line-height: 1.65;
+      letter-spacing: -0.012em;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px); }
+    .topbar-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 0; font-size: 13px; color: var(--muted);
+      text-decoration: none; transition: color .2s var(--easing);
+    }
+    .topbar-link:hover { color: var(--accent); }
+    header.legal-head { padding: 56px 0 32px; border-bottom: 1px solid var(--rule); }
+    header.legal-head .eyebrow {
+      font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--muted); font-weight: 500; margin-bottom: 14px;
+    }
+    h1 {
+      font-size: clamp(36px, 5.2vw, 64px);
+      letter-spacing: -0.045em; line-height: 1.05;
+      margin: 0 0 16px; font-weight: 700;
+    }
+    .updated { font-size: 14px; color: var(--muted); margin: 0; }
+    main.legal-body { padding: 48px 0 80px; }
+    h2 {
+      font-size: clamp(22px, 2.4vw, 28px);
+      letter-spacing: -0.025em; font-weight: 600;
+      margin: 48px 0 12px;
+    }
+    h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; margin: 28px 0 8px; }
+    p, li { color: var(--ink-soft); }
+    p { margin: 0 0 16px; max-width: 64ch; }
+    ul, ol { margin: 0 0 20px; padding-left: 22px; }
+    li { margin-bottom: 8px; max-width: 60ch; }
+    a {
+      color: var(--accent); text-decoration: underline;
+      text-underline-offset: 3px; text-decoration-thickness: 1px;
+    }
+    a:hover { color: var(--accent-warm); }
+    .info-card {
+      margin: 32px 0; padding: 20px 24px;
+      background: var(--paper-warm); border-left: 3px solid var(--accent);
+      font-size: 15px; line-height: 1.55;
+    }
+    .info-card strong { color: var(--ink); }
+    table.cookies-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 14px; margin: 16px 0 24px;
+    }
+    table.cookies-table th, table.cookies-table td {
+      text-align: left; padding: 12px 14px;
+      border-bottom: 1px solid var(--rule); vertical-align: top;
+    }
+    table.cookies-table th {
+      font-weight: 600; color: var(--ink);
+      font-size: 12px; letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-bottom: 1.5px solid var(--ink);
+    }
+    table.cookies-table td { color: var(--ink-soft); }
+    table.cookies-table code {
+      font-family: ui-monospace, "Geist Mono", monospace;
+      font-size: 12.5px; background: var(--paper-warm);
+      padding: 2px 6px; color: var(--ink);
+    }
+    .reset-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 22px;
+      background: var(--ink); color: var(--paper);
+      font-size: 14px; font-weight: 500; letter-spacing: -0.01em;
+      border: 1px solid var(--ink); cursor: pointer;
+      transition: all .2s var(--easing);
+      font-family: "Geist", sans-serif;
+    }
+    .reset-btn:hover { background: var(--accent); border-color: var(--accent); }
+    footer.legal-foot {
+      border-top: 1px solid var(--rule); padding: 32px 0;
+      font-size: 13px; color: var(--muted);
+    }
+    footer.legal-foot .row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    footer.legal-foot a { color: var(--muted); text-decoration: none; }
+    footer.legal-foot a:hover { color: var(--accent); }
+    .skip-link {
+      position: absolute; top: -40px; left: 8px;
+      background: var(--ink); color: var(--paper);
+      padding: 8px 14px; font-size: 13px;
+      z-index: 200; text-decoration: none;
+    }
+    .skip-link:focus { top: 8px; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  </style>
+  <script>
+    (function() {
+      const KEY = 'vjf-theme';
+      const stored = (function() { try { return localStorage.getItem(KEY); } catch(e) { return null; } })();
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = stored || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', theme === 'dark' ? '#0E1116' : '#181C20');
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar para conteúdo</a>
+
+  <div class="container">
+    <a class="topbar-link" href="index.html">← V&amp;J Fonseca · voltar à página inicial</a>
+  </div>
+
+  <header class="legal-head">
+    <div class="container">
+      <div class="eyebrow">Documentos legais</div>
+      <h1>Política de Cookies</h1>
+      <p class="updated">Última atualização: Maio de 2026 · Versão 1.0</p>
+    </div>
+  </header>
+
+  <main class="legal-body" id="main">
+    <div class="container">
+
+      <p>
+        Este documento descreve que cookies este site utiliza, em conformidade com
+        o <a href="https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32016R0679" target="_blank" rel="noopener">RGPD</a>
+        e a <a href="https://dre.pt/dre/legislacao-consolidada/lei/2004-34522275" target="_blank" rel="noopener">Lei n.º 41/2004</a>
+        (Comunicações Eletrónicas).
+      </p>
+
+      <div class="info-card">
+        <strong>Em resumo:</strong> Por defeito não corremos cookies não-essenciais.
+        Só carregamos o mapa do Google (e os seus cookies) depois de
+        clicares “Aceitar cookies” no banner ou no botão do mapa.
+      </div>
+
+      <h2>1. O que são cookies</h2>
+      <p>
+        Cookies são pequenos ficheiros de texto que um site coloca no teu dispositivo
+        (computador, telemóvel) quando o visitas. Servem para o site funcionar
+        (lembrar idioma, sessão, preferências) ou para fins de análise/marketing.
+      </p>
+
+      <h2>2. Cookies que este site usa</h2>
+
+      <h3>Cookies estritamente necessários (sempre ativos)</h3>
+      <p>São essenciais para o site funcionar. Não requerem consentimento.</p>
+
+      <table class="cookies-table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Função</th>
+            <th>Duração</th>
+            <th>Tipo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>vjf-theme</code></td>
+            <td>Guarda a tua preferência de modo claro ou escuro.</td>
+            <td>Permanente (até apagares)</td>
+            <td>localStorage · 1.ª parte</td>
+          </tr>
+          <tr>
+            <td><code>vjf-cookie-consent</code></td>
+            <td>Guarda a tua escolha sobre cookies, para não voltarmos a perguntar.</td>
+            <td>Permanente (até apagares)</td>
+            <td>localStorage · 1.ª parte</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Cookies de terceiros (só com o teu consentimento)</h3>
+      <p>
+        Carregados apenas se aceitares no banner. Servem para mostrar o mapa do
+        Google na secção <em>Onde trabalhamos</em>.
+      </p>
+
+      <table class="cookies-table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Domínio</th>
+            <th>Função</th>
+            <th>Duração</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>NID</code></td>
+            <td>google.com</td>
+            <td>Identificador de preferências do Google (para o mapa).</td>
+            <td>~6 meses</td>
+          </tr>
+          <tr>
+            <td><code>1P_JAR</code></td>
+            <td>google.com</td>
+            <td>Cookie técnico do Google para anúncios e sessão.</td>
+            <td>~1 mês</td>
+          </tr>
+          <tr>
+            <td><code>SOCS, CONSENT</code></td>
+            <td>google.com</td>
+            <td>Estado de consentimento do utilizador no Google.</td>
+            <td>2 anos</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        A Google é a entidade responsável pelos seus próprios cookies. Para detalhes
+        consulta a <a href="https://policies.google.com/privacy?hl=pt-PT" target="_blank" rel="noopener">Política de Privacidade da Google</a>
+        e a <a href="https://policies.google.com/technologies/cookies?hl=pt-PT" target="_blank" rel="noopener">página de Cookies da Google</a>.
+      </p>
+
+      <h2>3. Como gerir os teus cookies</h2>
+      <p>
+        Podes alterar a tua escolha em qualquer momento. O botão abaixo apaga o
+        teu consentimento; a próxima visita mostra o banner outra vez.
+      </p>
+      <p>
+        <button class="reset-btn" type="button" id="reset-consent">Repor escolha de cookies</button>
+      </p>
+
+      <h3>Bloquear cookies no navegador</h3>
+      <p>Podes também bloquear ou apagar cookies directamente no teu navegador:</p>
+      <ul>
+        <li><a href="https://support.google.com/chrome/answer/95647?hl=pt-PT" target="_blank" rel="noopener">Google Chrome</a></li>
+        <li><a href="https://support.mozilla.org/pt-PT/kb/Activar%20e%20desactivar%20cookies" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+        <li><a href="https://support.apple.com/pt-pt/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Apple Safari</a></li>
+        <li><a href="https://support.microsoft.com/pt-pt/microsoft-edge/excluir-cookies-no-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener">Microsoft Edge</a></li>
+      </ul>
+
+      <h2>4. Alterações a esta Política</h2>
+      <p>
+        Esta Política pode ser revista a qualquer momento. A data da última revisão
+        consta no topo. Recomendamos consulta periódica.
+      </p>
+
+      <h2>5. Contacto</h2>
+      <p>
+        Dúvidas sobre cookies?
+        <a href="mailto:jf@vjfonseca.com">jf@vjfonseca.com</a> ·
+        <a href="tel:+351263079366">+351 263 079 366</a>.
+      </p>
+
+    </div>
+  </main>
+
+  <footer class="legal-foot">
+    <div class="container">
+      <div class="row">
+        <span>© 2003 — 2026 · V&amp;J Fonseca · Palmela, Portugal</span>
+        <span>
+          <a href="index.html">Início</a> ·
+          <a href="privacidade.html">Privacidade</a> ·
+          <a href="termos.html">Termos</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const btn = document.getElementById('reset-consent');
+      if (!btn) return;
+      btn.addEventListener('click', () => {
+        try {
+          localStorage.removeItem('vjf-cookie-consent');
+          btn.textContent = 'Escolha apagada · a recarregar…';
+          setTimeout(() => { window.location.href = 'index.html'; }, 700);
+        } catch(e) {
+          alert('Não foi possível apagar a tua escolha. Tenta limpar os cookies do navegador manualmente.');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

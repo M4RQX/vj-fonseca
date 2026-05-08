@@ -1122,6 +1122,111 @@
     .reveal { opacity: 0; transform: translateY(12px); transition: opacity .8s var(--easing), transform .8s var(--easing); }
     .reveal.in { opacity: 1; transform: translateY(0); }
 
+    /* ============================================================
+       COOKIE CONSENT BANNER (Lei 41/2004 + RGPD)
+       ============================================================ */
+    .cookie-banner {
+      position: fixed;
+      left: 16px; right: 16px; bottom: 16px;
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--ink);
+      color: var(--paper);
+      padding: 22px 24px;
+      box-shadow: 0 12px 40px -8px rgba(0,0,0,0.4);
+      z-index: 100;
+      display: none;
+      transform: translateY(40px);
+      opacity: 0;
+      transition: transform .35s var(--easing), opacity .35s var(--easing);
+    }
+    .cookie-banner[data-show="1"] {
+      display: block;
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .cookie-banner h3 {
+      font-family: "Geist", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: -0.02em;
+      margin: 0 0 8px;
+      color: var(--paper);
+    }
+    .cookie-banner p {
+      font-size: 14px;
+      line-height: 1.55;
+      color: rgba(229,231,234,0.78);
+      margin: 0 0 16px;
+      max-width: 64ch;
+    }
+    .cookie-banner p a {
+      color: var(--paper);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .cookie-banner-actions {
+      display: flex; gap: 10px; flex-wrap: wrap;
+    }
+    .cookie-banner-actions button {
+      font-family: "Geist", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      padding: 10px 18px;
+      border: 1px solid rgba(229,231,234,0.25);
+      background: transparent;
+      color: var(--paper);
+      cursor: pointer;
+      transition: all .2s var(--easing);
+    }
+    .cookie-banner-actions button:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .cookie-banner-actions button.primary {
+      background: var(--paper);
+      color: var(--ink);
+      border-color: var(--paper);
+    }
+    .cookie-banner-actions button.primary:hover {
+      background: var(--accent);
+      color: var(--paper);
+      border-color: var(--accent);
+    }
+
+    /* Map placeholder when consent not yet given */
+    .map-placeholder {
+      width: 100%; height: 100%;
+      display: grid; place-items: center;
+      text-align: center;
+      padding: 24px;
+      background: var(--paper-warm);
+      color: var(--ink-soft);
+    }
+    .map-placeholder p {
+      max-width: 32ch;
+      font-size: 14px;
+      line-height: 1.55;
+      margin: 0 0 16px;
+      color: var(--ink-soft);
+    }
+    .map-placeholder button {
+      font-family: "Geist", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 10px 18px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+      cursor: pointer;
+      transition: background .2s var(--easing);
+    }
+    .map-placeholder button:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
     a:focus-visible, button:focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 3px;
@@ -1477,17 +1582,14 @@
             <li>Évora <span class="km">75 km</span></li>
           </ul>
 
-          <div class="map-static">
-            <iframe
-              class="map-embed"
-              src="https://www.google.com/maps?q=Palmela,+Portugal&t=&z=11&ie=UTF8&iwloc=&output=embed"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="V&amp;J Fonseca · Atelier em Palmela · Cobertura geográfica"
-              allowfullscreen></iframe>
-            <a class="map-link" href="https://www.google.com/maps/place/Palmela,+Portugal" target="_blank" rel="noopener noreferrer" aria-label="Abrir no Google Maps em separador novo">
-              Abrir no Google Maps&nbsp;→
-            </a>
+          <div class="map-static" id="map-container">
+            <div class="map-placeholder" id="map-placeholder">
+              <p>O mapa do Google carrega cookies de terceiros. Aceita os cookies para o veres aqui — ou abre directamente no Google&nbsp;Maps.</p>
+              <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+                <button type="button" id="map-accept">Aceitar cookies e ver mapa</button>
+                <a class="map-link" style="position:static;" href="https://www.google.com/maps/place/Palmela,+Portugal" target="_blank" rel="noopener noreferrer">Abrir no Google Maps&nbsp;→</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1646,17 +1748,35 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Outras edições</h4>
+          <h4>Legal</h4>
           <ul>
-            <li><a href="/sites/editorial/">Edição editorial</a></li>
-            <li><a href="/sites/atelier/">Edição atelier</a></li>
-            <li><a href="/sites/VJ/">Edição técnica</a></li>
+            <li><a href="privacidade.html">Privacidade</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+            <li><a href="termos.html">Termos</a></li>
+            <li><a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Livro de Reclamações</a></li>
           </ul>
         </div>
       </div>
+
+      <div class="footer-legal" style="margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--rule); display: grid; grid-template-columns: 1fr 1fr; gap: 24px; font-size: 12px; color: var(--muted); line-height: 1.6;">
+        <div>
+          <strong style="color: var(--ink-soft); display: block; margin-bottom: 6px; font-weight: 600;">V&amp;J Fonseca</strong>
+          NIF: <em style="font-style: normal; color: var(--ink-soft); border-bottom: 1px dashed var(--accent); padding: 0 4px;">[NIF a confirmar]</em><br>
+          Sede: <em style="font-style: normal; color: var(--ink-soft); border-bottom: 1px dashed var(--accent); padding: 0 4px;">[morada a confirmar]</em>, Palmela<br>
+          CAE: <em style="font-style: normal; color: var(--ink-soft); border-bottom: 1px dashed var(--accent); padding: 0 4px;">[CAE a confirmar]</em>
+        </div>
+        <div style="text-align: right;">
+          Em caso de litígio de consumo:<br>
+          <a href="https://www.cniacc.pt" target="_blank" rel="noopener" style="color: var(--ink-soft); text-decoration: underline; text-underline-offset: 2px;">CNIACC</a>
+          ·
+          <a href="https://www.consumidor.gov.pt" target="_blank" rel="noopener" style="color: var(--ink-soft); text-decoration: underline; text-underline-offset: 2px;">consumidor.gov.pt</a><br>
+          (Lei 144/2015 · RAL)
+        </div>
+      </div>
+
       <div class="footer-bottom">
         <span>© 2003 — 2026 · V&amp;J Fonseca · Palmela, Portugal</span>
-        <span>Site atualizado em Maio de 2026</span>
+        <span>Site atualizado em Maio de 2026 · v1.0</span>
       </div>
     </div>
   </footer>
@@ -1736,6 +1856,101 @@
         });
       }, { rootMargin: '-40% 0px -55% 0px' });
       sections.forEach(s => navIO.observe(s));
+    })();
+  </script>
+
+  <!-- ============= COOKIE CONSENT BANNER ============= -->
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-desc">
+    <h3 id="cookie-title">Cookies neste site</h3>
+    <p id="cookie-desc">
+      Usamos apenas cookies técnicos para o site funcionar. O mapa do Google Maps
+      (na secção <em>Onde trabalhamos</em>) carrega cookies de terceiros para
+      mostrar a localização — só com a tua autorização.
+      Sabe mais na <a href="cookies.html">Política de Cookies</a> e na <a href="privacidade.html">Política de Privacidade</a>.
+    </p>
+    <div class="cookie-banner-actions">
+      <button type="button" class="primary" id="cookie-accept">Aceitar cookies</button>
+      <button type="button" id="cookie-reject">Rejeitar não-essenciais</button>
+      <button type="button" id="cookie-prefs" onclick="window.location.href='cookies.html'">Saber mais</button>
+    </div>
+  </div>
+
+  <script>
+    // ============================================================
+    // COOKIE CONSENT — minimal, RGPD-compliant
+    // ============================================================
+    (function() {
+      const KEY = 'vjf-cookie-consent';
+      const banner = document.getElementById('cookie-banner');
+      const mapContainer = document.getElementById('map-container');
+      const mapPlaceholder = document.getElementById('map-placeholder');
+      const mapAcceptBtn = document.getElementById('map-accept');
+
+      function getConsent() {
+        try { return localStorage.getItem(KEY); } catch(e) { return null; }
+      }
+      function setConsent(v) {
+        try { localStorage.setItem(KEY, v); } catch(e) {}
+      }
+      function showBanner() {
+        if (banner) banner.setAttribute('data-show', '1');
+      }
+      function hideBanner() {
+        if (banner) banner.removeAttribute('data-show');
+      }
+      function loadMap() {
+        if (!mapContainer) return;
+        // Replace placeholder with iframe only after consent
+        const iframe = document.createElement('iframe');
+        iframe.className = 'map-embed';
+        iframe.src = 'https://www.google.com/maps?q=Palmela,+Portugal&t=&z=11&ie=UTF8&iwloc=&output=embed';
+        iframe.loading = 'lazy';
+        iframe.referrerPolicy = 'no-referrer-when-downgrade';
+        iframe.title = 'V&J Fonseca · Atelier em Palmela · Cobertura geográfica';
+        iframe.allowFullscreen = true;
+        // Keep placeholder removed
+        if (mapPlaceholder) mapPlaceholder.remove();
+        mapContainer.appendChild(iframe);
+        // Add the absolute "Abrir no Google Maps" link back
+        const link = document.createElement('a');
+        link.className = 'map-link';
+        link.href = 'https://www.google.com/maps/place/Palmela,+Portugal';
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = 'Abrir no Google Maps →';
+        mapContainer.appendChild(link);
+      }
+
+      // Initial state
+      const consent = getConsent();
+      if (consent === 'accepted') {
+        loadMap();
+      } else if (consent === 'rejected') {
+        // Map stays placeholder; banner hidden
+      } else {
+        // No decision yet — show banner after a short delay (no FOUC)
+        setTimeout(showBanner, 600);
+      }
+
+      // Banner buttons
+      const acceptBtn = document.getElementById('cookie-accept');
+      const rejectBtn = document.getElementById('cookie-reject');
+      if (acceptBtn) acceptBtn.addEventListener('click', () => {
+        setConsent('accepted');
+        hideBanner();
+        loadMap();
+      });
+      if (rejectBtn) rejectBtn.addEventListener('click', () => {
+        setConsent('rejected');
+        hideBanner();
+      });
+
+      // Inline "load map" button on the placeholder (one-shot consent for the map only)
+      if (mapAcceptBtn) mapAcceptBtn.addEventListener('click', () => {
+        setConsent('accepted');
+        hideBanner();
+        loadMap();
+      });
     })();
   </script>
 </body>

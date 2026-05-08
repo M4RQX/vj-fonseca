@@ -79,22 +79,26 @@
     /* Force the .contacto section (which uses var(--ink) bg by default)
        to stay dark in dark mode. All inner elements use paper-color rgba
        overlays, which read correctly on this charcoal. */
-    [data-theme="dark"] .contacto {
-      background: #14181F;
-      color: var(--ink);
-      border-top-color: rgba(229,231,234,0.08);
-    }
+    /* .contacto, .cookie-banner são hardcoded como dark surfaces nas
+       suas regras-base (mais abaixo). Não flipam com o tema → não
+       precisam de override em dark.
+       .map-placeholder e footer continuam a usar tokens. */
 
-    /* Footer base (.footer-grid background is paper-warm) — re-tone in dark */
+    /* Footer base (.footer-grid background é paper-warm) — re-tonado em dark */
     [data-theme="dark"] footer {
       background: #11151B;
       border-top-color: rgba(229,231,234,0.10);
     }
 
-    /* Map link button in dark — keep it readable on the new charcoal */
-    [data-theme="dark"] .map-link {
-      background: #1F252D;
+    /* Map placeholder — usa paper-warm; mais escuro em dark */
+    [data-theme="dark"] .map-placeholder {
+      background: #11151B;
+      color: var(--ink-soft);
+    }
+    [data-theme="dark"] .map-placeholder button {
+      background: var(--paper-deep);
       color: var(--ink);
+      border-color: var(--rule);
     }
 
     /* Photos breathe softer in dark mode (heavier dim) */
@@ -107,39 +111,6 @@
     /* Map iframe — heavier dim filter to blend with charcoal surfaces */
     [data-theme="dark"] .map-embed {
       filter: invert(0.94) hue-rotate(180deg) saturate(0.55) brightness(0.82);
-    }
-
-    /* Cookie banner is already var(--ink)/var(--paper) — flips correctly,
-       but force darker bg in dark to avoid the "white box" inversion. */
-    [data-theme="dark"] .cookie-banner {
-      background: #14181F;
-      color: var(--ink);
-    }
-    [data-theme="dark"] .cookie-banner-actions button {
-      border-color: rgba(229,231,234,0.18);
-      color: var(--ink);
-    }
-    [data-theme="dark"] .cookie-banner-actions button.primary {
-      background: var(--paper);
-      color: var(--ink);
-      border-color: var(--paper);
-    }
-    [data-theme="dark"] .cookie-banner-actions button.primary:hover {
-      background: var(--accent);
-      color: #FFFFFF;
-      border-color: var(--accent);
-    }
-
-    /* Map placeholder — uses paper-warm; keep darker in dark */
-    [data-theme="dark"] .map-placeholder {
-      background: #11151B;
-      color: var(--ink-soft);
-    }
-    [data-theme="dark"] .map-placeholder p { color: var(--ink-soft); }
-    [data-theme="dark"] .map-placeholder button {
-      background: var(--paper-deep);
-      color: var(--ink);
-      border-color: var(--rule);
     }
 
     /* Theme transition (skip on user preference for reduced motion) */
@@ -986,15 +957,18 @@
        CONTACTO  ·  três telefones gigantes + morada
        ============================================================ */
     .contacto {
-      background: var(--ink);
-      color: var(--paper);
+      /* HARDCODED — sempre escuro, em ambos os modos.
+         Funciona como banda CTA permanente. Não usa var(--ink) porque
+         este flipa em dark mode e tornaria a secção branca. */
+      background: #181C20;
+      color: #E5E7EA;
     }
     .contacto .section-eyebrow {
       background: rgba(229,231,234,0.06);
       border-color: rgba(229,231,234,0.18);
-      color: var(--paper);
+      color: #E5E7EA;
     }
-    .contacto .section-title { color: var(--paper); }
+    .contacto .section-title { color: #E5E7EA; }
     .contacto .section-title .accent { color: #C75D34; }
     .contacto .section-lede { color: rgba(229,231,234,0.7); }
 
@@ -1170,8 +1144,9 @@
       left: 16px; right: 16px; bottom: 16px;
       max-width: 720px;
       margin: 0 auto;
-      background: var(--ink);
-      color: var(--paper);
+      /* HARDCODED — banner sempre escuro, ambos os modos */
+      background: #181C20;
+      color: #E5E7EA;
       padding: 22px 24px;
       box-shadow: 0 12px 40px -8px rgba(0,0,0,0.4);
       z-index: 100;

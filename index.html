@@ -48,8 +48,8 @@
        ============================================================ */
     :root[data-theme="dark"] {
       --paper:        #0E1116;   /* off-black não-puro */
-      --paper-warm:   #161A20;   /* surface elevada 1 */
-      --paper-deep:   #1F252D;   /* surface elevada 2 */
+      --paper-warm:   #11151B;   /* pulled closer to paper — less contrast */
+      --paper-deep:   #161A20;   /* slightly raised, used for elevated cards */
       --ink:          #E5E7EA;   /* texto principal */
       --ink-soft:     #C9CCD1;
       --muted:        #8A929E;   /* AA on dark — 4.74:1 */
@@ -67,39 +67,79 @@
       color-scheme: dark;
     }
 
-    /* Dark mode: contacto inversion fixes + photo dim
-       (the contacto section uses --ink as bg, which inverts to light in dark mode;
-       its hardcoded rgbas of paper-color need flipping to ink-color rgbas) */
-    [data-theme="dark"] .contacto .section-eyebrow {
-      background: rgba(14,17,22,0.05);
-      border-color: rgba(14,17,22,0.15);
-    }
-    [data-theme="dark"] .contacto .section-lede { color: rgba(14,17,22,0.7); }
-    [data-theme="dark"] .telefone-card { border-bottom-color: rgba(14,17,22,0.12); }
-    [data-theme="dark"] .telefone-card:first-child { border-top-color: rgba(14,17,22,0.12); }
-    [data-theme="dark"] .telefone-icon {
-      border-color: rgba(14,17,22,0.25);
-      color: rgba(14,17,22,0.7);
-    }
-    [data-theme="dark"] .telefone-label,
-    [data-theme="dark"] .horario-label { color: rgba(14,17,22,0.55); }
-    [data-theme="dark"] .telefone-arrow,
-    [data-theme="dark"] .horario .closed { color: rgba(14,17,22,0.45); }
-    [data-theme="dark"] .morada-card {
-      background: rgba(14,17,22,0.05);
-      border-color: rgba(14,17,22,0.15);
-    }
-    [data-theme="dark"] .morada-card p { color: rgba(14,17,22,0.85); }
-    [data-theme="dark"] .horario {
-      border-top-color: rgba(14,17,22,0.15);
-      color: rgba(14,17,22,0.85);
+    /* ============================================================
+       DARK MODE: surface dimming
+       Sections that hardcoded var(--ink) as background (e.g. .contacto)
+       would naturally flip to a near-white surface in dark mode — that is
+       what was reading "muito branco". We override those sections to a
+       properly elevated charcoal surface so the page reads as a coherent
+       dark UI throughout.
+       ============================================================ */
+
+    /* Force the .contacto section (which uses var(--ink) bg by default)
+       to stay dark in dark mode. All inner elements use paper-color rgba
+       overlays, which read correctly on this charcoal. */
+    [data-theme="dark"] .contacto {
+      background: #14181F;
+      color: var(--ink);
+      border-top-color: rgba(229,231,234,0.08);
     }
 
-    /* Photos breathe softer in dark mode */
+    /* Footer base (.footer-grid background is paper-warm) — re-tone in dark */
+    [data-theme="dark"] footer {
+      background: #11151B;
+      border-top-color: rgba(229,231,234,0.10);
+    }
+
+    /* Map link button in dark — keep it readable on the new charcoal */
+    [data-theme="dark"] .map-link {
+      background: #1F252D;
+      color: var(--ink);
+    }
+
+    /* Photos breathe softer in dark mode (heavier dim) */
     [data-theme="dark"] .hero-photo img,
     [data-theme="dark"] .sobre-photo img,
     [data-theme="dark"] .obra img {
-      filter: contrast(1.04) saturate(0.85) brightness(0.82);
+      filter: contrast(1.04) saturate(0.82) brightness(0.74);
+    }
+
+    /* Map iframe — heavier dim filter to blend with charcoal surfaces */
+    [data-theme="dark"] .map-embed {
+      filter: invert(0.94) hue-rotate(180deg) saturate(0.55) brightness(0.82);
+    }
+
+    /* Cookie banner is already var(--ink)/var(--paper) — flips correctly,
+       but force darker bg in dark to avoid the "white box" inversion. */
+    [data-theme="dark"] .cookie-banner {
+      background: #14181F;
+      color: var(--ink);
+    }
+    [data-theme="dark"] .cookie-banner-actions button {
+      border-color: rgba(229,231,234,0.18);
+      color: var(--ink);
+    }
+    [data-theme="dark"] .cookie-banner-actions button.primary {
+      background: var(--paper);
+      color: var(--ink);
+      border-color: var(--paper);
+    }
+    [data-theme="dark"] .cookie-banner-actions button.primary:hover {
+      background: var(--accent);
+      color: #FFFFFF;
+      border-color: var(--accent);
+    }
+
+    /* Map placeholder — uses paper-warm; keep darker in dark */
+    [data-theme="dark"] .map-placeholder {
+      background: #11151B;
+      color: var(--ink-soft);
+    }
+    [data-theme="dark"] .map-placeholder p { color: var(--ink-soft); }
+    [data-theme="dark"] .map-placeholder button {
+      background: var(--paper-deep);
+      color: var(--ink);
+      border-color: var(--rule);
     }
 
     /* Theme transition (skip on user preference for reduced motion) */

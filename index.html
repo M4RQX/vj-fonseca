@@ -1606,7 +1606,7 @@
               <p>O mapa do Google carrega cookies de terceiros. Aceita os cookies para o veres aqui, ou abre directamente no Google&nbsp;Maps.</p>
               <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
                 <button type="button" id="map-accept">Aceitar cookies e ver mapa</button>
-                <a class="map-link" style="position:static;" href="https://www.google.com/maps/place/Cabanas+de+Torres,+Alenquer,+Portugal" target="_blank" rel="noopener noreferrer">Abrir no Google Maps&nbsp;→</a>
+                <a class="map-link" style="position:static;" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+das+Flores+8,+2580-121+Cabanas+de+Torres" target="_blank" rel="noopener noreferrer">Abrir no Google Maps&nbsp;→</a>
               </div>
             </div>
           </div>
@@ -1923,10 +1923,10 @@
         // Replace placeholder with iframe only after consent
         const iframe = document.createElement('iframe');
         iframe.className = 'map-embed';
-        iframe.src = 'https://www.google.com/maps?q=Cabanas+de+Torres,+Alenquer,+Portugal&t=&z=11&ie=UTF8&iwloc=&output=embed';
+        iframe.src = 'https://www.google.com/maps?q=Rua+das+Flores+8,+2580-121+Cabanas+de+Torres,+Alenquer,+Portugal&t=&z=17&ie=UTF8&iwloc=B&output=embed';
         iframe.loading = 'lazy';
         iframe.referrerPolicy = 'no-referrer-when-downgrade';
-        iframe.title = 'V&J Fonseca · Atelier em Cabanas de Torres · Cobertura geográfica';
+        iframe.title = 'V&J Fonseca · Atelier · Rua das Flores 8, Cabanas de Torres';
         iframe.allowFullscreen = true;
         // Keep placeholder removed
         if (mapPlaceholder) mapPlaceholder.remove();
@@ -1934,7 +1934,7 @@
         // Add the absolute "Abrir no Google Maps" link back
         const link = document.createElement('a');
         link.className = 'map-link';
-        link.href = 'https://www.google.com/maps/place/Cabanas+de+Torres,+Alenquer,+Portugal';
+        link.href = 'https://www.google.com/maps/search/?api=1&query=Rua+das+Flores+8,+2580-121+Cabanas+de+Torres';
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
         link.textContent = 'Abrir no Google Maps →';

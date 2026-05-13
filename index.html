@@ -2053,7 +2053,9 @@
       });
 
       // Mobile drawer (hamburger menu)
-      (function() {
+      // NOTE: este script bloco corre antes do markup do drawer ser parseado,
+      // por isso esperamos por DOMContentLoaded antes de queries / listeners.
+      document.addEventListener('DOMContentLoaded', () => {
         const drawer = document.getElementById('mobile-drawer');
         const burger = document.getElementById('nav-burger');
         const closeBtn = document.getElementById('drawer-close');
@@ -2088,7 +2090,7 @@
         document.addEventListener('keydown', (e) => {
           if (e.key === 'Escape' && drawer.hasAttribute('data-open')) closeDrawer();
         });
-      })();
+      });
 
       // Reveal subtle on scroll
       const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

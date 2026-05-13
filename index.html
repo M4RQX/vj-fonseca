@@ -214,26 +214,33 @@
       flex-wrap: wrap;
     }
     .topbar-wa a {
-      display: inline-flex; align-items: center;
-      background: #075E54; color: #fff !important;
-      padding: 4px 10px;
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #25D366; color: #fff !important;
+      padding: 5px 12px 5px 10px;
       border-radius: 999px;
       font-size: 12px;
-      font-weight: 500;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      min-height: 30px;
+      transition: background .2s var(--easing);
     }
-    .topbar-wa a:hover { background: #0A8A7A; text-decoration: none; }
+    .topbar-wa a:hover { background: #1EBE5C; text-decoration: none; }
+    .topbar-wa a svg { width: 14px; height: 14px; flex-shrink: 0; }
+
     @media (max-width: 720px) {
+      .topbar { padding: 6px 0; }
       .topbar-inner { gap: 10px 14px; }
-      .topbar-left, .topbar-right { gap: 8px 12px; }
-      .topbar-left { font-size: 12px; }
+      .topbar-left { font-size: 11px; gap: 8px; }
+      .topbar-left span:not(:first-child) { display: none; }
+      .topbar-right { gap: 10px; }
       .topbar-email { display: none; }
-      .topbar a { min-height: 32px; padding: 2px 4px; font-size: 12px; }
-      .topbar-wa a { padding: 4px 10px; font-size: 11px; }
+      .phone-label { display: none; }
+      .topbar a { min-height: 30px; padding: 2px 4px; font-size: 12px; font-weight: 600; }
     }
     @media (max-width: 480px) {
-      /* Em ecrãs muito pequenos, esconder o fixo do atelier — telemóvel é mais útil */
-      .topbar-right .phone-link[href*="263"] { display: none; }
-      .topbar-left span:not(:first-child) { display: none; }
+      .topbar-phone-fixo { display: none; }
+      .wa-label { display: none; }
+      .topbar-wa a { padding: 6px 8px; border-radius: 50%; min-width: 30px; justify-content: center; }
     }
 
     /* ============================================================
@@ -300,6 +307,7 @@
 
     .nav-actions {
       display: inline-flex; align-items: center; gap: 8px;
+      justify-self: end;
     }
     .theme-toggle {
       display: inline-flex; align-items: center; justify-content: center;
@@ -337,8 +345,12 @@
       padding: 0;
       transition: border-color .2s var(--easing), background .2s var(--easing);
     }
-    .nav-burger:hover { border-color: var(--accent); }
-    .nav-burger svg { width: 18px; height: 18px; transition: transform .25s var(--easing); }
+    .nav-burger:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-burger svg {
+      width: 18px; height: 18px;
+      transition: transform .25s var(--easing);
+      pointer-events: none; /* garante que o click chega ao <button> */
+    }
     .nav-burger[aria-expanded="true"] svg { transform: rotate(90deg); }
 
     .mobile-drawer {
@@ -1464,11 +1476,11 @@
           <span>Cabanas&nbsp;de&nbsp;Torres&nbsp;·&nbsp;Alenquer</span>
         </div>
         <div class="topbar-right">
-          <span><a href="tel:+351263079366" class="phone-link">Atelier&nbsp;<strong>263 079 366</strong></a></span>
-          <span><a href="tel:+351916641573" class="phone-link">Sr. Fonseca&nbsp;<strong>916 641 573</strong></a></span>
+          <span class="topbar-phone topbar-phone-fixo"><a href="tel:+351263079366" class="phone-link"><span class="phone-label">Atelier&nbsp;</span><strong>263 079 366</strong></a></span>
+          <span class="topbar-phone"><a href="tel:+351916641573" class="phone-link"><span class="phone-label">Sr. Fonseca&nbsp;</span><strong>916 641 573</strong></a></span>
           <span class="topbar-email"><a href="mailto:jf@vjfonseca.com">jf@vjfonseca.com</a></span>
           <span class="topbar-wa"><a href="https://wa.me/351916641573?text=Boa%20tarde%2C%20gostaria%20de%20pedir%20um%20or%C3%A7amento." aria-label="WhatsApp">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.7-.83-2-.92-.27-.1-.46-.15-.65.15s-.75.92-.92 1.1c-.17.2-.34.22-.63.07-.3-.15-1.25-.46-2.4-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.34.44-.52s.2-.3.3-.5c.1-.2.05-.37-.02-.52-.08-.15-.65-1.6-.9-2.2-.24-.57-.48-.5-.66-.5h-.57c-.2 0-.5.07-.78.36-.27.3-1.04.99-1.04 2.42s1.07 2.83 1.21 3.02c.15.2 2.1 3.2 5.07 4.48.7.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.69.25-1.28.17-1.4-.07-.13-.27-.2-.56-.34zm-5.4 7.4a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 0 1 2.2 12c0-5.45 4.43-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.43 9.88-9.88 9.88z"/></svg>&nbsp;WhatsApp</a></span>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.7-.83-2-.92-.27-.1-.46-.15-.65.15s-.75.92-.92 1.1c-.17.2-.34.22-.63.07-.3-.15-1.25-.46-2.4-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.34.44-.52s.2-.3.3-.5c.1-.2.05-.37-.02-.52-.08-.15-.65-1.6-.9-2.2-.24-.57-.48-.5-.66-.5h-.57c-.2 0-.5.07-.78.36-.27.3-1.04.99-1.04 2.42s1.07 2.83 1.21 3.02c.15.2 2.1 3.2 5.07 4.48.7.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.69.25-1.28.17-1.4-.07-.13-.27-.2-.56-.34zm-5.4 7.4a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 0 1 2.2 12c0-5.45 4.43-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.43 9.88-9.88 9.88z"/></svg><span class="wa-label">&nbsp;WhatsApp</span></a></span>
         </div>
       </div>
     </div>
